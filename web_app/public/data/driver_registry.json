@@ -41,14 +41,14 @@
       "number": 44
     },
     {
-      "canonicalId": "norris",
+      "canonicalId": "max_verstappen",
       "aliases": [
-        "NOR",
-        "nor",
-        "norris"
+        "VER",
+        "max_verstappen",
+        "ver"
       ],
-      "abbreviation": "NOR",
-      "number": 1
+      "abbreviation": "VER",
+      "number": 3
     },
     {
       "canonicalId": "leclerc",
@@ -61,14 +61,14 @@
       "number": 16
     },
     {
-      "canonicalId": "max_verstappen",
+      "canonicalId": "norris",
       "aliases": [
-        "VER",
-        "max_verstappen",
-        "ver"
+        "NOR",
+        "nor",
+        "norris"
       ],
-      "abbreviation": "VER",
-      "number": 3
+      "abbreviation": "NOR",
+      "number": 1
     },
     {
       "canonicalId": "piastri",
@@ -141,16 +141,6 @@
       "number": 87
     },
     {
-      "canonicalId": "bortoleto",
-      "aliases": [
-        "BOR",
-        "bor",
-        "bortoleto"
-      ],
-      "abbreviation": "BOR",
-      "number": 5
-    },
-    {
       "canonicalId": "hulkenberg",
       "aliases": [
         "HUL",
@@ -161,24 +151,14 @@
       "number": 27
     },
     {
-      "canonicalId": "sainz",
+      "canonicalId": "bortoleto",
       "aliases": [
-        "SAI",
-        "sai",
-        "sainz"
+        "BOR",
+        "bor",
+        "bortoleto"
       ],
-      "abbreviation": "SAI",
-      "number": 55
-    },
-    {
-      "canonicalId": "albon",
-      "aliases": [
-        "ALB",
-        "alb",
-        "albon"
-      ],
-      "abbreviation": "ALB",
-      "number": 23
+      "abbreviation": "BOR",
+      "number": 5
     },
     {
       "canonicalId": "ocon",
@@ -199,6 +179,26 @@
       ],
       "abbreviation": "ALO",
       "number": 14
+    },
+    {
+      "canonicalId": "sainz",
+      "aliases": [
+        "SAI",
+        "sai",
+        "sainz"
+      ],
+      "abbreviation": "SAI",
+      "number": 55
+    },
+    {
+      "canonicalId": "albon",
+      "aliases": [
+        "ALB",
+        "alb",
+        "albon"
+      ],
+      "abbreviation": "ALB",
+      "number": 23
     },
     {
       "canonicalId": "tsunoda",

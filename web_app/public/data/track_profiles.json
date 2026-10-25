@@ -1,0 +1,235 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "snapshotId": "jolpica-af71b6d4fc7690801e5002eb",
+    "season": 2026,
+    "raceId": null,
+    "round": 17,
+    "generatedAt": "2026-10-25T14:40:27.628719+00:00",
+    "dataThrough": "2026-10-11",
+    "placeholder": false,
+    "source": "Jolpica grid and recorded classifications; circuit outcomes v1"
+  },
+  "data": [
+    {
+      "trackId": "aut_dromo_hermanos_rodr_guez",
+      "sampleCount": 0,
+      "poleStarts": 0,
+      "poleWins": 0,
+      "poleToWin": null,
+      "fromDate": null,
+      "toDate": null,
+      "definition": "Selected-season recorded races only. Pole-to-win = classified wins by grid-position-1 starters / races with an identified grid-position-1 starter. Missing grids are excluded, not losses. Single-race samples describe an outcome, not a predictive probability. Tyre degradation and pit-stop delta require separate measurements."
+    },
+    {
+      "trackId": "aut_dromo_jos_carlos_pace",
+      "sampleCount": 0,
+      "poleStarts": 0,
+      "poleWins": 0,
+      "poleToWin": null,
+      "fromDate": null,
+      "toDate": null,
+      "definition": "Selected-season recorded races only. Pole-to-win = classified wins by grid-position-1 starters / races with an identified grid-position-1 starter. Missing grids are excluded, not losses. Single-race samples describe an outcome, not a predictive probability. Tyre degradation and pit-stop delta require separate measurements."
+    },
+    {
+      "trackId": "autodromo_nazionale_monza",
+      "sampleCount": 1,
+      "poleStarts": 1,
+      "poleWins": 0,
+      "poleToWin": 0.0,
+      "fromDate": "2026-09-06",
+      "toDate": "2026-09-06",
+      "definition": "Selected-season recorded races only. Pole-to-win = classified wins by grid-position-1 starters / races with an identified grid-position-1 starter. Missing grids are excluded, not losses. Single-race samples describe an outcome, not a predictive probability. Tyre degradation and pit-stop delta require separate measurements."
+    },
+    {
+      "trackId": "baku_city_circuit",
+      "sampleCount": 1,
+      "poleStarts": 1,
+      "poleWins": 1,
+      "poleToWin": 1.0,
+      "fromDate": "2026-09-26",
+      "toDate": "2026-09-26",
+      "definition": "Selected-season recorded races only. Pole-to-win = classified wins by grid-position-1 starters / races with an identified grid-position-1 starter. Missing grids are excluded, not losses. Single-race samples describe an outcome, not a predictive probability. Tyre degradation and pit-stop delta require separate measurements."
+    },
+    {
+      "trackId": "circuit_de_barcelona_catalunya",
+      "sampleCount": 1,
+      "poleStarts": 1,
+      "poleWins": 0,
+      "poleToWin": 0.0,
+      "fromDate": "2026-06-14",
+      "toDate": "2026-06-14",
+      "definition": "Selected-season recorded races only. Pole-to-win = classified wins by grid-position-1 starters / races with an identified grid-position-1 starter. Missing grids are excluded, not losses. Single-race samples describe an outcome, not a predictive probability. Tyre degradation and pit-stop delta require separate measurements."
+    },
+    {
+      "trackId": "circuit_de_monaco",
+      "sampleCount": 1,
+      "poleStarts": 1,
+      "poleWins": 1,
+      "poleToWin": 1.0,
+      "fromDate": "2026-06-07",
+      "toDate": "2026-06-07",
+      "definition": "Selected-season recorded races only. Pole-to-win = classified wins by grid-position-1 starters / races with an identified grid-position-1 starter. Missing grids are excluded, not losses. Single-race samples describe an outcome, not a predictive probability. Tyre degradation and pit-stop delta require separate measurements."
+    },
+    {
+      "trackId": "circuit_de_spa_francorchamps",
+      "sampleCount": 1,
+      "poleStarts": 1,
+      "poleWins": 1,
+      "poleToWin": 1.0,
+      "fromDate": "2026-07-19",
+      "toDate": "2026-07-19",
+      "definition": "Selected-season recorded races only. Pole-to-win = classified wins by grid-position-1 starters / races with an identified grid-position-1 starter. Missing grids are excluded, not losses. Single-race samples describe an outcome, not a predictive probability. Tyre degradation and pit-stop delta require separate measurements."
+    },
+    {
+      "trackId": "circuit_gilles_villeneuve",
+      "sampleCount": 1,
+      "poleStarts": 1,
+      "poleWins": 0,
+      "poleToWin": 0.0,
+      "fromDate": "2026-05-24",
+      "toDate": "2026-05-24",
+      "definition": "Selected-season recorded races only. Pole-to-win = classified wins by grid-position-1 starters / races with an identified grid-position-1 starter. Missing grids are excluded, not losses. Single-race samples describe an outcome, not a predictive probability. Tyre degradation and pit-stop delta require separate measurements."
+    },
+    {
+      "trackId": "circuit_of_the_americas",
+      "sampleCount": 0,
+      "poleStarts": 0,
+      "poleWins": 0,
+      "poleToWin": null,
+      "fromDate": null,
+      "toDate": null,
+      "definition": "Selected-season recorded races only. Pole-to-win = classified wins by grid-position-1 starters / races with an identified grid-position-1 starter. Missing grids are excluded, not losses. Single-race samples describe an outcome, not a predictive probability. Tyre degradation and pit-stop delta require separate measurements."
+    },
+    {
+      "trackId": "circuit_park_zandvoort",
+      "sampleCount": 1,
+      "poleStarts": 1,
+      "poleWins": 1,
+      "poleToWin": 1.0,
+      "fromDate": "2026-08-23",
+      "toDate": "2026-08-23",
+      "definition": "Selected-season recorded races only. Pole-to-win = classified wins by grid-position-1 starters / races with an identified grid-position-1 starter. Missing grids are excluded, not losses. Single-race samples describe an outcome, not a predictive probability. Tyre degradation and pit-stop delta require separate measurements."
+    },
+    {
+      "trackId": "hungaroring",
+      "sampleCount": 1,
+      "poleStarts": 1,
+      "poleWins": 1,
+      "poleToWin": 1.0,
+      "fromDate": "2026-07-26",
+      "toDate": "2026-07-26",
+      "definition": "Selected-season recorded races only. Pole-to-win = classified wins by grid-position-1 starters / races with an identified grid-position-1 starter. Missing grids are excluded, not losses. Single-race samples describe an outcome, not a predictive probability. Tyre degradation and pit-stop delta require separate measurements."
+    },
+    {
+      "trackId": "las_vegas_street_circuit",
+      "sampleCount": 0,
+      "poleStarts": 0,
+      "poleWins": 0,
+      "poleToWin": null,
+      "fromDate": null,
+      "toDate": null,
+      "definition": "Selected-season recorded races only. Pole-to-win = classified wins by grid-position-1 starters / races with an identified grid-position-1 starter. Missing grids are excluded, not losses. Single-race samples describe an outcome, not a predictive probability. Tyre degradation and pit-stop delta require separate measurements."
+    },
+    {
+      "trackId": "lusail_international_circuit",
+      "sampleCount": 0,
+      "poleStarts": 0,
+      "poleWins": 0,
+      "poleToWin": null,
+      "fromDate": null,
+      "toDate": null,
+      "definition": "Selected-season recorded races only. Pole-to-win = classified wins by grid-position-1 starters / races with an identified grid-position-1 starter. Missing grids are excluded, not losses. Single-race samples describe an outcome, not a predictive probability. Tyre degradation and pit-stop delta require separate measurements."
+    },
+    {
+      "trackId": "marina_bay_street_circuit",
+      "sampleCount": 1,
+      "poleStarts": 1,
+      "poleWins": 1,
+      "poleToWin": 1.0,
+      "fromDate": "2026-10-11",
+      "toDate": "2026-10-11",
+      "definition": "Selected-season recorded races only. Pole-to-win = classified wins by grid-position-1 starters / races with an identified grid-position-1 starter. Missing grids are excluded, not losses. Single-race samples describe an outcome, not a predictive probability. Tyre degradation and pit-stop delta require separate measurements."
+    },
+    {
+      "trackId": "melbourne_grand_prix_circuit",
+      "sampleCount": 1,
+      "poleStarts": 1,
+      "poleWins": 1,
+      "poleToWin": 1.0,
+      "fromDate": "2026-03-08",
+      "toDate": "2026-03-08",
+      "definition": "Selected-season recorded races only. Pole-to-win = classified wins by grid-position-1 starters / races with an identified grid-position-1 starter. Missing grids are excluded, not losses. Single-race samples describe an outcome, not a predictive probability. Tyre degradation and pit-stop delta require separate measurements."
+    },
+    {
+      "trackId": "miami_international_autodrome",
+      "sampleCount": 1,
+      "poleStarts": 1,
+      "poleWins": 1,
+      "poleToWin": 1.0,
+      "fromDate": "2026-05-03",
+      "toDate": "2026-05-03",
+      "definition": "Selected-season recorded races only. Pole-to-win = classified wins by grid-position-1 starters / races with an identified grid-position-1 starter. Missing grids are excluded, not losses. Single-race samples describe an outcome, not a predictive probability. Tyre degradation and pit-stop delta require separate measurements."
+    },
+    {
+      "trackId": "red_bull_ring",
+      "sampleCount": 1,
+      "poleStarts": 1,
+      "poleWins": 1,
+      "poleToWin": 1.0,
+      "fromDate": "2026-06-28",
+      "toDate": "2026-06-28",
+      "definition": "Selected-season recorded races only. Pole-to-win = classified wins by grid-position-1 starters / races with an identified grid-position-1 starter. Missing grids are excluded, not losses. Single-race samples describe an outcome, not a predictive probability. Tyre degradation and pit-stop delta require separate measurements."
+    },
+    {
+      "trackId": "sepang_international_circuit",
+      "sampleCount": 1,
+      "poleStarts": 1,
+      "poleWins": 1,
+      "poleToWin": 1.0,
+      "fromDate": "2026-10-04",
+      "toDate": "2026-10-04",
+      "definition": "Selected-season recorded races only. Pole-to-win = classified wins by grid-position-1 starters / races with an identified grid-position-1 starter. Missing grids are excluded, not losses. Single-race samples describe an outcome, not a predictive probability. Tyre degradation and pit-stop delta require separate measurements."
+    },
+    {
+      "trackId": "shanghai_international_circuit",
+      "sampleCount": 1,
+      "poleStarts": 1,
+      "poleWins": 1,
+      "poleToWin": 1.0,
+      "fromDate": "2026-03-15",
+      "toDate": "2026-03-15",
+      "definition": "Selected-season recorded races only. Pole-to-win = classified wins by grid-position-1 starters / races with an identified grid-position-1 starter. Missing grids are excluded, not losses. Single-race samples describe an outcome, not a predictive probability. Tyre degradation and pit-stop delta require separate measurements."
+    },
+    {
+      "trackId": "silverstone_circuit",
+      "sampleCount": 1,
+      "poleStarts": 1,
+      "poleWins": 0,
+      "poleToWin": 0.0,
+      "fromDate": "2026-07-05",
+      "toDate": "2026-07-05",
+      "definition": "Selected-season recorded races only. Pole-to-win = classified wins by grid-position-1 starters / races with an identified grid-position-1 starter. Missing grids are excluded, not losses. Single-race samples describe an outcome, not a predictive probability. Tyre degradation and pit-stop delta require separate measurements."
+    },
+    {
+      "trackId": "suzuka_circuit",
+      "sampleCount": 1,
+      "poleStarts": 1,
+      "poleWins": 1,
+      "poleToWin": 1.0,
+      "fromDate": "2026-03-29",
+      "toDate": "2026-03-29",
+      "definition": "Selected-season recorded races only. Pole-to-win = classified wins by grid-position-1 starters / races with an identified grid-position-1 starter. Missing grids are excluded, not losses. Single-race samples describe an outcome, not a predictive probability. Tyre degradation and pit-stop delta require separate measurements."
+    },
+    {
+      "trackId": "yas_marina_circuit",
+      "sampleCount": 0,
+      "poleStarts": 0,
+      "poleWins": 0,
+      "poleToWin": null,
+      "fromDate": null,
+      "toDate": null,
+      "definition": "Selected-season recorded races only. Pole-to-win = classified wins by grid-position-1 starters / races with an identified grid-position-1 starter. Missing grids are excluded, not losses. Single-race samples describe an outcome, not a predictive probability. Tyre degradation and pit-stop delta require separate measurements."
+    }
+  ]
+}

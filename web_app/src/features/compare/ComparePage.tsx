@@ -32,7 +32,7 @@ export default function ComparePage() {
           { key: 'bn', label: 'B samples', numeric: true, render: row => <Num value={row.sampleB} /> },
         ]} /></div>}
         <div className="space-y-3">{Object.entries(data.metricDefinitions).map(([key, definition]) => <InfoPopover key={key} label={key}>{definition}</InfoPopover>)}</div>
-        <p className="text-xs text-text-muted">No overall-track fallback is used when a selected track lacks comparable mastery data. Insufficient samples are unavailable rather than zero. The last fixture record intentionally demonstrates sparse data; it is not a claim about the real driver's experience.</p>
+        <p className="text-xs text-text-muted">Track comparisons use only recorded starts at that circuit. Sample counts remain visible; a single race is an observation, not a long-term rating. Missing track data never falls back to overall form.</p>
       </div>;
     }}</ResourceBoundary></Surface><ResourceBoundary state={tracks}>{() => null}</ResourceBoundary>
   </div>;

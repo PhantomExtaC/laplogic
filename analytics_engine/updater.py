@@ -122,6 +122,10 @@ def main():
                                 payloads[name]["meta"]["generatedAt"] = old_meta["generatedAt"]
                     from src.export.momentum import build as build_momentum
                     payloads["momentum.json"] = build_momentum(source, payloads["driver_standings.json"]["meta"])
+                    from src.export.comparison import build as build_comparison
+                    payloads["head_to_head.json"] = build_comparison(source, payloads["calendar.json"]["data"], payloads["driver_standings.json"]["meta"])
+                    from src.export.track_outcomes import build as build_tracks
+                    payloads["track_profiles.json"] = build_tracks(source, payloads["calendar.json"]["data"], payloads["driver_standings.json"]["meta"])
                     meta = payloads["driver_standings.json"]["meta"]
                     upcoming = next((r for r in payloads["calendar.json"]["data"] if r["status"] == "upcoming"), None)
                     payloads["manifest.json"] = {"meta": meta, "data": {"snapshotId": meta["snapshotId"], "season": args.season, "nextRaceId": upcoming["raceId"] if upcoming else None, "championModelId": None, "evaluationId": None, "resources": {name.removesuffix(".json"): {"filename": name, "schemaVersion": "1.0.0"} for name in payloads}}}

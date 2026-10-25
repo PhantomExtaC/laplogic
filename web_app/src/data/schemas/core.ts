@@ -1,6 +1,16 @@
 import { z } from 'zod';
 import { envelope, predictionsSchema } from './index';
 const n = z.number().finite();
+export const trackProfilesSchema = envelope(z.array(z.object({
+  trackId: z.string(), sampleCount: n.int().nonnegative(), poleStarts: n.int().nonnegative(),
+  poleWins: n.int().nonnegative(), poleToWin: n.min(0).max(1).nullable(),
+  fromDate: z.string().nullable(), toDate: z.string().nullable(), definition: z.string(),
+}).superRefine((row, ctx) => {
+  if (row.poleWins > row.poleStarts || row.poleStarts > row.sampleCount ||
+    (row.poleStarts === 0 ? row.poleToWin !== null : row.poleToWin === null || Math.abs(row.poleToWin - row.poleWins / row.poleStarts) > 0.000001)) {
+    ctx.addIssue({ code: 'custom', message: 'Circuit outcome counts and ratio disagree' });
+  }
+})));
 export const stageSchema = z.enum(['pre-weekend', 'post-fp2', 'post-quali']);
 export const momentumSchema = envelope(z.object({
   definition: z.string(), drivers: z.array(z.object({

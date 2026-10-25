@@ -10,8 +10,13 @@ import ComparePage from './ComparePage';
 vi.mock('../../charts/RadarCompare', () => ({ RadarCompare: () => <div>Accessible comparison chart</div> }));
 afterEach(() => { cleanup(); vi.unstubAllGlobals(); });
 function fixture() {
-  vi.stubGlobal('fetch', vi.fn(async (url: string) => new Response(readFileSync(resolve('public/data', url.split('/').at(-1) ?? ''), 'utf8').replaceAll('"placeholder": true', '"placeholder": false'))));
-  return comparisonSchema.parse(JSON.parse(readFileSync('public/data/head_to_head.json', 'utf8'))).data;
+  const resource = comparisonSchema.parse(JSON.parse(readFileSync('public/data/head_to_head.json', 'utf8')));
+  resource.meta.placeholder = false;
+  for (const metric of Object.values(resource.data.drivers.at(-1)?.metrics ?? {})) {
+    metric.sampleCount = 0; metric.raw = null; metric.normalized = null;
+  }
+  vi.stubGlobal('fetch', vi.fn(async (url: string) => new Response(url.endsWith('head_to_head.json') ? JSON.stringify(resource) : readFileSync(resolve('public/data', url.split('/').at(-1) ?? ''), 'utf8'))));
+  return resource.data;
 }
 it('guards equal-driver deep links while keeping controls usable', async () => {
   const data = fixture(), id = data.drivers[0].driverId;

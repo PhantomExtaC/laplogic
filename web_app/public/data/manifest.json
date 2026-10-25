@@ -60,6 +60,14 @@
       "momentum": {
         "filename": "momentum.json",
         "schemaVersion": "1.0.0"
+      },
+      "head_to_head": {
+        "filename": "head_to_head.json",
+        "schemaVersion": "1.0.0"
+      },
+      "track_profiles": {
+        "filename": "track_profiles.json",
+        "schemaVersion": "1.0.0"
       }
     }
   }

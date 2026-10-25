@@ -27,6 +27,11 @@ it('uses track-specific sample sizes rather than the overall counts', () => {
   const result = headToHead(a, b, 'track')[0];
   expect(result.sampleA).toBe(1); expect(result.reason).toBe('Insufficient sample');
 });
+it('applies selected track context to every metric, including finish and points', () => {
+  const a = { id: 'a', metrics: { 'Mean finish': metric }, tracks: [{ trackId: 'track', metrics: { 'Mean finish': { ...metric, raw: 8, sampleCount: 3 } } }] };
+  expect(headToHead(a, { ...a, id: 'b' }, 'track')[0].a?.raw).toBe(8);
+  expect(headToHead(a, { ...a, id: 'b' }, 'missing')[0].a).toBeNull();
+});
 it('keeps one common cohort with identical denominators and auditable exclusions', () => {
   const history = arenaHistorySchema.parse(JSON.parse(readFileSync('public/data/arena_history.json', 'utf8')));
   const evaluation = evaluationSchema.parse(JSON.parse(readFileSync('public/data/evaluation.json', 'utf8')));
