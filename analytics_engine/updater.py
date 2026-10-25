@@ -127,8 +127,26 @@ def main():
                     from src.export.track_outcomes import build as build_tracks
                     payloads["track_profiles.json"] = build_tracks(source, payloads["calendar.json"]["data"], payloads["driver_standings.json"]["meta"])
                     meta = payloads["driver_standings.json"]["meta"]
+                    from src.export.baseline_engine import build as build_baseline
+                    predictions, evaluation, artifact = build_baseline(source, payloads["calendar.json"]["data"], meta, report["startedAt"])
+                    old_evaluation_path = ROOT / "web_app/public/data/evaluation.json"
+                    if old_evaluation_path.exists():
+                        old_evaluation = json.loads(old_evaluation_path.read_text(encoding="utf-8"))
+                        if old_evaluation.get("data") == evaluation["data"] and old_evaluation.get("meta", {}).get("source") == evaluation["meta"]["source"]:
+                            evaluation["meta"]["generatedAt"] = old_evaluation["meta"]["generatedAt"]
+                    # Reusing identical input must not churn first-publication time.
+                    old_forecast_path = ROOT / "web_app/public/data/predictions.json"
+                    if old_forecast_path.exists():
+                        old_forecast = json.loads(old_forecast_path.read_text(encoding="utf-8"))
+                        if isinstance(old_forecast, dict) and old_forecast.get("data") == predictions["data"] and all(old_forecast.get("meta", {}).get(key) == predictions["meta"].get(key) for key in ("snapshotId", "raceId", "modelId", "modelVersion")):
+                            predictions["meta"]["generatedAt"] = old_forecast["meta"]["generatedAt"]
+                    payloads["predictions.json"], payloads["evaluation.json"] = predictions, evaluation
+                    artifact_id = hashlib.sha256(canonical(artifact)).hexdigest()[:24]
+                    (folder / "models").mkdir(exist_ok=True)
+                    atomic_json(folder / "models" / (artifact_id + ".json"), artifact)
+                    report["modelArtifactId"] = artifact_id
                     upcoming = next((r for r in payloads["calendar.json"]["data"] if r["status"] == "upcoming"), None)
-                    payloads["manifest.json"] = {"meta": meta, "data": {"snapshotId": meta["snapshotId"], "season": args.season, "nextRaceId": upcoming["raceId"] if upcoming else None, "championModelId": None, "evaluationId": None, "resources": {name.removesuffix(".json"): {"filename": name, "schemaVersion": "1.0.0"} for name in payloads}}}
+                    payloads["manifest.json"] = {"meta": meta, "data": {"snapshotId": meta["snapshotId"], "season": args.season, "nextRaceId": upcoming["raceId"] if upcoming else None, "championModelId": None, "evaluationId": evaluation["data"]["evaluationId"], "resources": {name.removesuffix(".json"): {"filename": name, "schemaVersion": "1.0.0"} for name in payloads}}}
                 identifier, created = stage(payloads, folder, validate_frontend)
                 from src.export.freshness import describe
                 report["resources"] = describe(payloads)

@@ -38,7 +38,7 @@ export default function RaceHubPage() {
       <InfoPopover label="Timing provenance">Fastest-sector claims are withheld unless their session and timing provenance are supplied. Raw pace averages also require stint and compound context.</InfoPopover>
     </div> : <EmptyState title="Event-bound context unavailable" description="The export can be parsed, but it cannot be combined safely with the selected prediction snapshot." />}</ResourceBoundary></Surface>
     <Surface title="Latest published forecast" variant="accent">
-      <ResourceBoundary state={predictions}>{rows => predictions.status === 'ready' && eventMatches(predictions.meta, event) ? <Field rows={rows} fieldSize={predictions.meta.fieldSize} /> : <EmptyState title="Forecast unavailable" description="No verified forecast has been published for this event." />}</ResourceBoundary>
+      <ResourceBoundary state={predictions}>{rows => predictions.status === 'ready' && eventMatches(predictions.meta, event) ? <div className="space-y-4"><p className="text-sm text-text-muted">{predictions.meta.source}</p><Field rows={rows} fieldSize={predictions.meta.fieldSize} /></div> : <EmptyState title="Forecast unavailable" description="No verified forecast has been published for this event." />}</ResourceBoundary>
     </Surface>
   </div>;
 }

@@ -15,7 +15,7 @@
     "season": 2026,
     "nextRaceId": "2026-r18",
     "championModelId": null,
-    "evaluationId": null,
+    "evaluationId": "walk-forward-4a0a2cd23e0c8e96bd871e0d",
     "resources": {
       "calendar": {
         "filename": "calendar.json",
@@ -67,6 +67,14 @@
       },
       "track_profiles": {
         "filename": "track_profiles.json",
+        "schemaVersion": "1.0.0"
+      },
+      "predictions": {
+        "filename": "predictions.json",
+        "schemaVersion": "1.0.0"
+      },
+      "evaluation": {
+        "filename": "evaluation.json",
         "schemaVersion": "1.0.0"
       }
     }

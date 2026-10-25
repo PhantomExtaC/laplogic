@@ -1,112 +1,151 @@
-[
-  {
-    "driverId": "nor",
-    "driverName": "NOR",
-    "winProbability": 0.61,
-    "predictedPosition": 1,
-    "insights": {
-      "trackMastery": 18.0,
-      "teamMomentum": 18.6,
-      "driverMomentum": 6.5
-    }
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "snapshotId": "jolpica-af71b6d4fc7690801e5002eb",
+    "season": 2026,
+    "raceId": "2026-r18",
+    "round": 18,
+    "generatedAt": "2026-10-25T18:25:08.263176+00:00",
+    "dataThrough": "2026-10-11",
+    "placeholder": false,
+    "source": "Provisional statistical baseline: assumes the last recorded race field returns. No confirmed next-event entry list, grid, weather or practice inputs. Not a calibrated ML forecast.",
+    "modelId": "season-wins-baseline",
+    "modelVersion": "1.0.0",
+    "stage": "pre-weekend",
+    "fieldSize": 22
   },
-  {
-    "driverId": "rus",
-    "driverName": "RUS",
-    "winProbability": 0.096,
-    "predictedPosition": 2,
-    "insights": {
-      "trackMastery": 4.0,
-      "teamMomentum": 25.6,
-      "driverMomentum": 7.8
+  "data": [
+    {
+      "driverId": "antonelli",
+      "driverName": "Andrea Kimi Antonelli",
+      "predictedPosition": 1,
+      "winProbability": 0.23076923076923078
+    },
+    {
+      "driverId": "russell",
+      "driverName": "George Russell",
+      "predictedPosition": 2,
+      "winProbability": 0.10256410256410256
+    },
+    {
+      "driverId": "max_verstappen",
+      "driverName": "Max Verstappen",
+      "predictedPosition": 3,
+      "winProbability": 0.07692307692307693
+    },
+    {
+      "driverId": "norris",
+      "driverName": "Lando Norris",
+      "predictedPosition": 4,
+      "winProbability": 0.07692307692307693
+    },
+    {
+      "driverId": "hamilton",
+      "driverName": "Lewis Hamilton",
+      "predictedPosition": 5,
+      "winProbability": 0.05128205128205128
+    },
+    {
+      "driverId": "leclerc",
+      "driverName": "Charles Leclerc",
+      "predictedPosition": 6,
+      "winProbability": 0.05128205128205128
+    },
+    {
+      "driverId": "albon",
+      "driverName": "Alexander Albon",
+      "predictedPosition": 7,
+      "winProbability": 0.02564102564102564
+    },
+    {
+      "driverId": "alonso",
+      "driverName": "Fernando Alonso",
+      "predictedPosition": 8,
+      "winProbability": 0.02564102564102564
+    },
+    {
+      "driverId": "arvid_lindblad",
+      "driverName": "Arvid Lindblad",
+      "predictedPosition": 9,
+      "winProbability": 0.02564102564102564
+    },
+    {
+      "driverId": "bearman",
+      "driverName": "Oliver Bearman",
+      "predictedPosition": 10,
+      "winProbability": 0.02564102564102564
+    },
+    {
+      "driverId": "bortoleto",
+      "driverName": "Gabriel Bortoleto",
+      "predictedPosition": 11,
+      "winProbability": 0.02564102564102564
+    },
+    {
+      "driverId": "bottas",
+      "driverName": "Valtteri Bottas",
+      "predictedPosition": 12,
+      "winProbability": 0.02564102564102564
+    },
+    {
+      "driverId": "colapinto",
+      "driverName": "Franco Colapinto",
+      "predictedPosition": 13,
+      "winProbability": 0.02564102564102564
+    },
+    {
+      "driverId": "gasly",
+      "driverName": "Pierre Gasly",
+      "predictedPosition": 14,
+      "winProbability": 0.02564102564102564
+    },
+    {
+      "driverId": "hadjar",
+      "driverName": "Isack Hadjar",
+      "predictedPosition": 15,
+      "winProbability": 0.02564102564102564
+    },
+    {
+      "driverId": "hulkenberg",
+      "driverName": "Nico H\u00fclkenberg",
+      "predictedPosition": 16,
+      "winProbability": 0.02564102564102564
+    },
+    {
+      "driverId": "lawson",
+      "driverName": "Liam Lawson",
+      "predictedPosition": 17,
+      "winProbability": 0.02564102564102564
+    },
+    {
+      "driverId": "ocon",
+      "driverName": "Esteban Ocon",
+      "predictedPosition": 18,
+      "winProbability": 0.02564102564102564
+    },
+    {
+      "driverId": "perez",
+      "driverName": "Sergio P\u00e9rez",
+      "predictedPosition": 19,
+      "winProbability": 0.02564102564102564
+    },
+    {
+      "driverId": "piastri",
+      "driverName": "Oscar Piastri",
+      "predictedPosition": 20,
+      "winProbability": 0.02564102564102564
+    },
+    {
+      "driverId": "sainz",
+      "driverName": "Carlos Sainz",
+      "predictedPosition": 21,
+      "winProbability": 0.02564102564102564
+    },
+    {
+      "driverId": "stroll",
+      "driverName": "Lance Stroll",
+      "predictedPosition": 22,
+      "winProbability": 0.02564102564102564
     }
-  },
-  {
-    "driverId": "lec",
-    "driverName": "LEC",
-    "winProbability": 0.069,
-    "predictedPosition": 3,
-    "insights": {
-      "trackMastery": 19.0,
-      "teamMomentum": 23.9,
-      "driverMomentum": 5.9
-    }
-  },
-  {
-    "driverId": "ham",
-    "driverName": "HAM",
-    "winProbability": 0.064,
-    "predictedPosition": 4,
-    "insights": {
-      "trackMastery": 20.0,
-      "teamMomentum": 23.9,
-      "driverMomentum": 4.4
-    }
-  },
-  {
-    "driverId": "ant",
-    "driverName": "ANT",
-    "winProbability": 0.042,
-    "predictedPosition": 5,
-    "insights": {
-      "trackMastery": 16.0,
-      "teamMomentum": 25.6,
-      "driverMomentum": 5.3
-    }
-  },
-  {
-    "driverId": "lin",
-    "driverName": "LIN",
-    "winProbability": 0.041,
-    "predictedPosition": 6,
-    "insights": {
-      "trackMastery": 5.0,
-      "teamMomentum": 0.0,
-      "driverMomentum": 5.0
-    }
-  },
-  {
-    "driverId": "pia",
-    "driverName": "PIA",
-    "winProbability": 0.018,
-    "predictedPosition": 7,
-    "insights": {
-      "trackMastery": 1.0,
-      "teamMomentum": 18.6,
-      "driverMomentum": 9.4
-    }
-  },
-  {
-    "driverId": "sai",
-    "driverName": "SAI",
-    "winProbability": 0.017,
-    "predictedPosition": 8,
-    "insights": {
-      "trackMastery": 13.0,
-      "teamMomentum": 1.1,
-      "driverMomentum": 15.0
-    }
-  },
-  {
-    "driverId": "alb",
-    "driverName": "ALB",
-    "winProbability": 0.014,
-    "predictedPosition": 9,
-    "insights": {
-      "trackMastery": 5.0,
-      "teamMomentum": 1.1,
-      "driverMomentum": 16.3
-    }
-  },
-  {
-    "driverId": "ver",
-    "driverName": "VER",
-    "winProbability": 0.013,
-    "predictedPosition": 10,
-    "insights": {
-      "trackMastery": 2.0,
-      "teamMomentum": 19.0,
-      "driverMomentum": 6.8
-    }
-  }
-]
+  ]
+}

@@ -1,50 +1,43 @@
 {
   "meta": {
     "schemaVersion": "1.0.0",
-    "snapshotId": null,
+    "snapshotId": "jolpica-af71b6d4fc7690801e5002eb",
     "season": 2026,
     "raceId": null,
-    "generatedAt": "2026-10-25T12:11:49.499086+00:00",
-    "dataThrough": null,
-    "placeholder": true,
-    "source": "analytics_engine/src/export/placeholders/export_evaluation.py",
-    "round": null,
-    "stage": null,
-    "modelId": null
+    "round": 17,
+    "generatedAt": "2026-10-25T18:27:20.091422+00:00",
+    "dataThrough": "2026-10-11",
+    "placeholder": false,
+    "source": "Computed walk-forward retrospective baseline evaluation; not archived published forecasts; computed at generatedAt"
   },
   "data": {
-    "evaluationId": "sample-common-cohort-v1",
+    "evaluationId": "walk-forward-4a0a2cd23e0c8e96bd871e0d",
     "championId": null,
     "sampleCount": 12,
-    "dateRange": {
-      "fromDate": "2026-06-28",
-      "toDate": "2026-08-23"
-    },
-    "metricDefinitions": {
-      "accuracy": "Correct winner picks / shared eligible event-stage forecasts. Fraction 0\u20131.",
-      "top3": "Observed winner included among the model's frozen top-three winner candidates / the same shared eligible forecast cohort; not podium overlap.",
-      "cohort": "A forecast row is eligible only if every listed model and the baseline is eligible with known correctness. All stages count event-stage forecasts, not distinct races."
-    },
-    "baseline": {
-      "id": "grid-baseline",
-      "label": "Grid baseline",
-      "accuracy": 0.25
-    },
     "models": [
       {
-        "id": "randomForest",
-        "version": "sample-v1",
+        "id": "season-wins-baseline",
+        "version": "1.0.0",
         "accuracy": 0.5,
-        "top3": 0.6666666666666666
-      },
-      {
-        "id": "xgBoost",
-        "version": "sample-v1",
-        "accuracy": 0.3333333333333333,
-        "top3": 0.6666666666666666
+        "top3": 0.5833333333333334
       }
     ],
-    "conflict": true
-  },
-  "_note": "Sample data. Replace by running analytics_engine/src/export/placeholders/export_evaluation.py"
+    "dateRange": {
+      "fromDate": "2026-05-03",
+      "toDate": "2026-10-11"
+    },
+    "metricDefinitions": {
+      "Win accuracy": "Top-ranked driver equals the recorded winner; ties break by canonical driver ID.",
+      "Top-3": "Recorded winner is among the three highest forecast probabilities; not podium coverage.",
+      "Cohort": "Retrospective chronological backtest, minimum 3 prior races. Uses the previous race field; excludes roster changes. 5 races excluded. Model and uniform baseline use the same eligible races. No current-race outcome enters its forecast.",
+      "Probability": "Dirichlet categorical posterior: (prior season wins + 1) / (wins among assumed field + field size). No grid, weather, practice, track or team inputs. Uncalibrated baseline, not promoted ML.",
+      "Baseline": "Uniform field probability; top-1 tie breaks by canonical driver ID. Not a pole-position baseline."
+    },
+    "baseline": {
+      "id": "uniform-field",
+      "label": "Uniform field (deterministic tie break)",
+      "accuracy": 0.0
+    },
+    "conflict": false
+  }
 }

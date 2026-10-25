@@ -1,7 +1,6 @@
 import { expect, it } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { arenaHistorySchema } from '../../data/schemas/arena';
-import { evaluationSchema } from '../../data/schemas';
 import { arenaCohort } from './arena';
 import { headToHead } from './comparison';
 import type { ComparisonMetric } from '../types/comparison';
@@ -34,13 +33,13 @@ it('applies selected track context to every metric, including finish and points'
 });
 it('keeps one common cohort with identical denominators and auditable exclusions', () => {
   const history = arenaHistorySchema.parse(JSON.parse(readFileSync('public/data/arena_history.json', 'utf8')));
-  const evaluation = evaluationSchema.parse(JSON.parse(readFileSync('public/data/evaluation.json', 'utf8')));
   const cohort = arenaCohort(history.data);
   expect(cohort.excluded.length).toBeGreaterThan(0);
   expect(new Set(cohort.summaries.map(model => model.denominator)).size).toBe(1);
-  expect(evaluation.data.sampleCount).toBe(cohort.eligible.length);
-  for (const model of evaluation.data.models) expect(model.accuracy).toBe(cohort.summaries.find(row => row.id === model.id)?.accuracy);
-  expect(cohort.points.at(-1)?.values[evaluation.data.models[0].id]).toBe((evaluation.data.models[0].accuracy ?? 0) * 100);
+  for (const model of cohort.summaries) {
+    expect(model.denominator).toBe(cohort.eligible.length);
+    expect(cohort.points.at(-1)?.values[model.id]).toBe((model.accuracy ?? 0) * 100);
+  }
   const empty = arenaCohort(history.data, 1900, 'post-quali');
   expect(empty.summaries.every(row => row.accuracy === null)).toBe(true);
 });

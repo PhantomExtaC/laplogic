@@ -9,7 +9,9 @@ it.skipIf(!candidate)('validates every core candidate with the production contra
  const schemas = { calendar: s.calendarResourceSchema, drivers: s.driversSchema, teams: s.teamsSchema, tracks: s.tracksSchema, driver_standings: s.driverStandingsResourceSchema, constructor_standings: s.constructorStandingsResourceSchema, driver_registry: s.registrySchema, track_registry: s.trackRegistrySchema, asset_manifest: s.assetSchema, season_stats: seasonStatsSchema };
  const folder = candidate ?? '';
  const files = readdirSync(folder);
- expect(files.sort()).toEqual([...Object.keys(schemas).map(name => `${name}.json`), ...['momentum.json', 'manifest.json', 'head_to_head.json', 'track_profiles.json'].filter(name => files.includes(name))].sort());
+ expect(files.sort()).toEqual([...Object.keys(schemas).map(name => `${name}.json`), ...['momentum.json', 'manifest.json', 'head_to_head.json', 'track_profiles.json', 'predictions.json', 'evaluation.json'].filter(name => files.includes(name))].sort());
+ if (files.includes('predictions.json')) s.envelope(s.predictionsSchema).parse(JSON.parse(readFileSync(resolve(folder, 'predictions.json'), 'utf8')));
+ if (files.includes('evaluation.json')) s.evaluationSchema.parse(JSON.parse(readFileSync(resolve(folder, 'evaluation.json'), 'utf8')));
  if (files.includes('track_profiles.json')) trackProfilesSchema.parse(JSON.parse(readFileSync(resolve(folder, 'track_profiles.json'), 'utf8')));
  if (files.includes('head_to_head.json')) comparisonSchema.parse(JSON.parse(readFileSync(resolve(folder, 'head_to_head.json'), 'utf8')));
  if (files.includes('manifest.json')) s.manifestSchema.parse(JSON.parse(readFileSync(resolve(folder, 'manifest.json'), 'utf8')));

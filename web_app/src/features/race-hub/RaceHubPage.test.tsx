@@ -8,9 +8,10 @@ import RaceHubPage from './RaceHubPage';
 afterEach(() => { cleanup(); vi.unstubAllGlobals(); });
 it('uses one published view and ignores obsolete source/stage controls', async () => {
   vi.stubGlobal('fetch', vi.fn(async (url: string) => new Response(readFileSync(resolve('public/data', url.split('/').at(-1) ?? ''), 'utf8'))));
-  render(<MemoryRouter initialEntries={['/race-hub?source=stages&stage=post-quali']}><RaceHubPage /></MemoryRouter>);
-  expect(await screen.findByText('A verified forecast has not been published for this event yet.')).toBeTruthy();
+  const forecast = JSON.parse(readFileSync('public/data/predictions.json', 'utf8')) as { meta: { raceId: string } };
+  render(<MemoryRouter initialEntries={[`/race-hub?race=${forecast.meta.raceId}&source=stages&stage=post-quali`]}><RaceHubPage /></MemoryRouter>);
+  expect(await screen.findByText(/Provisional statistical baseline:/)).toBeTruthy();
   expect(screen.queryByLabelText('Prediction source')).toBeNull();
   expect(screen.queryByLabelText('Prediction stage')).toBeNull();
-  expect(screen.queryByRole('table', { name: /Published field/ })).toBeNull();
+  expect(screen.getByRole('table', { name: /Published field/ })).toBeTruthy();
 });

@@ -26,7 +26,7 @@ export default function HomePage() {
           <Badge tone={predictions.status === 'ready' && eventMatches(predictions.meta, event) ? 'success' : 'warning'}>{predictions.status === 'ready' && eventMatches(predictions.meta, event) ? 'EVENT MATCHED' : 'UNBOUND EXPORT'}</Badge>
           <p className="text-xs text-text-muted">Model: {predictions.status === 'ready' ? predictions.meta.modelId ?? 'Unavailable' : 'Unavailable'} / Version: {predictions.status === 'ready' ? predictions.meta.modelVersion ?? 'Unavailable' : 'Unavailable'} / Stage: {predictions.status === 'ready' ? predictions.meta.stage ?? 'Unverified' : 'Unverified'}</p>
           <PredictionPanel rows={[...rows].sort((a, b) => b.winProbability - a.winProbability).slice(0, 3).map(row => ({ id: row.driverId, label: row.driverName, probability: row.winProbability }))} coverage={probabilityCoverage(rows)} fieldSize={predictions.status === 'ready' ? predictions.meta.fieldSize : null} />
-          <p className="text-xs text-text-muted">Champion and event binding await verification.</p>
+          <p className="text-xs text-text-muted">{predictions.status === 'ready' ? predictions.meta.source : ''}</p>
         </div>}</ResourceBoundary>
       </Surface>
       <Surface title="Next race context" kicker="Calendar"><ResourceBoundary state={calendar}>{() => <RaceContext event={event} />}</ResourceBoundary></Surface>
