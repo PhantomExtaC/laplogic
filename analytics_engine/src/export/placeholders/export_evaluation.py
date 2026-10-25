@@ -1,18 +1,17 @@
-"""Outputs: evaluation.json.
-Exact schema: web_app/src/data/schemas/index.ts and templates below.
-Intended real source: versioned arena evaluation results and eligible training cohort.
-TODO(real-export): replace templates with verified computation and placeholder=False metadata.
+"""Output evaluation.json: envelope with evaluationId, nullable championId,
+sampleCount (shared eligible event-stage forecasts), dateRange, metricDefinitions,
+baseline {id,label,accuracy}, models [{id,version,accuracy,top3}], conflict.
+Accuracy/top3 are fractions 0–1; missing is null. Intended real source: arena.py
+frozen predictions/outcomes on one common cohort. TODO(real-export): replace
+synthetic metrics with measured evaluation and resolve model promotion explicitly.
 """
 import argparse
-import json
-import sys
-from pathlib import Path
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from arena_fixtures import build
 from export_utils import write_json_atomic
-TEMPLATES = json.loads("{\"evaluation\": {\"meta\": {\"schemaVersion\": \"1.0.0\", \"snapshotId\": null, \"season\": null, \"raceId\": null, \"generatedAt\": null, \"dataThrough\": null, \"placeholder\": true, \"source\": \"analytics_engine/src/export/placeholders/export_evaluation.py\"}, \"data\": {\"evaluationId\": null, \"championId\": null, \"sampleCount\": null, \"models\": [], \"conflict\": true}, \"_note\": \"Sample data. Replace by running analytics_engine/src/export/placeholders/export_evaluation.py\"}}")
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--force", action="store_true")
     args = parser.parse_args()
-    for name, payload in TEMPLATES.items():
-        write_json_atomic("web_app/public/data/" + name + ".json", payload, force=args.force)
+    evaluation, _, _, _ = build()
+    write_json_atomic("web_app/public/data/evaluation.json", evaluation, force=args.force)

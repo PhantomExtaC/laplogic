@@ -1,0 +1,43 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "snapshotId": "sample-2026-r12-post-quali",
+    "season": 2026,
+    "raceId": "2026-r12",
+    "generatedAt": "2026-10-25T12:11:49.257037+00:00",
+    "dataThrough": null,
+    "placeholder": true,
+    "source": "analytics_engine/src/export/placeholders/export_arena_history.py",
+    "round": null,
+    "stage": null,
+    "modelId": null
+  },
+  "data": {
+    "snapshotId": "sample-2026-r12-post-quali",
+    "evaluationId": "sample-common-cohort-v1",
+    "raceId": "2026-r12",
+    "eventName": "Dutch Grand Prix",
+    "season": 2026,
+    "round": 12,
+    "stage": "post-quali",
+    "frozenAt": "2026-08-23T00:00:00Z",
+    "predictions": [
+      {
+        "modelId": "randomForest",
+        "predictedWinner": "arvid_lindblad",
+        "winProbability": 0.41
+      },
+      {
+        "modelId": "xgBoost",
+        "predictedWinner": null,
+        "winProbability": null
+      },
+      {
+        "modelId": "grid-baseline",
+        "predictedWinner": "arvid_lindblad",
+        "winProbability": 0.25
+      }
+    ]
+  },
+  "_note": "Sample data. Replace by running analytics_engine/src/export/placeholders/export_arena_history.py"
+}

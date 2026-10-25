@@ -1,0 +1,1566 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "snapshotId": null,
+    "season": 2026,
+    "raceId": null,
+    "generatedAt": "2026-10-25T12:11:49.729367+00:00",
+    "dataThrough": null,
+    "placeholder": true,
+    "source": "analytics_engine/src/export/placeholders/export_head_to_head.py",
+    "round": null,
+    "stage": null,
+    "modelId": null
+  },
+  "data": {
+    "season": 2026,
+    "metricDefinitions": {
+      "racecraft": "Synthetic racecraft index; higher is better. Minimum three observations.",
+      "trackMastery": "Synthetic loss index; lower is better. Normalized axis is inverted for the radar. Track overrides exist only for listed fixtures.",
+      "momentum": "Synthetic index; higher is better. Not live form or a calibrated forecast."
+    },
+    "drivers": [
+      {
+        "driverId": "antonelli",
+        "metrics": {
+          "racecraft": {
+            "raw": 1.0,
+            "normalized": 40,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": true,
+            "unit": "index"
+          },
+          "trackMastery": {
+            "raw": 8.0,
+            "normalized": 30,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": false,
+            "unit": "loss index"
+          },
+          "momentum": {
+            "raw": 35,
+            "normalized": 35,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": true,
+            "unit": "index"
+          }
+        },
+        "tracks": [
+          {
+            "trackId": "brands_hatch",
+            "metrics": {
+              "trackMastery": {
+                "raw": 7.0,
+                "normalized": 25,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          },
+          {
+            "trackId": "avus",
+            "metrics": {
+              "trackMastery": {
+                "raw": 7.0,
+                "normalized": 25,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          },
+          {
+            "trackId": "autodromo_internazionale_enzo_e_dino_ferrari",
+            "metrics": {
+              "trackMastery": {
+                "raw": 7.0,
+                "normalized": 25,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "driverId": "hamilton",
+        "metrics": {
+          "racecraft": {
+            "raw": 1.1,
+            "normalized": 44,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": true,
+            "unit": "index"
+          },
+          "trackMastery": {
+            "raw": 8.2,
+            "normalized": 35,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": false,
+            "unit": "loss index"
+          },
+          "momentum": {
+            "raw": 40,
+            "normalized": 40,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": true,
+            "unit": "index"
+          }
+        },
+        "tracks": [
+          {
+            "trackId": "brands_hatch",
+            "metrics": {
+              "trackMastery": {
+                "raw": 7.2,
+                "normalized": 30,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          },
+          {
+            "trackId": "avus",
+            "metrics": {
+              "trackMastery": {
+                "raw": 7.2,
+                "normalized": 30,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          },
+          {
+            "trackId": "autodromo_internazionale_enzo_e_dino_ferrari",
+            "metrics": {
+              "trackMastery": {
+                "raw": 7.2,
+                "normalized": 30,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "driverId": "russell",
+        "metrics": {
+          "racecraft": {
+            "raw": 1.2,
+            "normalized": 48,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": true,
+            "unit": "index"
+          },
+          "trackMastery": {
+            "raw": 8.4,
+            "normalized": 40,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": false,
+            "unit": "loss index"
+          },
+          "momentum": {
+            "raw": 45,
+            "normalized": 45,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": true,
+            "unit": "index"
+          }
+        },
+        "tracks": [
+          {
+            "trackId": "brands_hatch",
+            "metrics": {
+              "trackMastery": {
+                "raw": 7.4,
+                "normalized": 35,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          },
+          {
+            "trackId": "avus",
+            "metrics": {
+              "trackMastery": {
+                "raw": 7.4,
+                "normalized": 35,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          },
+          {
+            "trackId": "autodromo_internazionale_enzo_e_dino_ferrari",
+            "metrics": {
+              "trackMastery": {
+                "raw": 7.4,
+                "normalized": 35,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "driverId": "leclerc",
+        "metrics": {
+          "racecraft": {
+            "raw": 1.3,
+            "normalized": 52,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": true,
+            "unit": "index"
+          },
+          "trackMastery": {
+            "raw": 8.6,
+            "normalized": 45,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": false,
+            "unit": "loss index"
+          },
+          "momentum": {
+            "raw": 50,
+            "normalized": 50,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": true,
+            "unit": "index"
+          }
+        },
+        "tracks": [
+          {
+            "trackId": "brands_hatch",
+            "metrics": {
+              "trackMastery": {
+                "raw": 7.6,
+                "normalized": 40,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          },
+          {
+            "trackId": "avus",
+            "metrics": {
+              "trackMastery": {
+                "raw": 7.6,
+                "normalized": 40,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          },
+          {
+            "trackId": "autodromo_internazionale_enzo_e_dino_ferrari",
+            "metrics": {
+              "trackMastery": {
+                "raw": 7.6,
+                "normalized": 40,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "driverId": "norris",
+        "metrics": {
+          "racecraft": {
+            "raw": 1.4,
+            "normalized": 56,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": true,
+            "unit": "index"
+          },
+          "trackMastery": {
+            "raw": 8.8,
+            "normalized": 50,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": false,
+            "unit": "loss index"
+          },
+          "momentum": {
+            "raw": 55,
+            "normalized": 55,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": true,
+            "unit": "index"
+          }
+        },
+        "tracks": [
+          {
+            "trackId": "brands_hatch",
+            "metrics": {
+              "trackMastery": {
+                "raw": 7.8,
+                "normalized": 45,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          },
+          {
+            "trackId": "avus",
+            "metrics": {
+              "trackMastery": {
+                "raw": 7.8,
+                "normalized": 45,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          },
+          {
+            "trackId": "autodromo_internazionale_enzo_e_dino_ferrari",
+            "metrics": {
+              "trackMastery": {
+                "raw": 7.8,
+                "normalized": 45,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "driverId": "piastri",
+        "metrics": {
+          "racecraft": {
+            "raw": 1.5,
+            "normalized": 60,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": true,
+            "unit": "index"
+          },
+          "trackMastery": {
+            "raw": 9.0,
+            "normalized": 55,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": false,
+            "unit": "loss index"
+          },
+          "momentum": {
+            "raw": 60,
+            "normalized": 60,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": true,
+            "unit": "index"
+          }
+        },
+        "tracks": [
+          {
+            "trackId": "brands_hatch",
+            "metrics": {
+              "trackMastery": {
+                "raw": 8.0,
+                "normalized": 50,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          },
+          {
+            "trackId": "avus",
+            "metrics": {
+              "trackMastery": {
+                "raw": 8.0,
+                "normalized": 50,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          },
+          {
+            "trackId": "autodromo_internazionale_enzo_e_dino_ferrari",
+            "metrics": {
+              "trackMastery": {
+                "raw": 8.0,
+                "normalized": 50,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "driverId": "max_verstappen",
+        "metrics": {
+          "racecraft": {
+            "raw": 1.6,
+            "normalized": 64,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": true,
+            "unit": "index"
+          },
+          "trackMastery": {
+            "raw": 9.2,
+            "normalized": 60,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": false,
+            "unit": "loss index"
+          },
+          "momentum": {
+            "raw": 65,
+            "normalized": 65,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": true,
+            "unit": "index"
+          }
+        },
+        "tracks": [
+          {
+            "trackId": "brands_hatch",
+            "metrics": {
+              "trackMastery": {
+                "raw": 8.2,
+                "normalized": 55,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          },
+          {
+            "trackId": "avus",
+            "metrics": {
+              "trackMastery": {
+                "raw": 8.2,
+                "normalized": 55,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          },
+          {
+            "trackId": "autodromo_internazionale_enzo_e_dino_ferrari",
+            "metrics": {
+              "trackMastery": {
+                "raw": 8.2,
+                "normalized": 55,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "driverId": "gasly",
+        "metrics": {
+          "racecraft": {
+            "raw": 1.7,
+            "normalized": 68,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": true,
+            "unit": "index"
+          },
+          "trackMastery": {
+            "raw": 9.4,
+            "normalized": 65,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": false,
+            "unit": "loss index"
+          },
+          "momentum": {
+            "raw": 70,
+            "normalized": 70,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": true,
+            "unit": "index"
+          }
+        },
+        "tracks": [
+          {
+            "trackId": "brands_hatch",
+            "metrics": {
+              "trackMastery": {
+                "raw": 8.4,
+                "normalized": 60,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          },
+          {
+            "trackId": "avus",
+            "metrics": {
+              "trackMastery": {
+                "raw": 8.4,
+                "normalized": 60,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          },
+          {
+            "trackId": "autodromo_internazionale_enzo_e_dino_ferrari",
+            "metrics": {
+              "trackMastery": {
+                "raw": 8.4,
+                "normalized": 60,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "driverId": "hadjar",
+        "metrics": {
+          "racecraft": {
+            "raw": 1.8,
+            "normalized": 72,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": true,
+            "unit": "index"
+          },
+          "trackMastery": {
+            "raw": 9.6,
+            "normalized": 70,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": false,
+            "unit": "loss index"
+          },
+          "momentum": {
+            "raw": 75,
+            "normalized": 75,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": true,
+            "unit": "index"
+          }
+        },
+        "tracks": [
+          {
+            "trackId": "brands_hatch",
+            "metrics": {
+              "trackMastery": {
+                "raw": 8.6,
+                "normalized": 65,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          },
+          {
+            "trackId": "avus",
+            "metrics": {
+              "trackMastery": {
+                "raw": 8.6,
+                "normalized": 65,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          },
+          {
+            "trackId": "autodromo_internazionale_enzo_e_dino_ferrari",
+            "metrics": {
+              "trackMastery": {
+                "raw": 8.6,
+                "normalized": 65,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "driverId": "lawson",
+        "metrics": {
+          "racecraft": {
+            "raw": 1.9,
+            "normalized": 76,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": true,
+            "unit": "index"
+          },
+          "trackMastery": {
+            "raw": 9.8,
+            "normalized": 75,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": false,
+            "unit": "loss index"
+          },
+          "momentum": {
+            "raw": 35,
+            "normalized": 35,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": true,
+            "unit": "index"
+          }
+        },
+        "tracks": [
+          {
+            "trackId": "brands_hatch",
+            "metrics": {
+              "trackMastery": {
+                "raw": 8.8,
+                "normalized": 70,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          },
+          {
+            "trackId": "avus",
+            "metrics": {
+              "trackMastery": {
+                "raw": 8.8,
+                "normalized": 70,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          },
+          {
+            "trackId": "autodromo_internazionale_enzo_e_dino_ferrari",
+            "metrics": {
+              "trackMastery": {
+                "raw": 8.8,
+                "normalized": 70,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "driverId": "bearman",
+        "metrics": {
+          "racecraft": {
+            "raw": 2.0,
+            "normalized": 40,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": true,
+            "unit": "index"
+          },
+          "trackMastery": {
+            "raw": 10.0,
+            "normalized": 30,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": false,
+            "unit": "loss index"
+          },
+          "momentum": {
+            "raw": 40,
+            "normalized": 40,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": true,
+            "unit": "index"
+          }
+        },
+        "tracks": [
+          {
+            "trackId": "brands_hatch",
+            "metrics": {
+              "trackMastery": {
+                "raw": 9.0,
+                "normalized": 25,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          },
+          {
+            "trackId": "avus",
+            "metrics": {
+              "trackMastery": {
+                "raw": 9.0,
+                "normalized": 25,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          },
+          {
+            "trackId": "autodromo_internazionale_enzo_e_dino_ferrari",
+            "metrics": {
+              "trackMastery": {
+                "raw": 9.0,
+                "normalized": 25,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "driverId": "colapinto",
+        "metrics": {
+          "racecraft": {
+            "raw": 2.1,
+            "normalized": 44,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": true,
+            "unit": "index"
+          },
+          "trackMastery": {
+            "raw": 10.2,
+            "normalized": 35,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": false,
+            "unit": "loss index"
+          },
+          "momentum": {
+            "raw": 45,
+            "normalized": 45,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": true,
+            "unit": "index"
+          }
+        },
+        "tracks": [
+          {
+            "trackId": "brands_hatch",
+            "metrics": {
+              "trackMastery": {
+                "raw": 9.2,
+                "normalized": 30,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          },
+          {
+            "trackId": "avus",
+            "metrics": {
+              "trackMastery": {
+                "raw": 9.2,
+                "normalized": 30,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          },
+          {
+            "trackId": "autodromo_internazionale_enzo_e_dino_ferrari",
+            "metrics": {
+              "trackMastery": {
+                "raw": 9.2,
+                "normalized": 30,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "driverId": "arvid_lindblad",
+        "metrics": {
+          "racecraft": {
+            "raw": 2.2,
+            "normalized": 48,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": true,
+            "unit": "index"
+          },
+          "trackMastery": {
+            "raw": 10.4,
+            "normalized": 40,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": false,
+            "unit": "loss index"
+          },
+          "momentum": {
+            "raw": 50,
+            "normalized": 50,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": true,
+            "unit": "index"
+          }
+        },
+        "tracks": [
+          {
+            "trackId": "brands_hatch",
+            "metrics": {
+              "trackMastery": {
+                "raw": 9.4,
+                "normalized": 35,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          },
+          {
+            "trackId": "avus",
+            "metrics": {
+              "trackMastery": {
+                "raw": 9.4,
+                "normalized": 35,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          },
+          {
+            "trackId": "autodromo_internazionale_enzo_e_dino_ferrari",
+            "metrics": {
+              "trackMastery": {
+                "raw": 9.4,
+                "normalized": 35,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "driverId": "sainz",
+        "metrics": {
+          "racecraft": {
+            "raw": 2.3,
+            "normalized": 52,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": true,
+            "unit": "index"
+          },
+          "trackMastery": {
+            "raw": 10.6,
+            "normalized": 45,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": false,
+            "unit": "loss index"
+          },
+          "momentum": {
+            "raw": 55,
+            "normalized": 55,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": true,
+            "unit": "index"
+          }
+        },
+        "tracks": [
+          {
+            "trackId": "brands_hatch",
+            "metrics": {
+              "trackMastery": {
+                "raw": 9.6,
+                "normalized": 40,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          },
+          {
+            "trackId": "avus",
+            "metrics": {
+              "trackMastery": {
+                "raw": 9.6,
+                "normalized": 40,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          },
+          {
+            "trackId": "autodromo_internazionale_enzo_e_dino_ferrari",
+            "metrics": {
+              "trackMastery": {
+                "raw": 9.6,
+                "normalized": 40,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "driverId": "albon",
+        "metrics": {
+          "racecraft": {
+            "raw": 2.4,
+            "normalized": 56,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": true,
+            "unit": "index"
+          },
+          "trackMastery": {
+            "raw": 10.8,
+            "normalized": 50,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": false,
+            "unit": "loss index"
+          },
+          "momentum": {
+            "raw": 60,
+            "normalized": 60,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": true,
+            "unit": "index"
+          }
+        },
+        "tracks": [
+          {
+            "trackId": "brands_hatch",
+            "metrics": {
+              "trackMastery": {
+                "raw": 9.8,
+                "normalized": 45,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          },
+          {
+            "trackId": "avus",
+            "metrics": {
+              "trackMastery": {
+                "raw": 9.8,
+                "normalized": 45,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          },
+          {
+            "trackId": "autodromo_internazionale_enzo_e_dino_ferrari",
+            "metrics": {
+              "trackMastery": {
+                "raw": 9.8,
+                "normalized": 45,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "driverId": "ocon",
+        "metrics": {
+          "racecraft": {
+            "raw": 2.5,
+            "normalized": 60,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": true,
+            "unit": "index"
+          },
+          "trackMastery": {
+            "raw": 11.0,
+            "normalized": 55,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": false,
+            "unit": "loss index"
+          },
+          "momentum": {
+            "raw": 65,
+            "normalized": 65,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": true,
+            "unit": "index"
+          }
+        },
+        "tracks": [
+          {
+            "trackId": "brands_hatch",
+            "metrics": {
+              "trackMastery": {
+                "raw": 10.0,
+                "normalized": 50,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          },
+          {
+            "trackId": "avus",
+            "metrics": {
+              "trackMastery": {
+                "raw": 10.0,
+                "normalized": 50,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          },
+          {
+            "trackId": "autodromo_internazionale_enzo_e_dino_ferrari",
+            "metrics": {
+              "trackMastery": {
+                "raw": 10.0,
+                "normalized": 50,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "driverId": "bortoleto",
+        "metrics": {
+          "racecraft": {
+            "raw": 2.6,
+            "normalized": 64,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": true,
+            "unit": "index"
+          },
+          "trackMastery": {
+            "raw": 11.2,
+            "normalized": 60,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": false,
+            "unit": "loss index"
+          },
+          "momentum": {
+            "raw": 70,
+            "normalized": 70,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": true,
+            "unit": "index"
+          }
+        },
+        "tracks": [
+          {
+            "trackId": "brands_hatch",
+            "metrics": {
+              "trackMastery": {
+                "raw": 10.2,
+                "normalized": 55,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          },
+          {
+            "trackId": "avus",
+            "metrics": {
+              "trackMastery": {
+                "raw": 10.2,
+                "normalized": 55,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          },
+          {
+            "trackId": "autodromo_internazionale_enzo_e_dino_ferrari",
+            "metrics": {
+              "trackMastery": {
+                "raw": 10.2,
+                "normalized": 55,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "driverId": "alonso",
+        "metrics": {
+          "racecraft": {
+            "raw": 2.7,
+            "normalized": 68,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": true,
+            "unit": "index"
+          },
+          "trackMastery": {
+            "raw": 11.4,
+            "normalized": 65,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": false,
+            "unit": "loss index"
+          },
+          "momentum": {
+            "raw": 75,
+            "normalized": 75,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": true,
+            "unit": "index"
+          }
+        },
+        "tracks": [
+          {
+            "trackId": "brands_hatch",
+            "metrics": {
+              "trackMastery": {
+                "raw": 10.4,
+                "normalized": 60,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          },
+          {
+            "trackId": "avus",
+            "metrics": {
+              "trackMastery": {
+                "raw": 10.4,
+                "normalized": 60,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          },
+          {
+            "trackId": "autodromo_internazionale_enzo_e_dino_ferrari",
+            "metrics": {
+              "trackMastery": {
+                "raw": 10.4,
+                "normalized": 60,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "driverId": "hulkenberg",
+        "metrics": {
+          "racecraft": {
+            "raw": 2.8,
+            "normalized": 72,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": true,
+            "unit": "index"
+          },
+          "trackMastery": {
+            "raw": 11.6,
+            "normalized": 70,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": false,
+            "unit": "loss index"
+          },
+          "momentum": {
+            "raw": 35,
+            "normalized": 35,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": true,
+            "unit": "index"
+          }
+        },
+        "tracks": [
+          {
+            "trackId": "brands_hatch",
+            "metrics": {
+              "trackMastery": {
+                "raw": 10.6,
+                "normalized": 65,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          },
+          {
+            "trackId": "avus",
+            "metrics": {
+              "trackMastery": {
+                "raw": 10.6,
+                "normalized": 65,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          },
+          {
+            "trackId": "autodromo_internazionale_enzo_e_dino_ferrari",
+            "metrics": {
+              "trackMastery": {
+                "raw": 10.6,
+                "normalized": 65,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "driverId": "bottas",
+        "metrics": {
+          "racecraft": {
+            "raw": 2.9,
+            "normalized": 76,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": true,
+            "unit": "index"
+          },
+          "trackMastery": {
+            "raw": 11.8,
+            "normalized": 75,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": false,
+            "unit": "loss index"
+          },
+          "momentum": {
+            "raw": 40,
+            "normalized": 40,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": true,
+            "unit": "index"
+          }
+        },
+        "tracks": [
+          {
+            "trackId": "brands_hatch",
+            "metrics": {
+              "trackMastery": {
+                "raw": 10.8,
+                "normalized": 70,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          },
+          {
+            "trackId": "avus",
+            "metrics": {
+              "trackMastery": {
+                "raw": 10.8,
+                "normalized": 70,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          },
+          {
+            "trackId": "autodromo_internazionale_enzo_e_dino_ferrari",
+            "metrics": {
+              "trackMastery": {
+                "raw": 10.8,
+                "normalized": 70,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "driverId": "perez",
+        "metrics": {
+          "racecraft": {
+            "raw": 3.0,
+            "normalized": 40,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": true,
+            "unit": "index"
+          },
+          "trackMastery": {
+            "raw": 12.0,
+            "normalized": 30,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": false,
+            "unit": "loss index"
+          },
+          "momentum": {
+            "raw": 45,
+            "normalized": 45,
+            "sampleCount": 12,
+            "minimumSamples": 3,
+            "higherIsBetter": true,
+            "unit": "index"
+          }
+        },
+        "tracks": [
+          {
+            "trackId": "brands_hatch",
+            "metrics": {
+              "trackMastery": {
+                "raw": 11.0,
+                "normalized": 25,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          },
+          {
+            "trackId": "avus",
+            "metrics": {
+              "trackMastery": {
+                "raw": 11.0,
+                "normalized": 25,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          },
+          {
+            "trackId": "autodromo_internazionale_enzo_e_dino_ferrari",
+            "metrics": {
+              "trackMastery": {
+                "raw": 11.0,
+                "normalized": 25,
+                "sampleCount": 12,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "driverId": "stroll",
+        "metrics": {
+          "racecraft": {
+            "raw": 3.1,
+            "normalized": 44,
+            "sampleCount": 0,
+            "minimumSamples": 3,
+            "higherIsBetter": true,
+            "unit": "index"
+          },
+          "trackMastery": {
+            "raw": 12.2,
+            "normalized": 35,
+            "sampleCount": 0,
+            "minimumSamples": 3,
+            "higherIsBetter": false,
+            "unit": "loss index"
+          },
+          "momentum": {
+            "raw": 50,
+            "normalized": 50,
+            "sampleCount": 0,
+            "minimumSamples": 3,
+            "higherIsBetter": true,
+            "unit": "index"
+          }
+        },
+        "tracks": [
+          {
+            "trackId": "brands_hatch",
+            "metrics": {
+              "trackMastery": {
+                "raw": 11.2,
+                "normalized": 30,
+                "sampleCount": 0,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          },
+          {
+            "trackId": "avus",
+            "metrics": {
+              "trackMastery": {
+                "raw": 11.2,
+                "normalized": 30,
+                "sampleCount": 0,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          },
+          {
+            "trackId": "autodromo_internazionale_enzo_e_dino_ferrari",
+            "metrics": {
+              "trackMastery": {
+                "raw": 11.2,
+                "normalized": 30,
+                "sampleCount": 0,
+                "minimumSamples": 3,
+                "higherIsBetter": false,
+                "unit": "loss index"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "_note": "Sample data. Replace by running analytics_engine/src/export/placeholders/export_head_to_head.py"
+}

@@ -5,7 +5,14 @@ export const envelope=<T extends z.ZodType>(data:T)=>z.object({meta:metaSchema,d
 export const registrySchema=envelope(z.array(z.object({canonicalId:z.string(),aliases:z.array(z.string()),abbreviation:z.string().nullable(),number:n})));
 export const trackRegistrySchema=envelope(z.array(z.object({canonicalId:z.string(),aliases:z.array(z.string()),engineCircuitId:z.string().nullable()})));
 export const assetSchema=envelope(z.array(z.string()));
-export const evaluationSchema=envelope(z.object({evaluationId:z.string().nullable(),championId:z.string().nullable(),sampleCount:n.nullable(),models:z.array(z.object({id:z.string(),accuracy:n.nullable()})),conflict:z.boolean()}));
+export const evaluationSchema = envelope(z.object({
+  evaluationId: z.string().nullable(), championId: z.string().nullable(), sampleCount: n.int().nonnegative().nullable(),
+  models: z.array(z.object({ id: z.string(), version: z.string().nullable().default(null), accuracy: n.min(0).max(1).nullable(), top3: n.min(0).max(1).nullable().default(null) })),
+  dateRange: z.object({ fromDate: z.string(), toDate: z.string() }).nullable().default(null),
+  metricDefinitions: z.record(z.string(), z.string()).default({}),
+  baseline: z.object({ id: z.string(), label: z.string(), accuracy: n.min(0).max(1).nullable() }).nullable().default(null),
+  conflict: z.boolean(),
+}));
 export const manifestSchema=envelope(z.object({snapshotId:z.string().nullable(),season:n.nullable(),nextRaceId:z.string().nullable(),championModelId:z.string().nullable(),evaluationId:z.string().nullable(),resources:z.record(z.string(),z.object({filename:z.string(),schemaVersion:z.string()}))}));
 export const legacyEvaluationSchema=z.object({totalRaces:n,baselineAccuracy:n,champion:z.string(),models:z.record(z.string(),z.object({winAccuracy:n,podiumCoverage:n}))});
 export const arenaSchema=z.object({champion:z.string(),models:z.record(z.string(),z.object({winAccuracy:n}))});

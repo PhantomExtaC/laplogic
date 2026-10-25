@@ -107,6 +107,14 @@
       "asset_manifest": {
         "filename": "asset_manifest.json",
         "schemaVersion": "1.0.0"
+      },
+      "arena_history": {
+        "filename": "arena_history.json",
+        "schemaVersion": "1.0.0"
+      },
+      "head_to_head": {
+        "filename": "head_to_head.json",
+        "schemaVersion": "1.0.0"
       }
     }
   },

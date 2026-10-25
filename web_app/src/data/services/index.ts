@@ -22,7 +22,18 @@ export const getWeekendResource = async (signal?: AbortSignal) => {
   } };
 };
 export const getPredictionsResource=async(signal?:AbortSignal)=>{const [rows,registry]=await Promise.all([fetchJson('data/predictions.json',z.union([s.envelope(s.predictionsSchema),s.predictionsSchema]),signal),getRegistry(signal)]);const resource=Array.isArray(rows)?legacy(rows):rows;return {...resource,data:resource.data.map(row=>({...row,driverId:resolveDriver(row.driverId,registry.data)}))};};
-export const getEvaluation=async(signal?:AbortSignal)=>{const [canonical,evaluation,arena]=await Promise.all([fetchJson('data/evaluation.json',s.evaluationSchema,signal),fetchJson('data/evaluation_metrics.json',s.legacyEvaluationSchema,signal),fetchJson('data/arena_metrics.json',s.arenaSchema,signal)]);const normalize=(id:string)=>id.toLowerCase().replace(/[^a-z]/g,'');const conflict=normalize(evaluation.champion)!==normalize(arena.champion)||Object.entries(evaluation.models).some(([id,row])=>arena.models[id]?.winAccuracy!==row.winAccuracy);return {...canonical,data:{...canonical.data,conflict}};};
+export const getEvaluation = async (signal?: AbortSignal) => {
+  const canonical = await fetchJson('data/evaluation.json', s.evaluationSchema, signal);
+  // A real versioned contract supersedes historical, unbound evaluation files.
+  if (!canonical.meta.placeholder) return canonical;
+  const [evaluation, arena] = await Promise.all([
+    fetchJson('data/evaluation_metrics.json', s.legacyEvaluationSchema, signal), fetchJson('data/arena_metrics.json', s.arenaSchema, signal),
+  ]);
+  const normalize = (id: string) => id.toLowerCase().replace(/[^a-z]/g, '');
+  const conflict = canonical.data.conflict || normalize(evaluation.champion) !== normalize(arena.champion) ||
+    Object.entries(evaluation.models).some(([id, row]) => arena.models[id]?.winAccuracy !== row.winAccuracy);
+  return { ...canonical, data: { ...canonical.data, conflict } };
+};
 
 export const getProgressionResource = async (signal?: AbortSignal) => {
   const [points, registry, drivers, standings] = await Promise.all([

@@ -1,0 +1,23 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "snapshotId": "sample-2026-r8",
+    "season": 2026,
+    "raceId": "2026-r8",
+    "generatedAt": "2026-10-25T12:11:49.257037+00:00",
+    "dataThrough": null,
+    "placeholder": true,
+    "source": "analytics_engine/src/export/placeholders/export_arena_history.py",
+    "round": null,
+    "stage": null,
+    "modelId": null
+  },
+  "data": {
+    "outcomeId": "sample-2026-r8",
+    "raceId": "2026-r8",
+    "eventName": "Austrian Grand Prix",
+    "winnerId": "antonelli",
+    "recordedAt": "2026-06-28T23:59:00Z"
+  },
+  "_note": "Sample data. Replace by running analytics_engine/src/export/placeholders/export_arena_history.py"
+}

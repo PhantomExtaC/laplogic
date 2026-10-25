@@ -1,0 +1,43 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "snapshotId": "sample-2026-r9-pre-weekend",
+    "season": 2026,
+    "raceId": "2026-r9",
+    "generatedAt": "2026-10-25T12:11:49.257037+00:00",
+    "dataThrough": null,
+    "placeholder": true,
+    "source": "analytics_engine/src/export/placeholders/export_arena_history.py",
+    "round": null,
+    "stage": null,
+    "modelId": null
+  },
+  "data": {
+    "snapshotId": "sample-2026-r9-pre-weekend",
+    "evaluationId": "sample-common-cohort-v1",
+    "raceId": "2026-r9",
+    "eventName": "British Grand Prix",
+    "season": 2026,
+    "round": 9,
+    "stage": "pre-weekend",
+    "frozenAt": "2026-07-05T00:00:00Z",
+    "predictions": [
+      {
+        "modelId": "randomForest",
+        "predictedWinner": "norris",
+        "winProbability": 0.33
+      },
+      {
+        "modelId": "xgBoost",
+        "predictedWinner": "piastri",
+        "winProbability": 0.41
+      },
+      {
+        "modelId": "grid-baseline",
+        "predictedWinner": "max_verstappen",
+        "winProbability": 0.49
+      }
+    ]
+  },
+  "_note": "Sample data. Replace by running analytics_engine/src/export/placeholders/export_arena_history.py"
+}
