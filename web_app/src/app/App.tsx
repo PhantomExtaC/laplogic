@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { lazy } from 'react';
-import AppShell from './app/AppShell';
-import NotFound from './app/NotFound';
-import { routes, detailRoutes } from './config/routes';
-const Methodology = lazy(() => import('./app/Methodology'));
+import AppShell from './AppShell';
+import NotFound from './NotFound';
+import { routes, detailRoutes } from '../config/routes';
+const Methodology = lazy(() => import('./Methodology'));
 
 export default function App() {
   return <BrowserRouter basename={import.meta.env.BASE_URL}><Routes><Route element={<AppShell />}>

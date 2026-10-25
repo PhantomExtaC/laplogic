@@ -1,0 +1,161 @@
+{
+  "unusedFiles": [],
+  "testOnlyModules": [],
+  "violations": [],
+  "sourceFileCount": 89,
+  "reachableFromApp": 89,
+  "missingAssetReferences": 99,
+  "caseMismatches": [],
+  "chunks": [
+    {
+      "file": "assets/index-DY_kFoLV.js",
+      "bytes": 347844,
+      "gzipBytes": 107362
+    },
+    {
+      "file": "assets/tokens-DRlyIFf7.js",
+      "bytes": 258127,
+      "gzipBytes": 78690
+    },
+    {
+      "file": "assets/LineTrendChart-BKkrq8za.js",
+      "bytes": 95241,
+      "gzipBytes": 24341
+    },
+    {
+      "file": "assets/compare-Bl_PI-YW.js",
+      "bytes": 35706,
+      "gzipBytes": 9807
+    },
+    {
+      "file": "assets/arena-B3ON-vRd.js",
+      "bytes": 10861,
+      "gzipBytes": 3610
+    },
+    {
+      "file": "assets/race-hub-iInjrddP.js",
+      "bytes": 8503,
+      "gzipBytes": 2977
+    },
+    {
+      "file": "assets/simulator-sRmHy8Uh.js",
+      "bytes": 7482,
+      "gzipBytes": 2920
+    },
+    {
+      "file": "assets/insights-D_4KNPY9.js",
+      "bytes": 7246,
+      "gzipBytes": 2822
+    },
+    {
+      "file": "assets/tracks-BzYGnBJN.js",
+      "bytes": 6178,
+      "gzipBytes": 2138
+    },
+    {
+      "file": "assets/drivers-CMMAMZuD.js",
+      "bytes": 5610,
+      "gzipBytes": 2121
+    },
+    {
+      "file": "assets/home-BgG15DMQ.js",
+      "bytes": 5204,
+      "gzipBytes": 1956
+    },
+    {
+      "file": "assets/teams-iIhrsLdi.js",
+      "bytes": 4852,
+      "gzipBytes": 1875
+    },
+    {
+      "file": "assets/calendar-0i7ztWy3.js",
+      "bytes": 3661,
+      "gzipBytes": 1491
+    },
+    {
+      "file": "assets/ResourceBoundary-D9QjK3kp.js",
+      "bytes": 3381,
+      "gzipBytes": 1407
+    },
+    {
+      "file": "assets/MomentumTicker-DE2uAe2O.js",
+      "bytes": 2846,
+      "gzipBytes": 1224
+    },
+    {
+      "file": "assets/arena-D23N9SKH.js",
+      "bytes": 2689,
+      "gzipBytes": 1123
+    },
+    {
+      "file": "assets/Controls-D9vn6jYN.js",
+      "bytes": 2403,
+      "gzipBytes": 971
+    },
+    {
+      "file": "assets/Surface-hn5KSonf.js",
+      "bytes": 2373,
+      "gzipBytes": 1167
+    },
+    {
+      "file": "assets/DataTable-Dlq-3-0z.js",
+      "bytes": 2001,
+      "gzipBytes": 974
+    },
+    {
+      "file": "assets/Methodology-DK_-XIgf.js",
+      "bytes": 1911,
+      "gzipBytes": 934
+    },
+    {
+      "file": "assets/RaceContext-DOqa8X1g.js",
+      "bytes": 1746,
+      "gzipBytes": 765
+    },
+    {
+      "file": "assets/core-Be4QllOC.js",
+      "bytes": 1588,
+      "gzipBytes": 770
+    },
+    {
+      "file": "assets/resources-bNOn1mUH.js",
+      "bytes": 1402,
+      "gzipBytes": 677
+    },
+    {
+      "file": "assets/ProbabilityBars-CMGkxNq6.js",
+      "bytes": 1370,
+      "gzipBytes": 633
+    },
+    {
+      "file": "assets/logic-DManWEP1.js",
+      "bytes": 1323,
+      "gzipBytes": 661
+    },
+    {
+      "file": "assets/snapshots-DDOAmCdV.js",
+      "bytes": 769,
+      "gzipBytes": 397
+    },
+    {
+      "file": "assets/Avatar-CTM5iS1F.js",
+      "bytes": 617,
+      "gzipBytes": 431
+    },
+    {
+      "file": "assets/ScrollRegion-BtechK8H.js",
+      "bytes": 474,
+      "gzipBytes": 313
+    },
+    {
+      "file": "assets/InfoPopover-B9HL0inJ.js",
+      "bytes": 365,
+      "gzipBytes": 240
+    },
+    {
+      "file": "assets/iso-7NT4PCQz.js",
+      "bytes": 90,
+      "gzipBytes": 101
+    }
+  ]
+}

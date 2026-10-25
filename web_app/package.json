@@ -8,7 +8,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "test": "vitest run"
+    "test": "vitest run",
+    "audit": "node scripts/audit.mjs"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.1",

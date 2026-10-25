@@ -1,0 +1,355 @@
+{
+  "pages": [
+    {
+      "alerts": [],
+      "h1": "The prediction desk",
+      "main": 1,
+      "path": "/",
+      "scrollWidth": 345,
+      "width": 360
+    },
+    {
+      "alerts": [],
+      "h1": "Race Hub",
+      "main": 1,
+      "path": "/race-hub",
+      "scrollWidth": 345,
+      "width": 360
+    },
+    {
+      "alerts": [],
+      "h1": "Arena Tracker",
+      "main": 1,
+      "path": "/arena",
+      "scrollWidth": 345,
+      "width": 360
+    },
+    {
+      "alerts": [],
+      "h1": "Head-to-Head",
+      "main": 1,
+      "path": "/compare",
+      "scrollWidth": 345,
+      "width": 360
+    },
+    {
+      "alerts": [],
+      "h1": "Scenario Simulator",
+      "main": 1,
+      "path": "/simulator",
+      "scrollWidth": 345,
+      "width": 360
+    },
+    {
+      "alerts": [],
+      "h1": "Insights & Audits",
+      "main": 1,
+      "path": "/insights",
+      "scrollWidth": 345,
+      "width": 360
+    },
+    {
+      "alerts": [],
+      "h1": "Drivers",
+      "main": 1,
+      "path": "/drivers",
+      "scrollWidth": 345,
+      "width": 360
+    },
+    {
+      "alerts": [],
+      "h1": "Teams",
+      "main": 1,
+      "path": "/teams",
+      "scrollWidth": 345,
+      "width": 360
+    },
+    {
+      "alerts": [],
+      "h1": "Tracks",
+      "main": 1,
+      "path": "/tracks",
+      "scrollWidth": 345,
+      "width": 360
+    },
+    {
+      "alerts": [],
+      "h1": "Race calendar",
+      "main": 1,
+      "path": "/calendar",
+      "scrollWidth": 345,
+      "width": 360
+    },
+    {
+      "alerts": [],
+      "h1": "The prediction desk",
+      "main": 1,
+      "path": "/",
+      "scrollWidth": 753,
+      "width": 768
+    },
+    {
+      "alerts": [],
+      "h1": "Race Hub",
+      "main": 1,
+      "path": "/race-hub",
+      "scrollWidth": 753,
+      "width": 768
+    },
+    {
+      "alerts": [],
+      "h1": "Arena Tracker",
+      "main": 1,
+      "path": "/arena",
+      "scrollWidth": 753,
+      "width": 768
+    },
+    {
+      "alerts": [],
+      "h1": "Head-to-Head",
+      "main": 1,
+      "path": "/compare",
+      "scrollWidth": 753,
+      "width": 768
+    },
+    {
+      "alerts": [],
+      "h1": "Scenario Simulator",
+      "main": 1,
+      "path": "/simulator",
+      "scrollWidth": 753,
+      "width": 768
+    },
+    {
+      "alerts": [],
+      "h1": "Insights & Audits",
+      "main": 1,
+      "path": "/insights",
+      "scrollWidth": 753,
+      "width": 768
+    },
+    {
+      "alerts": [],
+      "h1": "Drivers",
+      "main": 1,
+      "path": "/drivers",
+      "scrollWidth": 753,
+      "width": 768
+    },
+    {
+      "alerts": [],
+      "h1": "Teams",
+      "main": 1,
+      "path": "/teams",
+      "scrollWidth": 753,
+      "width": 768
+    },
+    {
+      "alerts": [],
+      "h1": "Tracks",
+      "main": 1,
+      "path": "/tracks",
+      "scrollWidth": 753,
+      "width": 768
+    },
+    {
+      "alerts": [],
+      "h1": "Race calendar",
+      "main": 1,
+      "path": "/calendar",
+      "scrollWidth": 753,
+      "width": 768
+    },
+    {
+      "alerts": [],
+      "h1": "The prediction desk",
+      "main": 1,
+      "path": "/",
+      "scrollWidth": 1265,
+      "width": 1280
+    },
+    {
+      "alerts": [],
+      "h1": "Race Hub",
+      "main": 1,
+      "path": "/race-hub",
+      "scrollWidth": 1265,
+      "width": 1280
+    },
+    {
+      "alerts": [],
+      "h1": "Arena Tracker",
+      "main": 1,
+      "path": "/arena",
+      "scrollWidth": 1265,
+      "width": 1280
+    },
+    {
+      "alerts": [],
+      "h1": "Head-to-Head",
+      "main": 1,
+      "path": "/compare",
+      "scrollWidth": 1265,
+      "width": 1280
+    },
+    {
+      "alerts": [],
+      "h1": "Scenario Simulator",
+      "main": 1,
+      "path": "/simulator",
+      "scrollWidth": 1265,
+      "width": 1280
+    },
+    {
+      "alerts": [],
+      "h1": "Insights & Audits",
+      "main": 1,
+      "path": "/insights",
+      "scrollWidth": 1265,
+      "width": 1280
+    },
+    {
+      "alerts": [],
+      "h1": "Drivers",
+      "main": 1,
+      "path": "/drivers",
+      "scrollWidth": 1265,
+      "width": 1280
+    },
+    {
+      "alerts": [],
+      "h1": "Teams",
+      "main": 1,
+      "path": "/teams",
+      "scrollWidth": 1265,
+      "width": 1280
+    },
+    {
+      "alerts": [],
+      "h1": "Tracks",
+      "main": 1,
+      "path": "/tracks",
+      "scrollWidth": 1265,
+      "width": 1280
+    },
+    {
+      "alerts": [],
+      "h1": "Race calendar",
+      "main": 1,
+      "path": "/calendar",
+      "scrollWidth": 1265,
+      "width": 1280
+    }
+  ],
+  "stories": [
+    {
+      "alerts": 0,
+      "main": 1,
+      "path": "/insights/sample-track-profile-v1",
+      "scrollWidth": 345,
+      "title": "Reading a circuit profile — LapLogic",
+      "width": 360
+    },
+    {
+      "alerts": 0,
+      "main": 1,
+      "path": "/insights/sample-projection-v1",
+      "scrollWidth": 345,
+      "title": "A frozen projection — LapLogic",
+      "width": 360
+    },
+    {
+      "alerts": 0,
+      "main": 1,
+      "path": "/insights/sample-recalibration-v1",
+      "scrollWidth": 345,
+      "title": "Reading a probability revision — LapLogic",
+      "width": 360
+    },
+    {
+      "alerts": 0,
+      "main": 1,
+      "path": "/insights/sample-audit-v1",
+      "scrollWidth": 345,
+      "title": "Checking the frozen picks — LapLogic",
+      "width": 360
+    },
+    {
+      "alerts": 0,
+      "main": 1,
+      "path": "/insights/sample-track-profile-v1",
+      "scrollWidth": 753,
+      "title": "Reading a circuit profile — LapLogic",
+      "width": 768
+    },
+    {
+      "alerts": 0,
+      "main": 1,
+      "path": "/insights/sample-projection-v1",
+      "scrollWidth": 753,
+      "title": "A frozen projection — LapLogic",
+      "width": 768
+    },
+    {
+      "alerts": 0,
+      "main": 1,
+      "path": "/insights/sample-recalibration-v1",
+      "scrollWidth": 753,
+      "title": "Reading a probability revision — LapLogic",
+      "width": 768
+    },
+    {
+      "alerts": 0,
+      "main": 1,
+      "path": "/insights/sample-audit-v1",
+      "scrollWidth": 753,
+      "title": "Checking the frozen picks — LapLogic",
+      "width": 768
+    },
+    {
+      "alerts": 0,
+      "main": 1,
+      "path": "/insights/sample-track-profile-v1",
+      "scrollWidth": 1265,
+      "title": "Reading a circuit profile — LapLogic",
+      "width": 1280
+    },
+    {
+      "alerts": 0,
+      "main": 1,
+      "path": "/insights/sample-projection-v1",
+      "scrollWidth": 1265,
+      "title": "A frozen projection — LapLogic",
+      "width": 1280
+    },
+    {
+      "alerts": 0,
+      "main": 1,
+      "path": "/insights/sample-recalibration-v1",
+      "scrollWidth": 1265,
+      "title": "Reading a probability revision — LapLogic",
+      "width": 1280
+    },
+    {
+      "alerts": 0,
+      "main": 1,
+      "path": "/insights/sample-audit-v1",
+      "scrollWidth": 1265,
+      "title": "Checking the frozen picks — LapLogic",
+      "width": 1280
+    }
+  ],
+  "checks": {
+    "scenarioRun": true,
+    "changedInputsStale": true,
+    "unsupportedPreservesPrevious": true,
+    "resetOriginalBaseline": true,
+    "mobileFocusTrap": true,
+    "escapeReturnsFocus": true,
+    "archiveFilter": true,
+    "articleMetadata": true,
+    "emptyComparisonGuard": true
+  },
+  "reducedMotion": "CSS rules and automated source checks only; OS preference not exercised",
+  "consoleWarningsOrErrors": []
+}

@@ -13,6 +13,10 @@ const raw=(name:string):unknown=>JSON.parse(readFileSync(resolve('public/data',`
 describe('shipped contracts',()=>{
  for(const [name,schema] of Object.entries(schemas))it(name,()=>{expect(()=>schema.parse(raw(name))).not.toThrow();});
  it('covers every shipped JSON',()=>expect(readdirSync('public/data').filter(n=>n.endsWith('.json')).sort()).toEqual(Object.keys(schemas).map(n=>`${n}.json`).sort()));
+ it('does not leave new JSON subfolders outside contract coverage', () => {
+  const shipped = readdirSync('public/data', { recursive: true }).filter(name => typeof name === 'string' && name.endsWith('.json')).map(name => String(name).replaceAll('\\', '/'));
+  expect(shipped.filter(name => name.includes('/') && !/^(snapshots|outcomes|stories)\/[^/]+\.json$/.test(name))).toEqual([]);
+ });
  it('resolves prediction and telemetry IDs',()=>{const registry=s.registrySchema.parse(raw('driver_registry')).data;for(const row of [...s.predictionsSchema.parse(raw('predictions')),...s.weekendSchema.parse(raw('weekend_state')).telemetry.longRunPace])expect(resolveDriver(row.driverId,registry)).toBeTruthy();});
 });
 describe('domain',()=>{

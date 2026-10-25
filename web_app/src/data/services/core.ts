@@ -1,12 +1,9 @@
+import { getDrivers, getTeams, getTracks, getDriverStandings, getConstructorStandings } from './directories';
 import { fetchJson } from '../client/fetchJson';
 import { momentumSchema, seasonStatsSchema, stagesSchema } from '../schemas/core';
 import { degradationSchema, insightsSchema, trackRegistrySchema } from '../schemas';
 import { legacy, resolveDriver } from '../adapters';
 import { getRegistry } from './index';
-import { getDrivers } from '../../services/drivers';
-import { getTeams } from '../../services/teams';
-import { getTracks } from '../../services/tracks';
-import { getDriverStandings, getConstructorStandings } from '../../services/standings';
 
 export const getDriverDirectory = async (signal?: AbortSignal) => legacy(await getDrivers(signal));
 export const getTeamDirectory = async (signal?: AbortSignal) => legacy(await getTeams(signal));

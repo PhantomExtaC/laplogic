@@ -33,6 +33,16 @@ describe('simulation request lifecycle', () => {
   await act(async () => pending[2].resolve(first));
   expect(screen.getByTestId('result').textContent).toBe('0 / current');
  });
+ it('does not restore an aborted busy state when inputs are changed back', async () => {
+  const provider: SimulationProvider = { run: () => new Promise<SimulationResult>(() => {}) };
+  render(<Harness provider={provider} />);
+  fireEvent.click(screen.getByText('Run scenario'));
+  expect(screen.getByTestId('status').textContent).toBe('busy');
+  fireEvent.change(screen.getByRole('spinbutton'), { target: { value: '1' } });
+  fireEvent.change(screen.getByRole('spinbutton'), { target: { value: '0' } });
+  expect(screen.getByTestId('status').textContent).toBe('ready');
+  expect(screen.getByRole('button', { name: 'Run scenario' }).hasAttribute('disabled')).toBe(false);
+ });
  it('marks edited inputs stale and preserves the previous result on failure', async () => {
   const provider = { run: vi.fn<SimulationProvider['run']>().mockResolvedValueOnce(first).mockRejectedValueOnce(new Error('Unavailable sample')) };
   render(<Harness provider={provider} />);

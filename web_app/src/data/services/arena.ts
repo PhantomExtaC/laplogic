@@ -1,9 +1,8 @@
+import { getDrivers, getDriverStandings } from './directories';
 import { DataError, fetchJson } from '../client/fetchJson';
 import { arenaHistorySchema, frozenSnapshotSchema, outcomeSchema, comparisonSchema, archiveIdSchema } from '../schemas/arena';
 import { getRegistry } from './index';
 import { resolveDriver } from '../adapters';
-import { getDrivers } from '../../services/drivers';
-import { getDriverStandings } from '../../services/standings';
 
 export const getArenaHistory = async (signal?: AbortSignal) => {
   const [resource, registry] = await Promise.all([fetchJson('data/arena_history.json', arenaHistorySchema, signal), getRegistry(signal)]);
