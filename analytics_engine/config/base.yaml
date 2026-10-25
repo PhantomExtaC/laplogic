@@ -1,0 +1,44 @@
+# analytics_engine/config/base.yaml
+
+pipeline:
+  target_variable: "won_race"
+  historical_start_year: 2014
+  test_split_year: 2024
+
+# Toggle features by commenting/uncommenting. 
+# The pipeline will dynamically build the matrix based ONLY on what is active here.
+features:
+  - "grid"
+  - "quali_delta_to_pole"
+  - "team_momentum"
+  - "driver_momentum"
+  - "driver_overall_avg"
+  - "driver_track_avg"
+  - "driver_racecraft_index"
+  - "tire_deg_index"
+  # - "is_street" # Pruned: Found to be dead weight in RF/XGB importance audit
+
+models:
+  random_forest:
+    n_estimators: 100
+    max_depth: 6
+    random_state: 42
+  xgboost:
+    n_estimators: 200
+    max_depth: 4
+    learning_rate: 0.05
+    objective: "binary:logistic"
+    random_state: 42
+
+profiles:
+  prod:
+    enable_live_api: true        # Fetch the upcoming weekend's telemetry
+    fail_fast: false             # CRITICAL: Gracefully fallback to static data if FastF1 API crashes
+    export_json: true            # Export results to web_app/public/data/
+    log_level: "INFO"            # Keep GitHub Actions logs clean
+  
+  lab:
+    enable_live_api: true        # Allow massive historical API pulls for EDA
+    fail_fast: true              # Crash immediately on errors so you can debug the stack trace
+    export_json: false           # Do not overwrite the live website data while testing
+    log_level: "DEBUG"           # Verbose logging for console debugging
