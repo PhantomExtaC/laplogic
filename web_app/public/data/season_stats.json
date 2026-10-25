@@ -1,0 +1,26 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "snapshotId": null,
+    "season": 2026,
+    "raceId": null,
+    "generatedAt": "2026-10-25T11:53:16.916553+00:00",
+    "dataThrough": null,
+    "placeholder": false,
+    "source": "analytics_engine/src/export/placeholders/export_season_stats.py",
+    "round": null,
+    "stage": null,
+    "modelId": null
+  },
+  "data": {
+    "season": 2026,
+    "seasonEntrants": 23,
+    "currentLineup": 22,
+    "teams": 11,
+    "scheduledEvents": 23,
+    "uniqueCircuits": null,
+    "completedRaces": 12,
+    "scope": "Counts of the shipped directory, standings entrants and calendar status flags; their as-of dates may differ. Unique circuits unavailable without calendar track IDs."
+  },
+  "_note": "Derived directory/export counts. Replace by running analytics_engine/src/export/placeholders/export_season_stats.py"
+}

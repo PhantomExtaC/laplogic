@@ -79,6 +79,34 @@
       "weekend_state": {
         "filename": "weekend_state.json",
         "schemaVersion": "legacy"
+      },
+      "momentum": {
+        "filename": "momentum.json",
+        "schemaVersion": "1.0.0"
+      },
+      "prediction_stages": {
+        "filename": "prediction_stages.json",
+        "schemaVersion": "1.0.0"
+      },
+      "season_stats": {
+        "filename": "season_stats.json",
+        "schemaVersion": "1.0.0"
+      },
+      "driver_registry": {
+        "filename": "driver_registry.json",
+        "schemaVersion": "1.0.0"
+      },
+      "track_registry": {
+        "filename": "track_registry.json",
+        "schemaVersion": "1.0.0"
+      },
+      "evaluation": {
+        "filename": "evaluation.json",
+        "schemaVersion": "1.0.0"
+      },
+      "asset_manifest": {
+        "filename": "asset_manifest.json",
+        "schemaVersion": "1.0.0"
       }
     }
   },

@@ -2,9 +2,10 @@ import {describe,it,expect} from 'vitest';
 import {readFileSync,readdirSync} from 'node:fs';
 import {resolve} from 'node:path';
 import * as s from './schemas';
+import {momentumSchema,seasonStatsSchema,stagesSchema} from './schemas/core';
 import {nextEvent,probabilityCoverage,formatLapTime,pairwiseMatchups,formatPpDelta} from '../domain/logic';
 import {lapSeconds,resolveDriver} from './adapters';
-const schemas={manifest:s.manifestSchema,driver_registry:s.registrySchema,track_registry:s.trackRegistrySchema,evaluation:s.evaluationSchema,asset_manifest:s.assetSchema,calendar:s.calendarSchema,predictions:s.predictionsSchema,drivers:s.driversSchema,teams:s.teamsSchema,tracks:s.tracksSchema,driver_standings:s.driverStandingsSchema,constructor_standings:s.constructorStandingsSchema,pointsProgression:s.progressionSchema,weekend_state:s.weekendSchema,evaluation_metrics:s.legacyEvaluationSchema,arena_metrics:s.arenaSchema,driverTrends:s.trendsSchema,insights:s.insightsSchema,tracksDeg:s.degradationSchema,stats:s.statsSchema,next_race:s.nextRaceSchema};
+const schemas={momentum:momentumSchema,season_stats:seasonStatsSchema,prediction_stages:stagesSchema,manifest:s.manifestSchema,driver_registry:s.registrySchema,track_registry:s.trackRegistrySchema,evaluation:s.evaluationSchema,asset_manifest:s.assetSchema,calendar:s.calendarSchema,predictions:s.predictionsSchema,drivers:s.driversSchema,teams:s.teamsSchema,tracks:s.tracksSchema,driver_standings:s.driverStandingsSchema,constructor_standings:s.constructorStandingsSchema,pointsProgression:s.progressionSchema,weekend_state:s.weekendSchema,evaluation_metrics:s.legacyEvaluationSchema,arena_metrics:s.arenaSchema,driverTrends:s.trendsSchema,insights:s.insightsSchema,tracksDeg:s.degradationSchema,stats:s.statsSchema,next_race:s.nextRaceSchema};
 const raw=(name:string):unknown=>JSON.parse(readFileSync(resolve('public/data',`${name}.json`),'utf8'));
 describe('shipped contracts',()=>{
  for(const [name,schema] of Object.entries(schemas))it(name,()=>{expect(()=>schema.parse(raw(name))).not.toThrow();});

@@ -1,0 +1,446 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "snapshotId": null,
+    "season": 2026,
+    "raceId": "2026-r13",
+    "generatedAt": "2026-10-25T11:53:16.779685+00:00",
+    "dataThrough": null,
+    "placeholder": true,
+    "source": "analytics_engine/src/export/placeholders/export_prediction_stages.py",
+    "round": null,
+    "stage": null,
+    "modelId": null
+  },
+  "data": {
+    "raceId": "2026-r13",
+    "eventName": "Italian Grand Prix",
+    "fieldSize": 22,
+    "stages": [
+      {
+        "stage": "pre-weekend",
+        "snapshotId": "sample-2026-r13-pre-weekend",
+        "modelId": "sample-fixture",
+        "modelVersion": "1.0.0",
+        "generatedAt": "2026-09-01T00:00:00Z",
+        "predictions": [
+          {
+            "driverId": "antonelli",
+            "driverName": "Andrea Kimi Antonelli",
+            "winProbability": 0.080292,
+            "predictedPosition": 1
+          },
+          {
+            "driverId": "hamilton",
+            "driverName": "Lewis Hamilton",
+            "winProbability": 0.080292,
+            "predictedPosition": 2
+          },
+          {
+            "driverId": "russell",
+            "driverName": "George Russell",
+            "winProbability": 0.080292,
+            "predictedPosition": 3
+          },
+          {
+            "driverId": "leclerc",
+            "driverName": "Charles Leclerc",
+            "winProbability": 0.069343,
+            "predictedPosition": 4
+          },
+          {
+            "driverId": "norris",
+            "driverName": "Lando Norris",
+            "winProbability": 0.069343,
+            "predictedPosition": 5
+          },
+          {
+            "driverId": "piastri",
+            "driverName": "Oscar Piastri",
+            "winProbability": 0.069343,
+            "predictedPosition": 6
+          },
+          {
+            "driverId": "max_verstappen",
+            "driverName": "Max Verstappen",
+            "winProbability": 0.058394,
+            "predictedPosition": 7
+          },
+          {
+            "driverId": "gasly",
+            "driverName": "Pierre Gasly",
+            "winProbability": 0.058394,
+            "predictedPosition": 8
+          },
+          {
+            "driverId": "hadjar",
+            "driverName": "Isack Hadjar",
+            "winProbability": 0.058394,
+            "predictedPosition": 9
+          },
+          {
+            "driverId": "lawson",
+            "driverName": "Liam Lawson",
+            "winProbability": 0.047445,
+            "predictedPosition": 10
+          },
+          {
+            "driverId": "bearman",
+            "driverName": "Oliver Bearman",
+            "winProbability": 0.047445,
+            "predictedPosition": 11
+          },
+          {
+            "driverId": "colapinto",
+            "driverName": "Franco Colapinto",
+            "winProbability": 0.047445,
+            "predictedPosition": 12
+          },
+          {
+            "driverId": "arvid_lindblad",
+            "driverName": "Arvid Lindblad",
+            "winProbability": 0.036496,
+            "predictedPosition": 13
+          },
+          {
+            "driverId": "sainz",
+            "driverName": "Carlos Sainz",
+            "winProbability": 0.036496,
+            "predictedPosition": 14
+          },
+          {
+            "driverId": "albon",
+            "driverName": "Alexander Albon",
+            "winProbability": 0.036496,
+            "predictedPosition": 15
+          },
+          {
+            "driverId": "ocon",
+            "driverName": "Esteban Ocon",
+            "winProbability": 0.025547,
+            "predictedPosition": 16
+          },
+          {
+            "driverId": "bortoleto",
+            "driverName": "Gabriel Bortoleto",
+            "winProbability": 0.025547,
+            "predictedPosition": 17
+          },
+          {
+            "driverId": "alonso",
+            "driverName": "Fernando Alonso",
+            "winProbability": 0.025547,
+            "predictedPosition": 18
+          },
+          {
+            "driverId": "hulkenberg",
+            "driverName": "Nico H\u00fclkenberg",
+            "winProbability": 0.014599,
+            "predictedPosition": 19
+          },
+          {
+            "driverId": "bottas",
+            "driverName": "Valtteri Bottas",
+            "winProbability": 0.014599,
+            "predictedPosition": 20
+          },
+          {
+            "driverId": "perez",
+            "driverName": "Sergio P\u00e9rez",
+            "winProbability": 0.014599,
+            "predictedPosition": 21
+          },
+          {
+            "driverId": "stroll",
+            "driverName": "Lance Stroll",
+            "winProbability": 0.00365,
+            "predictedPosition": 22
+          }
+        ]
+      },
+      {
+        "stage": "post-fp2",
+        "snapshotId": "sample-2026-r13-post-fp2",
+        "modelId": "sample-fixture",
+        "modelVersion": "1.0.0",
+        "generatedAt": "2026-09-01T00:00:00Z",
+        "predictions": [
+          {
+            "driverId": "antonelli",
+            "driverName": "Andrea Kimi Antonelli",
+            "winProbability": 0.083636,
+            "predictedPosition": 1
+          },
+          {
+            "driverId": "hamilton",
+            "driverName": "Lewis Hamilton",
+            "winProbability": 0.083636,
+            "predictedPosition": 2
+          },
+          {
+            "driverId": "russell",
+            "driverName": "George Russell",
+            "winProbability": 0.072727,
+            "predictedPosition": 3
+          },
+          {
+            "driverId": "leclerc",
+            "driverName": "Charles Leclerc",
+            "winProbability": 0.072727,
+            "predictedPosition": 4
+          },
+          {
+            "driverId": "norris",
+            "driverName": "Lando Norris",
+            "winProbability": 0.072727,
+            "predictedPosition": 5
+          },
+          {
+            "driverId": "piastri",
+            "driverName": "Oscar Piastri",
+            "winProbability": 0.061818,
+            "predictedPosition": 6
+          },
+          {
+            "driverId": "max_verstappen",
+            "driverName": "Max Verstappen",
+            "winProbability": 0.061818,
+            "predictedPosition": 7
+          },
+          {
+            "driverId": "gasly",
+            "driverName": "Pierre Gasly",
+            "winProbability": 0.061818,
+            "predictedPosition": 8
+          },
+          {
+            "driverId": "hadjar",
+            "driverName": "Isack Hadjar",
+            "winProbability": 0.050909,
+            "predictedPosition": 9
+          },
+          {
+            "driverId": "lawson",
+            "driverName": "Liam Lawson",
+            "winProbability": 0.050909,
+            "predictedPosition": 10
+          },
+          {
+            "driverId": "bearman",
+            "driverName": "Oliver Bearman",
+            "winProbability": 0.050909,
+            "predictedPosition": 11
+          },
+          {
+            "driverId": "colapinto",
+            "driverName": "Franco Colapinto",
+            "winProbability": 0.04,
+            "predictedPosition": 12
+          },
+          {
+            "driverId": "arvid_lindblad",
+            "driverName": "Arvid Lindblad",
+            "winProbability": 0.04,
+            "predictedPosition": 13
+          },
+          {
+            "driverId": "sainz",
+            "driverName": "Carlos Sainz",
+            "winProbability": 0.04,
+            "predictedPosition": 14
+          },
+          {
+            "driverId": "albon",
+            "driverName": "Alexander Albon",
+            "winProbability": 0.029091,
+            "predictedPosition": 15
+          },
+          {
+            "driverId": "ocon",
+            "driverName": "Esteban Ocon",
+            "winProbability": 0.029091,
+            "predictedPosition": 16
+          },
+          {
+            "driverId": "bortoleto",
+            "driverName": "Gabriel Bortoleto",
+            "winProbability": 0.029091,
+            "predictedPosition": 17
+          },
+          {
+            "driverId": "alonso",
+            "driverName": "Fernando Alonso",
+            "winProbability": 0.018182,
+            "predictedPosition": 18
+          },
+          {
+            "driverId": "hulkenberg",
+            "driverName": "Nico H\u00fclkenberg",
+            "winProbability": 0.018182,
+            "predictedPosition": 19
+          },
+          {
+            "driverId": "bottas",
+            "driverName": "Valtteri Bottas",
+            "winProbability": 0.018182,
+            "predictedPosition": 20
+          },
+          {
+            "driverId": "perez",
+            "driverName": "Sergio P\u00e9rez",
+            "winProbability": 0.007273,
+            "predictedPosition": 21
+          },
+          {
+            "driverId": "stroll",
+            "driverName": "Lance Stroll",
+            "winProbability": 0.007273,
+            "predictedPosition": 22
+          }
+        ]
+      },
+      {
+        "stage": "post-quali",
+        "snapshotId": "sample-2026-r13-post-quali",
+        "modelId": "sample-fixture",
+        "modelVersion": "1.0.0",
+        "generatedAt": "2026-09-01T00:00:00Z",
+        "predictions": [
+          {
+            "driverId": "antonelli",
+            "driverName": "Andrea Kimi Antonelli",
+            "winProbability": 0.086957,
+            "predictedPosition": 1
+          },
+          {
+            "driverId": "hamilton",
+            "driverName": "Lewis Hamilton",
+            "winProbability": 0.076087,
+            "predictedPosition": 2
+          },
+          {
+            "driverId": "russell",
+            "driverName": "George Russell",
+            "winProbability": 0.076087,
+            "predictedPosition": 3
+          },
+          {
+            "driverId": "leclerc",
+            "driverName": "Charles Leclerc",
+            "winProbability": 0.076087,
+            "predictedPosition": 4
+          },
+          {
+            "driverId": "norris",
+            "driverName": "Lando Norris",
+            "winProbability": 0.065217,
+            "predictedPosition": 5
+          },
+          {
+            "driverId": "piastri",
+            "driverName": "Oscar Piastri",
+            "winProbability": 0.065217,
+            "predictedPosition": 6
+          },
+          {
+            "driverId": "max_verstappen",
+            "driverName": "Max Verstappen",
+            "winProbability": 0.065217,
+            "predictedPosition": 7
+          },
+          {
+            "driverId": "gasly",
+            "driverName": "Pierre Gasly",
+            "winProbability": 0.054348,
+            "predictedPosition": 8
+          },
+          {
+            "driverId": "hadjar",
+            "driverName": "Isack Hadjar",
+            "winProbability": 0.054348,
+            "predictedPosition": 9
+          },
+          {
+            "driverId": "lawson",
+            "driverName": "Liam Lawson",
+            "winProbability": 0.054348,
+            "predictedPosition": 10
+          },
+          {
+            "driverId": "bearman",
+            "driverName": "Oliver Bearman",
+            "winProbability": 0.043478,
+            "predictedPosition": 11
+          },
+          {
+            "driverId": "colapinto",
+            "driverName": "Franco Colapinto",
+            "winProbability": 0.043478,
+            "predictedPosition": 12
+          },
+          {
+            "driverId": "arvid_lindblad",
+            "driverName": "Arvid Lindblad",
+            "winProbability": 0.043478,
+            "predictedPosition": 13
+          },
+          {
+            "driverId": "sainz",
+            "driverName": "Carlos Sainz",
+            "winProbability": 0.032609,
+            "predictedPosition": 14
+          },
+          {
+            "driverId": "albon",
+            "driverName": "Alexander Albon",
+            "winProbability": 0.032609,
+            "predictedPosition": 15
+          },
+          {
+            "driverId": "ocon",
+            "driverName": "Esteban Ocon",
+            "winProbability": 0.032609,
+            "predictedPosition": 16
+          },
+          {
+            "driverId": "bortoleto",
+            "driverName": "Gabriel Bortoleto",
+            "winProbability": 0.021739,
+            "predictedPosition": 17
+          },
+          {
+            "driverId": "alonso",
+            "driverName": "Fernando Alonso",
+            "winProbability": 0.021739,
+            "predictedPosition": 18
+          },
+          {
+            "driverId": "hulkenberg",
+            "driverName": "Nico H\u00fclkenberg",
+            "winProbability": 0.021739,
+            "predictedPosition": 19
+          },
+          {
+            "driverId": "bottas",
+            "driverName": "Valtteri Bottas",
+            "winProbability": 0.01087,
+            "predictedPosition": 20
+          },
+          {
+            "driverId": "perez",
+            "driverName": "Sergio P\u00e9rez",
+            "winProbability": 0.01087,
+            "predictedPosition": 21
+          },
+          {
+            "driverId": "stroll",
+            "driverName": "Lance Stroll",
+            "winProbability": 0.01087,
+            "predictedPosition": 22
+          }
+        ]
+      }
+    ]
+  },
+  "_note": "Sample data. Replace by running analytics_engine/src/export/placeholders/export_prediction_stages.py"
+}

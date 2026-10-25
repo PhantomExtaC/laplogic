@@ -1,0 +1,11 @@
+# M2 — Core pages checkpoint
+
+The six core pages migrated to features/<name>/ with page-only index exports; routes point to the new modules and the old page files were removed. Shared data access stays in hooks, and display cards are now UI primitives with compatibility re-exports.
+
+Home sequence: prediction hero and race context, five-race momentum, evaluation summary, scoped season counts, then standings/progression. Race Hub adds source and stage controls, raw field coverage, top-ten/full-field toggle, prior-stage pp deltas, zero-safe insight values, event selection, and provenance-gated weather/track/long-run tables. Sample stages use their own event and snapshots. Calendar has season/status filters, local/track timing support when instants exist, sprint/status labels, and event/audit links. Drivers have current/archive scope, search/team/points/momentum/wins filters, URL state and two-driver comparison selection. Teams have search, standings, roster links/unmatched IDs and labeled roster-mean sample momentum. Tracks have search/country/type/length filters and current-calendar/historical tabs; unknown lengths sort last and missing calendar mappings are explicit.
+
+New exports: momentum.json and prediction_stages.json are sample fixtures with guarded exporters. season_stats.json contains genuine counts derived from shipped files, with scope and null unique-circuit count. Track registry numeric IDs now derive from exact circuitRef keys in the source CSV. Real analytics JSON is preserved. Replacement scripts and field units are documented in data_contracts.md.
+
+Verification from web_app: npx --no-install tsc -b, npm run lint, npm test (53 passing tests), and npm run build all passed before the M3 work started. Exporter runs generated the new files successfully; the real-file overwrite guard was checked against season_stats.json and refused the write. Browser confirmed the Home heading/section sequence. Full responsive, interaction and deep-link checks are consolidated with M3 in the paired checkpoint report.
+
+Known limits remain visible: no authoritative champion, unbound real predictions/weekend data, missing session instants/calendar track IDs, ambiguous legacy degradation units, and no inference backend. A real circuit count or a fabricated fresh telemetry view is never substituted for these missing contracts.

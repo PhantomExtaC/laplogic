@@ -165,3 +165,19 @@ The shell and presentation layer now use the Telemetry Terminal tokens. The regi
 There are still five placeholder files: `manifest.json` → `export_manifest.py`; `driver_registry.json` and `track_registry.json` → `export_registries.py`; `evaluation.json` → `export_evaluation.py`; `asset_manifest.json` → `export_asset_manifest.py`. All scripts live under `analytics_engine/src/export/placeholders/`. Pending Arena/Compare/Simulator/Insights pages render no analytics and are labeled unavailable; they do not pretend to be sample implementations.
 
 `docs/m1_design_report.md` records presentation changes, browser checks, remaining limits and bundle measurements. `docs/asset_audit.json` lists existing missing asset references. Real exports are preserved; image failures use a labeled fallback and missing track layouts use the supplied placeholder image.
+
+
+## M2 contracts and conservative limits
+| Resource | Schema / fields | Status and owner | Consumer |
+|---|---|---|---|
+| momentum.json | 1.0.0 envelope; definition; drivers[].driverId; points[<=5]: raceId, round, nullable momentum/racecraft/delta, direction | Sample; placeholders/export_momentum.py; intended real source per-race power ratings | useMomentum / Home, Drivers, Teams |
+| prediction_stages.json | 1.0.0 envelope; raceId, eventName, fieldSize; stages[].stage/snapshotId/modelId/modelVersion/generatedAt/predictions | Sample; placeholders/export_prediction_stages.py; intended frozen inference stages | useStages / Race Hub |
+| season_stats.json | 1.0.0 envelope; season, seasonEntrants, currentLineup, teams, scheduledEvents, nullable uniqueCircuits, completedRaces, scope | Real counts of shipped files; placeholders/export_season_stats.py. Requires --force to regenerate an existing real count export. | useSeasonStats / Home |
+
+Momentum fixtures are explicitly synthetic. Their delta is index points (not percentage points). A team's sample momentum is the arithmetic mean of the full listed roster only when every ID resolves and latest rounds agree. Counts use source status/active flags, not inferred outcomes. Standings entrant count and directory active-lineup count have different scopes. Unique circuits remains null because calendar track IDs are missing.
+
+Calendar adapter derives a stable event key `YEAR-rROUND` from existing numeric round and date year; this does not infer a circuit identity. Optional session instants and track timezones remain null/empty when absent. The raw race CSV ends in 2024, so it cannot provide an authoritative 2026 calendar join. Circuit numeric IDs can, however, be mapped to public track IDs through the raw circuits CSV's exact `circuitRef`; that explicit mapping is stored in the track registry. Degradation scale/direction/window and pit-stop denominator are still unconfirmed, and pole conversion is unavailable.
+
+Weather is adapted to canonical airTemperature/trackTemperature names, with observed/forecast/unknown kind. Missing session, lap count and stint age remain null. Legacy predictions keep their raw probability mass and unknown field denominator. Stage sample snapshots never inherit real weekend telemetry. A combined weekend view requires non-null matching event and snapshot IDs. The current real export cannot meet this condition, so its combined view remains suppressed.
+
+Resource loading now reads the manifest first, cancels on unmount, shows a dev-only notice if the manifest is unavailable, and returns loading when a new loader or retry supersedes an older result. These rules preserve existing section independence.

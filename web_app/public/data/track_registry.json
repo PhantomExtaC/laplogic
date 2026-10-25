@@ -13,16 +13,18 @@
     {
       "canonicalId": "brands_hatch",
       "aliases": [
-        "brands_hatch"
+        "brands_hatch",
+        "38"
       ],
-      "engineCircuitId": null
+      "engineCircuitId": "38"
     },
     {
       "canonicalId": "avus",
       "aliases": [
-        "avus"
+        "avus",
+        "61"
       ],
-      "engineCircuitId": null
+      "engineCircuitId": "61"
     },
     {
       "canonicalId": "autodromo_internazionale_enzo_e_dino_ferrari",
@@ -314,9 +316,10 @@
     {
       "canonicalId": "hockenheimring",
       "aliases": [
-        "hockenheimring"
+        "hockenheimring",
+        "10"
       ],
-      "engineCircuitId": null
+      "engineCircuitId": "10"
     },
     {
       "canonicalId": "indianapolis_motor_speedway",
@@ -328,9 +331,10 @@
     {
       "canonicalId": "hungaroring",
       "aliases": [
-        "hungaroring"
+        "hungaroring",
+        "11"
       ],
-      "engineCircuitId": null
+      "engineCircuitId": "11"
     },
     {
       "canonicalId": "jeddah_corniche_circuit",
@@ -377,9 +381,10 @@
     {
       "canonicalId": "long_beach",
       "aliases": [
-        "long_beach"
+        "long_beach",
+        "43"
       ],
-      "engineCircuitId": null
+      "engineCircuitId": "43"
     },
     {
       "canonicalId": "marina_bay_street_circuit",
@@ -482,9 +487,10 @@
     {
       "canonicalId": "red_bull_ring",
       "aliases": [
-        "red_bull_ring"
+        "red_bull_ring",
+        "70"
       ],
-      "engineCircuitId": null
+      "engineCircuitId": "70"
     },
     {
       "canonicalId": "shanghai_international_circuit",
@@ -531,9 +537,10 @@
     {
       "canonicalId": "zeltweg",
       "aliases": [
-        "zeltweg"
+        "zeltweg",
+        "57"
       ],
-      "engineCircuitId": null
+      "engineCircuitId": "57"
     },
     {
       "canonicalId": "yas_marina_circuit",

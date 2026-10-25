@@ -12,7 +12,9 @@ export function ResourceBoundary<T>({ state, children }: { state: ResourceState<
       <span>{state.meta.season === null ? 'Season unverified' : `Season ${state.meta.season}`}</span>
       <span>{state.meta.generatedAt ? `As of ${state.meta.generatedAt}` : 'As-of unavailable'}</span>
       {state.meta.raceId && <span>Event {state.meta.raceId}</span>}
+      {state.meta.snapshotId && <span className="break-all">Snapshot {state.meta.snapshotId}</span>}
     </div>
+    {import.meta.env.DEV && state.manifestMissing && <p className="mb-3 text-xs text-text-muted">No manifest — using per-file metadata.</p>}
     {state.isStale && <StaleBanner />}
     {children(state.data)}
   </>;
