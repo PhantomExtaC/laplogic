@@ -110,6 +110,8 @@ def main():
                     if source["season"] != args.season: raise ValueError("Requested season differs from snapshot")
                     from src.export.live_core import convert
                     payloads = convert(payloads, source, args.source_observed_at or report["startedAt"])
+                    from src.export.momentum import build as build_momentum
+                    payloads["momentum.json"] = build_momentum(source, payloads["driver_standings.json"]["meta"])
                 identifier, created = stage(payloads, folder, validate_frontend)
                 from src.export.freshness import describe
                 report["resources"] = describe(payloads)

@@ -77,3 +77,17 @@ separately. Remaining U2/U3 gates include complete profile freshness policy and
 broader live-source recovery observation. Later checkpoints populate
 analytics, forecasts, Simulator and stories before coherent scheduled publication.
 See weekly_updater_plan.md and updater_source_map.md.
+
+## First real descriptive analytics candidate
+Live and replay runs now add momentum.json as an eleventh validated resource.
+The version-1 definition is included in the resource: an adjusted exponential mean
+(span 10) of within-field finishing percentile, after each race, within the selected
+season. Higher is better; three consecutive recorded starts are required. Missing
+scheduled results or driver absence reset the sample. The last five scheduled rounds
+through the cutoff are shown, including nulls. Retired classified entrants count;
+sprints are excluded. This descriptive measure is separate from legacy engine power
+ratings and is not a prediction. Racecraft remains null pending a verified definition.
+Metadata binds standings and form to the same saved source. Later outcomes cannot
+change an earlier value. No published fixture has been overwritten.
+Candidate 8bdf82032ca96bd865580d9c passed all eleven resource contracts. The run report
+now lists coverage evidence per resource; see profile_freshness_policy.md.
