@@ -115,6 +115,14 @@
       "head_to_head": {
         "filename": "head_to_head.json",
         "schemaVersion": "1.0.0"
+      },
+      "simulator_scenarios": {
+        "filename": "simulator_scenarios.json",
+        "schemaVersion": "1.0.0"
+      },
+      "stories": {
+        "filename": "stories/index.json",
+        "schemaVersion": "1.0.0"
       }
     }
   },

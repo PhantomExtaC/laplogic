@@ -2,11 +2,13 @@ import {describe,it,expect} from 'vitest';
 import {readFileSync,readdirSync} from 'node:fs';
 import {resolve} from 'node:path';
 import * as s from './schemas';
+import { simulatorSchema } from './schemas/simulation';
+import { storySchema, storyIndexSchema } from './schemas/stories';
 import {arenaHistorySchema,comparisonSchema,frozenSnapshotSchema,outcomeSchema} from './schemas/arena';
 import {momentumSchema,seasonStatsSchema,stagesSchema} from './schemas/core';
 import {nextEvent,probabilityCoverage,formatLapTime,pairwiseMatchups,formatPpDelta} from '../domain/logic';
 import {lapSeconds,resolveDriver} from './adapters';
-const schemas={arena_history:arenaHistorySchema,head_to_head:comparisonSchema,momentum:momentumSchema,season_stats:seasonStatsSchema,prediction_stages:stagesSchema,manifest:s.manifestSchema,driver_registry:s.registrySchema,track_registry:s.trackRegistrySchema,evaluation:s.evaluationSchema,asset_manifest:s.assetSchema,calendar:s.calendarSchema,predictions:s.predictionsSchema,drivers:s.driversSchema,teams:s.teamsSchema,tracks:s.tracksSchema,driver_standings:s.driverStandingsSchema,constructor_standings:s.constructorStandingsSchema,pointsProgression:s.progressionSchema,weekend_state:s.weekendSchema,evaluation_metrics:s.legacyEvaluationSchema,arena_metrics:s.arenaSchema,driverTrends:s.trendsSchema,insights:s.insightsSchema,tracksDeg:s.degradationSchema,stats:s.statsSchema,next_race:s.nextRaceSchema};
+const schemas={simulator_scenarios:simulatorSchema,arena_history:arenaHistorySchema,head_to_head:comparisonSchema,momentum:momentumSchema,season_stats:seasonStatsSchema,prediction_stages:stagesSchema,manifest:s.manifestSchema,driver_registry:s.registrySchema,track_registry:s.trackRegistrySchema,evaluation:s.evaluationSchema,asset_manifest:s.assetSchema,calendar:s.calendarSchema,predictions:s.predictionsSchema,drivers:s.driversSchema,teams:s.teamsSchema,tracks:s.tracksSchema,driver_standings:s.driverStandingsSchema,constructor_standings:s.constructorStandingsSchema,pointsProgression:s.progressionSchema,weekend_state:s.weekendSchema,evaluation_metrics:s.legacyEvaluationSchema,arena_metrics:s.arenaSchema,driverTrends:s.trendsSchema,insights:s.insightsSchema,tracksDeg:s.degradationSchema,stats:s.statsSchema,next_race:s.nextRaceSchema};
 const raw=(name:string):unknown=>JSON.parse(readFileSync(resolve('public/data',`${name}.json`),'utf8'));
 describe('shipped contracts',()=>{
  for(const [name,schema] of Object.entries(schemas))it(name,()=>{expect(()=>schema.parse(raw(name))).not.toThrow();});
@@ -46,5 +48,32 @@ describe('immutable archive contracts', () => {
     if (result.eligible) expect(result.correct).toBe(result.predictedWinner === outcome.data.winnerId);
    }
   }
+ });
+});
+
+
+describe('simulator and story archive contracts', () => {
+ it('checks every fixture identity, event binding, delta and zero-penalty baseline', () => {
+  const fixture = simulatorSchema.parse(raw('simulator_scenarios'));
+  const registry = s.registrySchema.parse(raw('driver_registry')).data;
+  const keys = fixture.data.scenarios.map(row => `${row.snapshotId}/${row.driverId}/${row.gridPenalty}`);
+  expect(new Set(keys).size).toBe(keys.length);
+  for (const row of fixture.data.scenarios) {
+   expect(fixture.data.events.find(event => event.snapshotId === row.snapshotId)?.raceId).toBe(row.raceId);
+   expect(row.placeholder).toBe(fixture.meta.placeholder);
+   for (const driver of row.baseline) expect(resolveDriver(driver.driverId, registry)).toBe(driver.driverId);
+  }
+ });
+ const index = storyIndexSchema.parse(raw('stories/index'));
+ it('covers every story JSON', () => expect(readdirSync('public/data/stories').filter(file => file.endsWith('.json')).sort()).toEqual(['index.json', ...index.data.map(story => `${story.id}.json`)].sort()));
+ for (const header of index.data) it(`stories/${header.id}`, () => {
+  const story = storySchema.parse(raw(`stories/${header.id}`));
+  for (const key of Object.keys(header) as (keyof typeof header)[]) expect(story.data[key]).toEqual(header[key]);
+  const frozen = frozenSnapshotSchema.parse(raw(`snapshots/${story.data.snapshotId}`));
+  expect(frozen.data.raceId).toBe(story.data.raceId);
+  const model = frozen.data.predictions.find(model => model.modelId === story.data.modelId);
+  expect(model).toBeDefined();
+  expect(model?.modelVersion ?? null).toBe(story.data.modelVersion);
+  for (const block of story.data.blocks) if (block.type === 'audit') expect(outcomeSchema.parse(raw(`outcomes/${block.outcomeId}`)).data.raceId).toBe(story.data.raceId);
  });
 });

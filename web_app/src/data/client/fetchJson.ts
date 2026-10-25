@@ -11,7 +11,7 @@ export async function fetchJson<T>(path:string,schema:z.ZodType<T>,signal?:Abort
  let timeout=false;
  const timer=setTimeout(()=>{timeout=true;controller.abort();},12000);
  try{
- const response=await fetch(`${import.meta.env.BASE_URL}${path.replace(/^\//,'')}`,{signal:controller.signal});
+ const response=await fetch(/^https?:\/\//.test(path)?path:`${import.meta.env.BASE_URL}${path.replace(/^\//,'')}`,{signal:controller.signal});
  if(!response.ok)throw new DataError('http',`${path}: HTTP ${response.status}`);
  let raw:unknown;
  try{raw=await response.json();}catch{throw new DataError('parse',`${path}: invalid JSON`);}

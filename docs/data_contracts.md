@@ -201,3 +201,41 @@ Archive services validate filename-safe IDs and verify requested IDs against par
 Comparison rejects identical drivers, inverts lower-is-better normalized values, retains raw zeros, withholds sparse or directionless metrics, and reports track-specific sample counts. Selecting an unsupported track does not silently fall back to overall mastery. The deliberately sparse sample record is an availability fixture, not a claim about that real driver's experience.
 
 All newly introduced M2/M3 analytics fixtures are clearly labeled sample. `season_stats.json` is the sole new real derived-count feed; it describes shipped file scopes rather than live championship truth.
+
+
+## M4: Simulator and immutable stories
+
+| File | Schema | Owner | Status | Consumer |
+| --- | --- | --- | --- | --- |
+| simulator_scenarios.json | 1.0.0; events, drivers, scenarios | placeholders/export_simulator_scenarios.py | Sample | data/services/simulation.ts |
+| stories/index.json | 1.0.0; story headers | placeholders/export_stories.py | Sample | data/services/stories.ts |
+| stories/<id>.json | 1.0.0; header, blocks, chartRefs, socialLinks | placeholders/export_stories.py | Immutable sample archive | data/services/stories.ts |
+
+Simulator results bind snapshotId, raceId, driverId and integer gridPenalty (0..10).
+Baseline/scenario entries contain canonical driverId, driverName and probability in
+0..1; deltasPp are signed percentage points, schema-checked against the field.
+Zero penalty must equal the frozen baseline. Model ID/version, ISO generatedAt,
+assumptions and placeholder are required. Fixtures cover three supplied drivers at
+all eleven penalties; unsupported combinations return unavailable. The browser
+never constructs probability values. It ignores superseded requests, marks edited
+inputs stale, preserves the previous result on failure and resets to the original
+zero-penalty fixture. Sample field mass is shown raw, without normalization.
+
+Set public VITE_SIM_API_URL to select the HTTP provider. The integration stub uses
+GET with snapshotId, driverId and gridPenalty query parameters, validates the same
+result contract and enforces input identity. This endpoint shape must be agreed
+with the backend owner before enabling it. No credentials belong in Vite variables.
+
+Story headers contain id, type, raceId, eventName, publishedAt, snapshotId, modelId,
+nullable modelVersion, title and summary. Blocks are paragraph/heading text,
+delta (nullable before/after fractions) or audit (immutable outcomeId). chartRefs
+contain snapshotId and a plain-language summary. socialLinks contain reviewed
+HTTP(S) links; samples have none. Null model versions remain unavailable, never
+borrowed from the current evaluation. Article metadata binds its original event
+and snapshot; audit joins suppress mismatched event IDs. No current evaluation
+is fetched by an article. All four story types ship as explicit samples.
+
+Published article files are never overwritten, even with --force. A changed
+article needs a new ID; index generation reads the actual stored article headers.
+The standard write guard protects a real index unless --force is intentional.
+The scripts are not wired into production pipelines.

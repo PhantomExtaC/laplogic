@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "snapshotId": "sample-2026-r8-pre-weekend",
+    "season": 2026,
+    "raceId": "2026-r8",
+    "generatedAt": "2026-10-25T12:54:36.781479+00:00",
+    "dataThrough": null,
+    "placeholder": true,
+    "source": "analytics_engine/src/export/placeholders/export_stories.py",
+    "round": null,
+    "stage": null,
+    "modelId": null
+  },
+  "data": {
+    "id": "sample-projection-v1",
+    "type": "projection",
+    "raceId": "2026-r8",
+    "eventName": "Austrian Grand Prix",
+    "publishedAt": "2026-10-25T00:00:00Z",
+    "snapshotId": "sample-2026-r8-pre-weekend",
+    "modelId": "randomForest",
+    "modelVersion": null,
+    "title": "A frozen projection",
+    "summary": "A sample forecast preserved with the model that produced it.",
+    "blocks": [
+      {
+        "type": "heading",
+        "text": "Read the evidence in context"
+      },
+      {
+        "type": "paragraph",
+        "text": "This is a sample article with synthetic analytical values and illustrative outcomes. It demonstrates a publication format, not a claim about a real race. The original event, model and forecast remain attached when newer reports are published."
+      }
+    ],
+    "chartRefs": [
+      {
+        "snapshotId": "sample-2026-r8-pre-weekend",
+        "summary": "Original sample model picks and raw win probabilities, preserved without reference to the current evaluation."
+      }
+    ],
+    "socialLinks": []
+  },
+  "_note": "Sample data. Replace by running analytics_engine/src/export/placeholders/export_stories.py"
+}

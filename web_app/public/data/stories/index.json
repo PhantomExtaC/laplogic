@@ -1,0 +1,66 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "snapshotId": null,
+    "season": 2026,
+    "raceId": null,
+    "generatedAt": "2026-10-25T12:56:28.619448+00:00",
+    "dataThrough": null,
+    "placeholder": true,
+    "source": "analytics_engine/src/export/placeholders/export_stories.py",
+    "round": null,
+    "stage": null,
+    "modelId": null
+  },
+  "data": [
+    {
+      "id": "sample-track-profile-v1",
+      "type": "track-profile",
+      "raceId": "2026-r8",
+      "eventName": "Austrian Grand Prix",
+      "publishedAt": "2026-10-25T00:00:00Z",
+      "snapshotId": "sample-2026-r8-pre-weekend",
+      "modelId": "randomForest",
+      "modelVersion": null,
+      "title": "Reading a circuit profile",
+      "summary": "How to interpret a track profile when sample windows are unavailable."
+    },
+    {
+      "id": "sample-projection-v1",
+      "type": "projection",
+      "raceId": "2026-r8",
+      "eventName": "Austrian Grand Prix",
+      "publishedAt": "2026-10-25T00:00:00Z",
+      "snapshotId": "sample-2026-r8-pre-weekend",
+      "modelId": "randomForest",
+      "modelVersion": null,
+      "title": "A frozen projection",
+      "summary": "A sample forecast preserved with the model that produced it."
+    },
+    {
+      "id": "sample-recalibration-v1",
+      "type": "recalibration",
+      "raceId": "2026-r8",
+      "eventName": "Austrian Grand Prix",
+      "publishedAt": "2026-10-25T00:00:00Z",
+      "snapshotId": "sample-2026-r8-pre-weekend",
+      "modelId": "randomForest",
+      "modelVersion": null,
+      "title": "Reading a probability revision",
+      "summary": "A synthetic before-and-after example, expressed in percentage points."
+    },
+    {
+      "id": "sample-audit-v1",
+      "type": "audit",
+      "raceId": "2026-r8",
+      "eventName": "Austrian Grand Prix",
+      "publishedAt": "2026-10-25T00:00:00Z",
+      "snapshotId": "sample-2026-r8-pre-weekend",
+      "modelId": "randomForest",
+      "modelVersion": null,
+      "title": "Checking the frozen picks",
+      "summary": "Compare original sample picks with a separately frozen illustrative outcome."
+    }
+  ],
+  "_note": "Sample data. Replace by running analytics_engine/src/export/placeholders/export_stories.py"
+}
