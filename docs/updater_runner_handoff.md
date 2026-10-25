@@ -1,53 +1,67 @@
 # U2/U3 implementation progress
 
-Implemented an isolated, standard-library Python candidate runner and ten core
-resource builders. This is the staging foundation, not the completed live updater.
+The candidate runner now converts a Jolpica season snapshot into frontend calendar,
+driver standings and constructor standings resources. Directory career statistics
+remain cached with unknown freshness. This is staging; website publication and
+weekly scheduling remain U7 work.
 
 Run from the repository root:
-`python analytics_engine/updater.py --season 2026 --dry-run`
 
-The default input is the existing public/data bundle. --input-dir selects another
-cached bundle, and --work-dir changes the isolated artifact location. Outputs are
-content-addressed under .updater/releases. Validation uses frontend Zod contracts
-through Vitest. Successful non-dry runs update only .updater/candidate.json; neither
-mode publishes website data. No schedule has been changed.
+```text
+python analytics_engine/updater.py --season 2026 --live --dry-run
+```
 
-Sources are never stamped with invented current provenance. Original directory,
-calendar and standings payloads are preserved. Derived registries, asset inventory
-and counts describe supplied files; timestamps remain null. Track registry engine
-IDs remain unavailable in this bundle builder, pending verified circuit mapping.
-Source samples, duplicate entities, wrong seasons and unresolved active team joins
-are rejected. No-op reruns retain the same candidate ID. Validation failure cannot
-expose a partial release. A corrupt existing candidate fails verification.
+Omit --live to validate the cached public/data bundle. --input-dir selects another
+cached bundle; --work-dir changes the isolated artifact location. Both modes build
+ten core resources, validate them against frontend Zod contracts and place complete,
+content-addressed candidates under .updater/releases. Non-dry runs update only
+.updater/candidate.json. Neither mode writes website data.
 
-The overlap lock is intentionally not reclaimed automatically after a process crash:
-verify no updater is running before removing .updater/update.lock. Candidates use
-atomic same-filesystem rename. This does not constitute a website deployment or
-rollback mechanism; those remain U7 work.
+## Source handling
 
-Validation: Python lock, failure isolation, path escape and immutable rerun tests;
-core provenance/season/sample-input tests; a real cached-bundle dry run through all
-ten Zod contracts. No live upstream request or official-current-data claim was made.
+The adapter reads the complete season schedule and paginated race results, then
+standings at the same result cutoff. Full-season rereads catch earlier corrections
+and gaps. Requests use a custom User-Agent, 20-second timeout, three bounded
+attempts for transient failures and capped retry delays. Pagination, season and
+round checks reject incomplete or mismatched responses. API reference:
+https://github.com/jolpica/jolpica-f1/blob/main/docs/README.md.
 
-Remaining before U2/U3 completion: incremental/backfill keyed ingestion, bounded
-network retries, official source adapters, correction-window handling, complete
-profile policy, verified calendar instants and roster/standings provenance, and
-real-source outage/recovery rehearsal. Keep production data unchanged until those
-gates pass. See weekly_updater_plan.md and updater_source_map.md.
+Raw snapshots are saved under .updater/sources/<content-hash>.json. Calendar and
+standings envelopes retain source snapshot identity, observation time and result
+cutoff. Sessions preserve supplied UTC instants; missing times stay null. Events
+are completed only when results exist; missing results do not imply cancellation.
+Track directory joins and local timezone names remain null pending verified mapping.
+Driver teams come from their latest recorded race result, avoiding transfer errors
+from the ordering of constructors in standings. Missing numbers stay null; zero
+points remain zero. Live identities extend the driver registry without name joins.
+Mixed directory/live registries and season counts retain unknown aggregate freshness.
 
+## Replay and safety
 
-## Live ingestion continuation
-`--live` now collects schedule, complete paginated race results and standings at the
-same result cutoff through Jolpica. The source is saved separately under
-.updater/sources/<content-hash>.json; the ten core candidate files still come from
-the cached bundle until source-to-contract conversion is complete. The report
-explicitly distinguishes these two sources. No website files are published.
+Replay without network access using the original observation timestamp:
 
-The adapter uses a custom User-Agent, 20-second request timeout, three bounded
-attempts for transient failures, capped retry delay, pagination completeness checks
-and explicit season/round checks. Full-season rereads include earlier corrections
-and gaps; absent results remain absent. No pit-stop values are invented. The API
-contract was checked against https://github.com/jolpica/jolpica-f1/blob/main/docs/README.md.
-Twelve Python tests pass, including retries, permanent failures, split race pages,
-truncated pagination and noncontiguous rounds. Live source verification is recorded
-in .updater/last-run.json; a failed attempt preserves existing validated candidates.
+```text
+python analytics_engine/updater.py --season 2026 --source-snapshot .updater/sources/8e54ba2a0d3efa080dd94342.json --source-observed-at 2026-10-25T14:09:19.864035+00:00 --dry-run
+```
+
+Identical replay inputs reuse a candidate ID. A fresh live observation has a new
+observation timestamp and may create another candidate even if race data is unchanged.
+Duplicate entities, ambiguous aliases, unresolved standings team joins, source samples
+in the cached bundle and wrong seasons fail validation. Failed validation cannot
+expose a partial release. Existing candidate content is verified before reuse.
+The overlap lock is not reclaimed automatically after a process crash: verify no
+updater is running before removing .updater/update.lock. Candidates use atomic
+same-filesystem rename; this is not yet a website deployment/rollback mechanism.
+
+## Verification and remaining work
+
+The saved source was converted through round 17, with results through 2026-10-11.
+Candidate 79641de7b5191fdf30ced532 passed all ten frontend resource contracts.
+Python checks cover ingestion retries/pagination, isolation, immutable candidates,
+provenance, transfer handling, missing values, timestamp validation and replay.
+Frontend checks cover envelope metadata retention and compatibility with legacy arrays.
+
+Remaining U2/U3 gates include verified circuit mapping, complete profile freshness
+policy, and real-source outage/recovery rehearsal. Later checkpoints populate
+analytics, forecasts, Simulator and stories before coherent scheduled publication.
+See weekly_updater_plan.md and updater_source_map.md.

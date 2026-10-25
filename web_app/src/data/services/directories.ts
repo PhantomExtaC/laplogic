@@ -1,5 +1,6 @@
+import { legacy } from '../adapters';
 import { fetchJson } from '../client/fetchJson';
-import { driversSchema, teamsSchema, tracksSchema, assetSchema, driverStandingsSchema, constructorStandingsSchema } from '../schemas';
+import { driversSchema, teamsSchema, tracksSchema, assetSchema, driverStandingsResourceSchema, constructorStandingsResourceSchema } from '../schemas';
 import { adaptDriver, adaptTrack } from '../adapters/directories';
 
 export async function getDrivers(signal?: AbortSignal) {
@@ -16,5 +17,13 @@ export async function getTracks(signal?: AbortSignal) {
   const available = new Set(assets.data);
   return rows.map(row => adaptTrack(row, available));
 }
-export const getDriverStandings = (signal?: AbortSignal) => fetchJson('data/driver_standings.json', driverStandingsSchema, signal);
-export const getConstructorStandings = (signal?: AbortSignal) => fetchJson('data/constructor_standings.json', constructorStandingsSchema, signal);
+export async function getDriverStandingsResource(signal?: AbortSignal) {
+  const raw = await fetchJson('data/driver_standings.json', driverStandingsResourceSchema, signal);
+  return Array.isArray(raw) ? legacy(raw) : raw;
+}
+export async function getTeamStandingsResource(signal?: AbortSignal) {
+  const raw = await fetchJson('data/constructor_standings.json', constructorStandingsResourceSchema, signal);
+  return Array.isArray(raw) ? legacy(raw) : raw;
+}
+export const getDriverStandings = async (signal?: AbortSignal) => (await getDriverStandingsResource(signal)).data;
+export const getConstructorStandings = async (signal?: AbortSignal) => (await getTeamStandingsResource(signal)).data;

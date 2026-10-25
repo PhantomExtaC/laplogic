@@ -2,7 +2,7 @@ import { z } from 'zod';
 const n=z.number().finite();
 export const metaSchema=z.object({schemaVersion:z.string(),snapshotId:z.string().nullable(),season:n.nullable(),raceId:z.string().nullable(),generatedAt:z.string().nullable(),dataThrough:z.string().nullable(),placeholder:z.boolean(),source:z.string(),round:n.nullable().optional(),stage:z.string().nullable().optional(),modelId:z.string().nullable().optional(),modelVersion:z.string().nullable().optional(),fieldSize:n.int().positive().nullable().optional()});
 export const envelope=<T extends z.ZodType>(data:T)=>z.object({meta:metaSchema,data});
-export const registrySchema=envelope(z.array(z.object({canonicalId:z.string(),aliases:z.array(z.string()),abbreviation:z.string().nullable(),number:n})));
+export const registrySchema=envelope(z.array(z.object({canonicalId:z.string(),aliases:z.array(z.string()),abbreviation:z.string().nullable(),number:n.nullable()})));
 export const trackRegistrySchema=envelope(z.array(z.object({canonicalId:z.string(),aliases:z.array(z.string()),engineCircuitId:z.string().nullable()})));
 export const assetSchema=envelope(z.array(z.string()));
 export const evaluationSchema = envelope(z.object({
@@ -22,7 +22,7 @@ export const driversSchema=z.array(z.object({id:z.string(),fullName:z.string(),a
 export const teamsSchema=z.array(z.object({id:z.string(),name:z.string(),principal:z.string(),base:z.string(),engine:z.string(),driverIds:z.array(z.string()),wins:n,podiums:n,championships:n,points:n,active:z.boolean(),logo:z.string()}));
 export const tracksSchema=z.array(z.object({id:z.string(),name:z.string(),country:z.string(),city:z.string(),lengthKm:n.nullable(),turns:n.nullable(),firstGrandPrix:z.string().nullable(),lastGrandPrix:z.string().nullable(),lapRecord:z.object({time:z.string(),driver:z.string(),year:z.union([n,z.string()]),milliseconds:n}).nullable(),active:z.boolean(),layoutImage:z.string().nullable(),circuitType:z.string().nullable().default(null)}));
 const standing=z.object({id:z.string(),position:n,points:n,wins:n,nationality:z.string(),imagePath:z.string()});
-export const driverStandingsSchema=z.array(standing.extend({driverName:z.string(),driverNumber:n,currentTeamId:z.string().nullable()}));
+export const driverStandingsSchema=z.array(standing.extend({driverName:z.string(),driverNumber:n.nullable(),currentTeamId:z.string().nullable()}));
 export const constructorStandingsSchema=z.array(standing.extend({teamName:z.string()}));
 export const progressionSchema=z.array(z.object({round:n}).catchall(n));
 export const weekendSchema=z.object({track:z.object({circuitName:z.string(),layoutType:z.string(),pitStopDelta:n,drsZones:n,degradation:n.min(1).max(5).nullable().default(null),poleToWin:n.min(0).max(1).nullable().default(null),sampleWindow:z.string().nullable().default(null)}),weather:z.object({airTemp:n,trackTemp:n,rainProbability:n,condition:z.string(),kind:z.enum(['observed','forecast','unknown']).default('unknown'),observedAt:z.string().nullable().default(null)}),telemetry:z.object({fastestSectors:z.object({sector1:z.string(),sector2:z.string(),sector3:z.string()}),longRunPace:z.array(z.object({driverId:z.string(),driverName:z.string(),avgLapTime:z.string(),tireCompound:z.string(),session:z.string().nullable().default(null),stintAge:n.nullable().default(null),lapCount:n.nullable().default(null)}))})});
@@ -32,3 +32,7 @@ export const insightsSchema=z.array(z.object({driverId:z.string(),powerRating:z.
 export const degradationSchema=z.array(z.object({circuitId:z.string(),tireDegradationIndex:n.min(1).max(5),isStreetCircuit:z.boolean(),averagePitStops:n}));
 export const statsSchema=z.object({season:n,drivers:n,teams:n,tracks:n,completedRaces:n,remainingRaces:n});
 export const nextRaceSchema=z.object({round:n,grandPrix:z.string(),trackId:z.string(),country:z.string(),date:z.string(),weather:z.object({condition:z.string(),airTemperature:n,trackTemperature:n,rainProbability:n})});
+
+export const calendarResourceSchema = z.union([envelope(calendarSchema), calendarSchema]);
+export const driverStandingsResourceSchema = z.union([envelope(driverStandingsSchema), driverStandingsSchema]);
+export const constructorStandingsResourceSchema = z.union([envelope(constructorStandingsSchema), constructorStandingsSchema]);

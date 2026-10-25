@@ -1,4 +1,4 @@
-import { getDrivers, getTeams, getTracks, getDriverStandings, getConstructorStandings } from './directories';
+import { getDrivers, getTeams, getTracks } from './directories';
 import { fetchJson } from '../client/fetchJson';
 import { momentumSchema, seasonStatsSchema, stagesSchema } from '../schemas/core';
 import { degradationSchema, insightsSchema, trackRegistrySchema } from '../schemas';
@@ -8,8 +8,6 @@ import { getRegistry } from './index';
 export const getDriverDirectory = async (signal?: AbortSignal) => legacy(await getDrivers(signal));
 export const getTeamDirectory = async (signal?: AbortSignal) => legacy(await getTeams(signal));
 export const getTrackDirectory = async (signal?: AbortSignal) => legacy(await getTracks(signal));
-export const getDriverStandingsResource = async (signal?: AbortSignal) => legacy(await getDriverStandings(signal));
-export const getTeamStandingsResource = async (signal?: AbortSignal) => legacy(await getConstructorStandings(signal));
 export const getSeasonStats = (signal?: AbortSignal) => fetchJson('data/season_stats.json', seasonStatsSchema, signal);
 export const getStages = async (signal?: AbortSignal) => {
   const [resource, registry] = await Promise.all([fetchJson('data/prediction_stages.json', stagesSchema, signal), getRegistry(signal)]);
@@ -37,3 +35,5 @@ export const getTrackProfiles = async (signal?: AbortSignal) => {
 export const getInsights = async (signal?: AbortSignal) => legacy((await fetchJson('data/insights.json', insightsSchema, signal)).map(row => ({
   ...row, higherIsBetter: { momentumIndex: null, racecraftIndex: null, mastery: null },
 })));
+
+export { getDriverStandingsResource, getTeamStandingsResource } from './directories';

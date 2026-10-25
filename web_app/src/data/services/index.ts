@@ -1,3 +1,4 @@
+import { getDriverStandings } from './directories';
 import {z} from 'zod';
 import type {RaceEvent} from '../../domain/types/core';
 import {teamColors, unknownTeamColor} from '../registry/teams';
@@ -39,7 +40,7 @@ export const getProgressionResource = async (signal?: AbortSignal) => {
   const [points, registry, drivers, standings] = await Promise.all([
     fetchJson('data/pointsProgression.json', s.progressionSchema, signal),
     getRegistry(signal), fetchJson('data/drivers.json', s.driversSchema, signal),
-    fetchJson('data/driver_standings.json', s.driverStandingsSchema, signal),
+    getDriverStandings(signal),
   ]);
   const sorted = [...points].sort((a, b) => a.round - b.round);
   const ids = [...new Set(points.flatMap(row => Object.keys(row).filter(key => key !== 'round')))];

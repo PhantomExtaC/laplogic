@@ -253,3 +253,12 @@ It checks source reachability (including static types and lazy imports), unresol
 imports, domain purity, presentational-layer data imports, fetch location, explicit
 any, debug logging and exact asset-path casing. It reports existing missing asset
 references separately from source failures. See the final audit for scope and limits.
+
+## Live core candidate compatibility
+Calendar and both standings loaders accept either legacy arrays or versioned
+metadata envelopes. Live envelopes retain snapshotId, season, round, generatedAt
+and dataThrough; legacy arrays keep unknown provenance. Driver standings and
+registry numbers allow null when the source omits them. Calendar session instants
+preserve source timezone offsets; unmapped track IDs remain null. Cached career
+statistics do not inherit live standings freshness. These contracts are verified
+against staged candidates before any future publication.
