@@ -30,6 +30,13 @@ class ConversionTests(unittest.TestCase):
     def test_unmapped_circuit_and_timezone_stay_null(self):
         row=self.run_conversion()["calendar.json"]["data"][0]
         self.assertIsNone(row["trackId"]); self.assertIsNone(row["timezone"])
+    def test_calendar_and_registry_share_reviewed_join(self):
+        self.race["Circuit"] = {"circuitId": "monza", "Location": {"country": "Italy"}}
+        self.outputs["tracks.json"] = [{"id": "autodromo_nazionale_monza", "country": "Italy"}]
+        self.outputs["track_registry.json"] = {"meta": {}, "data": [{"canonicalId": "autodromo_nazionale_monza", "aliases": ["autodromo_nazionale_monza"], "engineCircuitId": None}]}
+        result = self.run_conversion()
+        self.assertEqual(result["calendar.json"]["data"][0]["trackId"], "autodromo_nazionale_monza")
+        self.assertEqual(result["track_registry.json"]["data"][0]["engineCircuitId"], "monza")
     def test_replay_is_deterministic(self): self.assertEqual(self.run_conversion(),self.run_conversion())
     def test_observation_requires_timezone(self):
         with self.assertRaises(ValueError):

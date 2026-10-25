@@ -2,6 +2,7 @@
 import hashlib
 import json
 from datetime import datetime
+from .circuit_map import resolve
 
 
 def convert(outputs, source, observed_at):
@@ -27,11 +28,22 @@ def convert(outputs, source, observed_at):
         if parsed.tzinfo is None: raise ValueError("Session instant lacks timezone")
         return value
     calendar=[]
+    tracks_payload = outputs.get("tracks.json", [])
+    tracks = tracks_payload["data"] if isinstance(tracks_payload, dict) else tracks_payload
+    circuit_joins = {}
     for number, race in sorted(races.items()):
+        circuit_joins[race["Circuit"]["circuitId"]] = resolve(race["Circuit"], tracks)
         sessions=[{"name": key, "startsAt": instant(race[key])} for key in ["FirstPractice", "SecondPractice", "ThirdPractice", "Qualifying", "SprintQualifying", "SprintShootout", "Sprint"] if key in race]
         sessions.append({"name": "Race", "startsAt": instant(race)})
         calendar.append({"season": season, "raceId": f"{season}-r{number}", "round": number, "grandPrix": race["raceName"], "date": race["date"], "sprintWeekend": "Sprint" in race, "status": "completed" if number in results else "upcoming", "trackId": None, "country": race["Circuit"]["Location"]["country"], "timezone": None, "startsAt": instant(race), "sessions": sessions})
-    # API circuit IDs are not the site's directory IDs. Leave the join unavailable.
+        calendar[-1]["trackId"] = circuit_joins[race["Circuit"]["circuitId"]]
+    registry_payload = outputs.get("track_registry.json")
+    if registry_payload:
+        for row in registry_payload["data"]:
+            refs = [ref for ref, target in circuit_joins.items() if target == row["canonicalId"]]
+            row["engineCircuitId"] = refs[0] if refs else None
+            row["aliases"] = sorted(set(row["aliases"] + refs))
+        registry_payload["meta"]["source"] = "Reviewed Jolpica circuit-reference joins to cached directory; directory freshness unknown"
     outputs["calendar.json"] = pack(calendar, "schedule and recorded results")
     latest_team={}
     for _, race in sorted(results.items()):
