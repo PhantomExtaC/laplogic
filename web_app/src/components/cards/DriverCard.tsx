@@ -1,55 +1,14 @@
-import type { Driver } from "../../types/driver";
-
-interface DriverCardProps {
-  driver: Driver;
-  teamName: string;
-}
-
-export default function DriverCard({
-  driver,
-  teamName,
-}: DriverCardProps) {
-  return (
-    <div className="overflow-hidden rounded-xl border border-slate-700 bg-slate-900 shadow-lg transition hover:border-red-600">
-      <img
-        src={driver.image}
-        alt={driver.fullName}
-        className="h-64 w-full object-cover"
-      />
-
-      <div className="p-5">
-        <div className="flex items-center justify-between">
-          <h2 className="text-xl font-bold">{driver.fullName}</h2>
-
-          <span className="rounded bg-red-600 px-2 py-1 text-sm font-semibold">
-            #{driver.number}
-          </span>
-        </div>
-
-        <p className="mt-1 text-slate-400">{teamName}</p>
-
-        <div className="mt-5 grid grid-cols-2 gap-3 text-sm">
-          <div>
-            <p className="text-slate-500">Wins</p>
-            <p>{driver.wins}</p>
-          </div>
-
-          <div>
-            <p className="text-slate-500">Podiums</p>
-            <p>{driver.podiums}</p>
-          </div>
-
-          <div>
-            <p className="text-slate-500">Starts</p>
-            <p>{driver.raceStarts}</p>
-          </div>
-
-          <div>
-            <p className="text-slate-500">Points</p>
-            <p>{driver.currentPoints}</p>
-          </div>
-        </div>
-      </div>
+import type { Driver } from '../../types/driver';
+import { Surface } from '../../ui/Surface';
+import { Avatar } from '../../ui/Avatar';
+import { Badge, Stat } from '../../ui/Indicators';
+export default function DriverCard({ driver, teamName }: { driver: Driver; teamName: string }) {
+  return <Surface><Avatar src={driver.image} name={driver.fullName} className="mb-5 h-48 w-full" />
+    <div className="mb-2 flex items-start justify-between gap-3"><h2 className="text-xl font-semibold tracking-tight">{driver.fullName}</h2><Badge>#{driver.number}</Badge></div>
+    <p className="text-sm text-text-muted">{teamName}</p>
+    <div className="mt-5 grid grid-cols-2 gap-5 border-t border-line pt-5">
+      <Stat label="Wins" value={driver.wins} scope="Career" /><Stat label="Podiums" value={driver.podiums} scope="Career" />
+      <Stat label="Starts" value={driver.raceStarts} scope="Career" /><Stat label="Points" value={driver.currentPoints} scope="Directory season unverified" />
     </div>
-  );
+  </Surface>;
 }

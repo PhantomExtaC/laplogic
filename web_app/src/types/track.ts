@@ -16,7 +16,7 @@ export interface Track {
   lastGrandPrix: string | null;
   laps: number | null;
   drsZones: number | null;
-  // âœ… Changed from string to our new object type (and allow null just in case)
+  // ✅ Changed from string to our new object type (and allow null just in case)
   lapRecord: LapRecord | null; 
   active: boolean;
   layout: string | null;

@@ -2,7 +2,7 @@ import { z } from 'zod';
 const n=z.number().finite();
 export const metaSchema=z.object({schemaVersion:z.string(),snapshotId:z.string().nullable(),season:n.nullable(),raceId:z.string().nullable(),generatedAt:z.string().nullable(),dataThrough:z.string().nullable(),placeholder:z.boolean(),source:z.string()});
 export const envelope=<T extends z.ZodType>(data:T)=>z.object({meta:metaSchema,data});
-export const registrySchema=envelope(z.array(z.object({canonicalId:z.string(),aliases:z.array(z.string()),abbreviation:z.string(),number:n})));
+export const registrySchema=envelope(z.array(z.object({canonicalId:z.string(),aliases:z.array(z.string()),abbreviation:z.string().nullable(),number:n})));
 export const trackRegistrySchema=envelope(z.array(z.object({canonicalId:z.string(),aliases:z.array(z.string()),engineCircuitId:z.string().nullable()})));
 export const assetSchema=envelope(z.array(z.string()));
 export const evaluationSchema=envelope(z.object({evaluationId:z.string().nullable(),championId:z.string().nullable(),sampleCount:n.nullable(),models:z.array(z.object({id:z.string(),accuracy:n.nullable()})),conflict:z.boolean()}));

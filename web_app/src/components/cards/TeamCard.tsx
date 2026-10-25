@@ -1,47 +1,12 @@
-import type { Team } from "../../types/team";
-import type { Driver } from "../../types/driver";
-
-interface TeamCardProps {
-  team: Team;
-  drivers: Driver[];
-}
-
-export default function TeamCard({
-  team,
-  drivers,
-}: TeamCardProps) {
-  return (
-    <div className="rounded-xl border border-slate-700 bg-slate-900 p-5 shadow-lg">
-      <img
-        src={team.logo}
-        alt={team.name}
-        className="mx-auto h-28 object-contain"
-      />
-
-      <h2 className="mt-4 text-center text-2xl font-bold">
-        {team.name}
-      </h2>
-
-      <p className="text-center text-slate-400">
-        {team.principal}
-      </p>
-
-      <div className="mt-4">
-        <p className="font-semibold">Drivers</p>
-
-        <ul className="list-inside list-disc text-sm text-slate-300">
-          {drivers.map((driver) => (
-            <li key={driver.id}>{driver.fullName}</li>
-          ))}
-        </ul>
-      </div>
-
-      <div className="mt-4 grid grid-cols-2 gap-2 text-sm">
-        <div>Wins: {team.wins}</div>
-        <div>Podiums: {team.podiums}</div>
-        <div>Titles: {team.championships}</div>
-        <div>Points: {team.points}</div>
-      </div>
-    </div>
-  );
+import type { Team } from '../../types/team';
+import type { Driver } from '../../types/driver';
+import { Surface } from '../../ui/Surface';
+import { Avatar } from '../../ui/Avatar';
+import { Stat } from '../../ui/Indicators';
+export default function TeamCard({ team, drivers }: { team: Team; drivers: Driver[] }) {
+  const unmatched = team.driverIds.filter(id => !drivers.some(driver => driver.id === id));
+  return <Surface><Avatar src={team.logo} name={team.name} className="mb-5 h-24 w-full" /><h2 className="text-xl font-semibold">{team.name}</h2><p className="mt-1 text-sm text-text-muted">{team.principal}</p>
+    <div className="my-5 border-y border-line py-4"><p className="kicker mb-2">Listed roster</p><ul className="space-y-1 text-sm">{drivers.map(driver => <li key={driver.id}>{driver.fullName}</li>)}</ul>{unmatched.length > 0 && <p className="mt-2 text-xs text-drs-amber">Unresolved roster IDs: {unmatched.join(', ')}</p>}</div>
+    <div className="grid grid-cols-2 gap-5"><Stat label="Wins" value={team.wins} scope="Career" /><Stat label="Podiums" value={team.podiums} scope="Career" /><Stat label="Titles" value={team.championships} scope="Career" /><Stat label="Points" value={team.points} scope="Directory season unverified" /></div>
+  </Surface>;
 }

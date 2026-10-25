@@ -229,6 +229,14 @@
       ],
       "abbreviation": "STR",
       "number": 18
+    },
+    {
+      "canonicalId": "tsunoda",
+      "aliases": [
+        "tsunoda"
+      ],
+      "abbreviation": null,
+      "number": 22
     }
   ],
   "_note": "Sample data. Replace by running analytics_engine/src/export/placeholders/export_registries.py"

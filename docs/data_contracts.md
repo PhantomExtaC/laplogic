@@ -157,3 +157,11 @@ Engine owner decisions: authoritative evaluation run and exact metric definition
 Contract tests validate every shipped JSON resource, numeric zero, aliases used by predictions and telemetry, date-aware next-event logic, lap-time units and probability mass. Server-rendered component tests cover boundary status and sample labeling. Network tests cover HTTP, parse, schema and network errors. Browser widths, keyboard interaction and reduced motion are pending M1; no visual verification is claimed.
 
 M0 production bundle before route splitting: approximately 708 kB JS / 211 kB gzip. Vite reports a chunk-size warning; route splitting is scheduled for M1.
+
+
+## M1 design-system handoff
+The shell and presentation layer now use the Telemetry Terminal tokens. The registry gained the canonical ID `tsunoda` from driver standings because points progression includes it while `drivers.json` does not. Its abbreviation is null; chart labels and team IDs are taken from standings by canonical ID. No display-name joins or invented initials are used for this identity mapping. `export_registries.py` emits the same corrected sample contract.
+
+There are still five placeholder files: `manifest.json` → `export_manifest.py`; `driver_registry.json` and `track_registry.json` → `export_registries.py`; `evaluation.json` → `export_evaluation.py`; `asset_manifest.json` → `export_asset_manifest.py`. All scripts live under `analytics_engine/src/export/placeholders/`. Pending Arena/Compare/Simulator/Insights pages render no analytics and are labeled unavailable; they do not pretend to be sample implementations.
+
+`docs/m1_design_report.md` records presentation changes, browser checks, remaining limits and bundle measurements. `docs/asset_audit.json` lists existing missing asset references. Real exports are preserved; image failures use a labeled fallback and missing track layouts use the supplied placeholder image.

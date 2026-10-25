@@ -1,26 +1,31 @@
-import { useEffect, useState, useMemo } from "react";
+import { useResource } from '../data/hooks/useResource';
+import { legacy } from '../data/adapters';
+import { ResourceBoundary } from '../ui/ResourceBoundary';
+import { Surface, SectionHeader } from '../ui/Surface';
+import { Select } from '../ui/Controls';
+import { useState, useMemo } from "react";
 
 import DriverCard from "../components/cards/DriverCard";
 
 import { getDrivers } from "../services/drivers";
 import { getTeams } from "../services/teams";
 
-import type { Driver } from "../types/driver";
-import type { Team } from "../types/team";
 
+
+const loadDrivers = async (signal: AbortSignal) => legacy(await getDrivers(signal));
+
+const loadTeams = async (signal: AbortSignal) => legacy(await getTeams(signal));
 
 export default function Drivers() {
-  const [drivers, setDrivers] = useState<Driver[]>([]);
-  const [teams, setTeams] = useState<Team[]>([]);
+  const driversState = useResource(loadDrivers);
+
+  const teamsState = useResource(loadTeams);
+  const teams = teamsState.status === 'ready' ? teamsState.data : [];
   const [showActiveOnly, setShowActiveOnly] = useState(false);
   const [sortBy, setSortBy] = useState("alphabetical");
-  useEffect(() => {
-    getDrivers().then(setDrivers);
-    getTeams().then(setTeams);
-  }, []);
 
   const displayedDrivers = useMemo(() => {
-  let filtered = [...drivers];
+  let filtered = driversState.status === 'ready' ? [...driversState.data] : [];
 
   // Filter
   if (showActiveOnly) {
@@ -48,16 +53,15 @@ export default function Drivers() {
   }
 
   return filtered;
-}, [drivers, showActiveOnly, sortBy]);
+}, [driversState, showActiveOnly, sortBy]);
 
   return (
-    <div className="mx-auto max-w-7xl p-8">
-      <h1 className="mb-8 text-4xl font-bold">
-        Drivers
-      </h1>
+    <div className="page space-y-6">
+      <SectionHeader title="Drivers" level={1} kicker="LapLogic / Directory" asOf="Directory export · season and as-of unverified" />
+      <Surface>
       <div className="mb-6 flex flex-wrap gap-4">
 
-  <label className="flex items-center gap-2">
+  <label className="flex min-h-11 items-center gap-2">
     <input
       type="checkbox"
       checked={showActiveOnly}
@@ -66,10 +70,9 @@ export default function Drivers() {
     Active Only
   </label>
 
-  <select
+  <Select label="Sort by"
     value={sortBy}
     onChange={(e) => setSortBy(e.target.value)}
-    className="rounded border border-slate-600 bg-slate-800 p-2"
   >
     <option value="alphabetical">
       Alphabetical (A-Z)
@@ -82,16 +85,19 @@ export default function Drivers() {
     <option value="winsDesc">
       Race Wins (Descending)
     </option>
-  </select>
+  </Select>
 
 </div>
+      </Surface>
+      <ResourceBoundary state={teamsState}>{()=>null}</ResourceBoundary>
+      <ResourceBoundary state={driversState}>{() => <>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {displayedDrivers.map((driver) => {
           const team = teams.find(
             (t) => t.id === driver.currentTeamId
           );
 
-          // Temporary debug log
+
 
           return (
             <DriverCard
@@ -102,6 +108,7 @@ export default function Drivers() {
           );
         })}
       </div>
+      </>}</ResourceBoundary>
     </div>
   );
 }

@@ -1,27 +1,31 @@
-import { useEffect, useState, useMemo } from "react";
+import { useResource } from '../data/hooks/useResource';
+import { legacy } from '../data/adapters';
+import { ResourceBoundary } from '../ui/ResourceBoundary';
+import { Surface, SectionHeader } from '../ui/Surface';
+import { Select } from '../ui/Controls';
+import { useState, useMemo } from "react";
 
 import TeamCard from "../components/cards/TeamCard";
 
 import { getTeams } from "../services/teams";
 import { getDrivers } from "../services/drivers";
 
-import type { Team } from "../types/team";
-import type { Driver } from "../types/driver";
+
+const loadTeams = async (signal: AbortSignal) => legacy(await getTeams(signal));
+
+const loadDrivers = async (signal: AbortSignal) => legacy(await getDrivers(signal));
 
 export default function Teams() {
-  const [teams, setTeams] = useState<Team[]>([]);
-  const [drivers, setDrivers] = useState<Driver[]>([]);
+  const teamsState = useResource(loadTeams);
+
+  const driversState = useResource(loadDrivers);
+  const drivers = driversState.status === 'ready' ? driversState.data : [];
   const [showActiveOnly, setShowActiveOnly] = useState(false);
   const [sortBy, setSortBy] = useState("alphabetical");
 
-  useEffect(() => {
-    getTeams().then(setTeams);
-    getDrivers().then(setDrivers);
-  }, []);
 
   const sortedTeams = useMemo(() => {
-    // âœ… Create a shallow copy to prevent direct state mutation
-    let filteredTeams = [...teams];
+    let filteredTeams = teamsState.status === 'ready' ? [...teamsState.data] : [];
 
     // Filter
     if (showActiveOnly) {
@@ -39,35 +43,37 @@ export default function Teams() {
       }
       return 0;
     });
-  }, [teams, showActiveOnly, sortBy]);
+  }, [teamsState, showActiveOnly, sortBy]);
 
   return (
-    <div className="mx-auto max-w-7xl p-8 text-white">
-      <h1 className="mb-8 text-4xl font-bold">Teams</h1>
+    <div className="page space-y-6">
+      <SectionHeader title="Teams" level={1} kicker="LapLogic / Directory" asOf="Directory export · season and as-of unverified" />
 
-      {/* âœ… Filtering and Sorting UI Layer */}
+      <Surface>
       <div className="mb-6 flex flex-wrap gap-4 items-center">
-        <label className="flex items-center gap-2 cursor-pointer select-none">
+        <label className="flex min-h-11 items-center gap-2 cursor-pointer select-none">
           <input
             type="checkbox"
             checked={showActiveOnly}
             onChange={(e) => setShowActiveOnly(e.target.checked)}
-            className="rounded border-slate-600 bg-slate-800 accent-red-500 h-4 w-4"
+            className="h-4 w-4 accent-telemetry-red"
           />
           <span>Active Only</span>
         </label>
 
-        <select
+        <Select label="Sort by"
           value={sortBy}
           onChange={(e) => setSortBy(e.target.value)}
-          className="rounded border border-slate-600 bg-slate-800 p-2 text-white outline-none focus:border-red-500"
         >
           <option value="alphabetical">Alphabetical (A-Z)</option>
           <option value="wins">Most Race Wins</option>
-        </select>
+        </Select>
       </div>
 
       {/* Grid Layout for Cards */}
+      </Surface>
+      <ResourceBoundary state={driversState}>{()=>null}</ResourceBoundary>
+      <ResourceBoundary state={teamsState}>{() => <>
       <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         {sortedTeams.map((team) => {
           const teamDrivers = drivers.filter((driver) =>
@@ -83,6 +89,7 @@ export default function Teams() {
           );
         })}
       </div>
+      </>}</ResourceBoundary>
     </div>
   );
 }

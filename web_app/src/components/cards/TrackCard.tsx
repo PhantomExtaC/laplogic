@@ -1,49 +1,12 @@
-import type { Track } from "../../types/track";
-
-interface TrackCardProps {
-  track: Track;
-}
-const PLACEHOLDER = "/images/tracks/placeholderTracks.webp";
-export default function TrackCard({ track }: TrackCardProps) {
-  return (
-    <div className="rounded-xl border border-slate-700 bg-slate-900 p-5 shadow-lg">
-      <img
-        src={track.layout ? track.layout : PLACEHOLDER}
-        alt={track.name}
-        onError={(e: React.SyntheticEvent<HTMLImageElement>) => {
-        e.currentTarget.onerror = null;
-        e.currentTarget.src = PLACEHOLDER;
-      }}
-        className="h-48 w-full object-contain"
-      />
-
-
-
-      <h2 className="mt-4 text-2xl font-bold text-white">
-        {track.name}
-      </h2>
-
-      <p className="text-slate-400">
-        {track.country}, {track.city}
-      </p>
-
-      <div className="mt-4 grid grid-cols-2 gap-y-2 gap-x-4 text-sm text-slate-300">
-        <div><span className="font-semibold text-white">Length:</span> {track.lengthKm} km</div>
-        
-        {/* ✅ Safely accessing the object properties */}
-        <div className="col-span-2">
-          <span className="font-semibold text-white">Track Record:</span>{" "}
-          {track.lapRecord ? (
-            `${track.lapRecord.time} (${track.lapRecord.driver}, ${track.lapRecord.year})`
-          ) : (
-            "N/A"
-          )}
-        </div>
-        
-        <div><span className="font-semibold text-white">First GP:</span> {track.firstGrandPrix}</div>
-        <div><span className="font-semibold text-white">Last GP:</span> {track.lastGrandPrix}</div>
-        
-      </div>
-    </div>
-  );
+import type { Track } from '../../types/track';
+import { Surface } from '../../ui/Surface';
+import { Avatar } from '../../ui/Avatar';
+import { Num } from '../../ui/Indicators';
+export default function TrackCard({ track }: { track: Track }) {
+  return <Surface><Avatar src={track.layout ?? '/images/tracks/placeholderTracks.webp'} name={track.name} className="mb-5 h-40 w-full" /><h2 className="text-xl font-semibold">{track.name}</h2><p className="mt-1 text-sm text-text-muted">{track.city}, {track.country}</p><dl className="mt-5 space-y-3 border-t border-line pt-4 text-sm">
+    <div className="flex justify-between gap-4"><dt className="text-text-muted">Length</dt><dd><Num value={track.lengthKm} digits={3} unit="km" /></dd></div>
+    <div className="flex justify-between gap-4"><dt className="text-text-muted">Turns</dt><dd><Num value={track.corners} /></dd></div>
+    <div><dt className="text-text-muted">Lap record</dt><dd>{track.lapRecord ? `${track.lapRecord.time} / ${track.lapRecord.driver} / ${track.lapRecord.year}` : <span aria-label="Unavailable">—</span>}</dd></div>
+    <div><dt className="text-text-muted">First Grand Prix</dt><dd>{track.firstGrandPrix ?? '—'}</dd></div><div><dt className="text-text-muted">Last Grand Prix</dt><dd>{track.lastGrandPrix ?? '—'}</dd></div>
+  </dl><p className="mt-4 text-xs text-text-muted">Historical directory · current-calendar membership unverified</p></Surface>;
 }

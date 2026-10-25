@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  --color-obsidian: #09090B;
+  --color-charcoal: #1C1C1E;
+  --color-charcoal-2: #26262A;
+  --color-line: rgba(255,255,255,0.08);
+  --color-telemetry-red: #EF4444;
+  --color-sector-green: #22C55E;
+  --color-drs-amber: #F59E0B;
+  --color-text: #F4F4F5;
+  --color-text-muted: #A1A1AA;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --shadow-surface: 0 4px 16px rgb(0 0 0 / 0.12);
+}
+
+@layer base {
+  * { box-sizing: border-box; }
+  html { color-scheme: dark; scroll-padding-top: 140px; }
+  html, body, #root { margin: 0; min-height: 100%; }
+  body { background: var(--color-obsidian); color: var(--color-text); font-family: var(--font-sans); font-size: 14px; line-height: 1.6; }
+  button, input, select, textarea { font: inherit; }
+  button:not(:disabled), summary, select { cursor: pointer; }
+  button, a, input, select { transition: background-color 160ms ease-out, border-color 160ms ease-out, color 160ms ease-out; }
+  button:disabled { cursor: not-allowed; opacity: .5; }
+  :focus-visible { outline: 2px solid var(--color-drs-amber); outline-offset: 4px; }
+  h1, h2, h3, p { overflow-wrap: anywhere; }
+  h1 { line-height: 1.15; letter-spacing: -.04em; }
+  td, th, .telemetry { font-variant-numeric: tabular-nums; }
+  ::selection { background: #EF444450; color: #fff; }
+}
+@layer components {
+.page { width: 100%; max-width: 1280px; margin-inline: auto; padding: 32px 24px 64px; }
+.kicker { font-family: var(--font-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--color-text-muted); }
+.control { min-height: 44px; border: 1px solid #52525B; border-radius: 8px; background: var(--color-obsidian); padding: 8px 12px; color: var(--color-text); }
+.control:hover { border-color: var(--color-text-muted); }
+.button { display: inline-flex; min-height: 44px; align-items: center; justify-content: center; gap: 8px; border: 1px solid #52525B; border-radius: 8px; padding: 8px 16px; font-weight: 500; }
+.button:hover { background: var(--color-charcoal-2); }
+.scroll-region { scrollbar-width: thin; scrollbar-color: #71717A #26262A; }
+.skip-link { position: fixed; top: 8px; left: 16px; transform: translateY(-160%); z-index: 100; background: var(--color-text); color: var(--color-obsidian); padding: 12px 20px; border-radius: 8px; }
+.skip-link:focus { transform: translateY(0); }
+@media (max-width: 639px) { .page { padding: 24px 16px 48px; } }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}

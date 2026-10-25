@@ -1,25 +1,5 @@
-interface PredictionCardProps {
-  winner: string;
-  probability: number;
-}
-
-export default function PredictionCard({
-  winner,
-  probability,
-}: PredictionCardProps) {
-  return (
-    <div className="rounded-xl border border-slate-700 bg-slate-900 p-5">
-      <h2 className="text-xl font-bold">
-        Predicted Winner
-      </h2>
-
-      <p className="mt-4 text-2xl">
-        {winner}
-      </p>
-
-      <p className="text-slate-400">
-        {(probability * 100).toFixed(1)}%
-      </p>
-    </div>
-  );
+import { Surface } from '../../ui/Surface';
+import { Num, ProgressBar } from '../../ui/Indicators';
+export default function PredictionCard({ winner, probability }: { winner: string; probability: number }) {
+  return <Surface title="Published prediction"><p className="mb-3 text-xl">{winner}</p><p className="mb-4"><Num value={probability * 100} digits={1} unit="%" /></p><ProgressBar label={`${winner} win probability`} value={probability} /><p className="mt-3 text-xs text-text-muted">Event and snapshot unverified</p></Surface>;
 }
