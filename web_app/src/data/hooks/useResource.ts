@@ -15,6 +15,7 @@ export function useResource<T>(loader: (signal: AbortSignal) => Promise<Resource
         const manifest = await getManifest(controller.signal).catch(() => null);
         if (controller.signal.aborted) return;
         const resource = await loader(controller.signal);
+        if (resource.meta.placeholder) throw new DataError('unavailable', 'Computed data has not been published for this section yet.');
         if (controller.signal.aborted) return;
         const isStale = !resource.meta.snapshotId || !resource.meta.generatedAt ||
           !manifest?.data.snapshotId || resource.meta.snapshotId !== manifest.data.snapshotId ||

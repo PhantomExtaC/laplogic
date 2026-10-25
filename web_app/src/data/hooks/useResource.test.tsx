@@ -7,6 +7,12 @@ import type { Resource } from '../../domain/types/resource';
 
 vi.mock('../services', () => ({ getManifest: vi.fn(async () => null) }));
 afterEach(cleanup);
+it('withholds sample values from the final UI', async () => {
+  const loader = async () => ({ ...legacy('dummy'), meta: { ...legacy('dummy').meta, placeholder: true } });
+  const hook = renderHook(() => useResource(loader));
+  await waitFor(() => expect(hook.result.current.status).toBe('error'));
+  expect(hook.result.current).toMatchObject({ status: 'error', error: { kind: 'unavailable' } });
+});
 it('discards superseded responses and never presents an old loader result as current', async () => {
   let first: ((value: Resource<string>) => void) | undefined;
   const older = () => new Promise<Resource<string>>(resolve => { first = resolve; });

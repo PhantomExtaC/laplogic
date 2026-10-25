@@ -2,7 +2,7 @@ import { getDriverStandings } from './directories';
 import {z} from 'zod';
 import type {RaceEvent} from '../../domain/types/core';
 import {teamColors, unknownTeamColor} from '../registry/teams';
-import {fetchJson} from '../client/fetchJson';
+import {fetchJson, DataError} from '../client/fetchJson';
 import * as s from '../schemas';
 import {legacy,resolveDriver} from '../adapters';
 export const getManifest=(signal?:AbortSignal)=>fetchJson('data/manifest.json',s.manifestSchema,signal);
@@ -22,7 +22,7 @@ export const getWeekendResource = async (signal?: AbortSignal) => {
     telemetry: { ...resource.data.telemetry, longRunPace: resource.data.telemetry.longRunPace.map(row => ({ ...row, driverId: resolveDriver(row.driverId, registry.data) })) },
   } };
 };
-export const getPredictionsResource=async(signal?:AbortSignal)=>{const [rows,registry]=await Promise.all([fetchJson('data/predictions.json',z.union([s.envelope(s.predictionsSchema),s.predictionsSchema]),signal),getRegistry(signal)]);const resource=Array.isArray(rows)?legacy(rows):rows;return {...resource,data:resource.data.map(row=>({...row,driverId:resolveDriver(row.driverId,registry.data)}))};};
+export const getPredictionsResource=async(signal?:AbortSignal)=>{const [rows,registry]=await Promise.all([fetchJson('data/predictions.json',z.union([s.envelope(s.predictionsSchema),s.predictionsSchema]),signal),getRegistry(signal)]);const resource=Array.isArray(rows)?legacy(rows):rows;if(!resource.meta.modelId || !resource.meta.snapshotId || !resource.meta.raceId)throw new DataError('unavailable','A verified forecast has not been published for this event yet.');return {...resource,data:resource.data.map(row=>({...row,driverId:resolveDriver(row.driverId,registry.data)}))};};
 export const getEvaluation = async (signal?: AbortSignal) => {
   const canonical = await fetchJson('data/evaluation.json', s.evaluationSchema, signal);
   // A real versioned contract supersedes historical, unbound evaluation files.

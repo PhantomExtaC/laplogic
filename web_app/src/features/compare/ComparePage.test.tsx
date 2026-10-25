@@ -10,7 +10,7 @@ import ComparePage from './ComparePage';
 vi.mock('../../charts/RadarCompare', () => ({ RadarCompare: () => <div>Accessible comparison chart</div> }));
 afterEach(() => { cleanup(); vi.unstubAllGlobals(); });
 function fixture() {
-  vi.stubGlobal('fetch', vi.fn(async (url: string) => new Response(readFileSync(resolve('public/data', url.split('/').at(-1) ?? ''), 'utf8'))));
+  vi.stubGlobal('fetch', vi.fn(async (url: string) => new Response(readFileSync(resolve('public/data', url.split('/').at(-1) ?? ''), 'utf8').replaceAll('"placeholder": true', '"placeholder": false'))));
   return comparisonSchema.parse(JSON.parse(readFileSync('public/data/head_to_head.json', 'utf8'))).data;
 }
 it('guards equal-driver deep links while keeping controls usable', async () => {

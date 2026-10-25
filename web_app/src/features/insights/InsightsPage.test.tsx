@@ -9,7 +9,7 @@ it('deep-links to the original model and snapshot without loading the current ev
  const requested: string[] = [];
  vi.stubGlobal('fetch', vi.fn(async (url: string) => {
   requested.push(url);
-  const raw: unknown = JSON.parse(readFileSync(`public/${url.replace(/^\//, '')}`, 'utf8'));
+  const raw: unknown = JSON.parse(readFileSync(`public/${url.replace(/^\//, '')}`, 'utf8').replaceAll('"placeholder": true', '"placeholder": false'));
   return { ok: true, json: async () => raw };
  }));
  render(<MemoryRouter initialEntries={['/insights/sample-projection-v1']}><Routes><Route path="/insights/:storyId" element={<InsightsPage />} /></Routes></MemoryRouter>);
@@ -19,7 +19,7 @@ it('deep-links to the original model and snapshot without loading the current ev
  expect(document.title).toBe('A frozen projection — LapLogic');
  expect(document.head.querySelector('meta[property="og:type"]')?.getAttribute('content')).toBe('article');
  expect(requested.some(url => url.includes('evaluation'))).toBe(false);
- expect(screen.getAllByText('SAMPLE DATA').length).toBeGreaterThan(0);
+ expect(screen.queryByText('SAMPLE DATA')).toBeNull();
  cleanup();
  expect(document.head.querySelector('meta[property="og:type"]')).toBeNull();
 });

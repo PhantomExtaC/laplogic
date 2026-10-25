@@ -15,7 +15,7 @@ export default function TeamsPage() {
   const points = (id: string) => standings.status === 'ready' ? standings.data.find(row => row.id === id)?.points ?? null : null;
   return <div className="page space-y-6"><SectionHeader title="Teams" level={1} kicker="LapLogic / Constructors" asOf="Season points from standings; wins, podiums and titles from career directory totals." />
     <Surface><div className="grid gap-4 sm:grid-cols-3"><SearchInput label="Search teams" value={q} onChange={value => update('q', value)} /><Select label="Sort teams" value={sort} onChange={e => update('sort', e.target.value)}><option value="points">Season standings points</option><option value="wins">Career wins</option><option value="name">Name</option></Select><label className="flex min-h-11 items-center gap-2 self-end"><input type="checkbox" checked={archive} onChange={e => update('lineup', e.target.checked ? 'archive' : 'current')} />Include archived teams</label></div></Surface>
-    <ResourceBoundary state={standings}>{() => null}</ResourceBoundary><ResourceBoundary state={drivers}>{() => null}</ResourceBoundary>
+    <ResourceBoundary state={standings}>{() => null}</ResourceBoundary>
     <ResourceBoundary state={teams}>{rows => {
       const filtered = rows.filter(row => (archive || row.active) && row.name.toLowerCase().includes(q.toLowerCase()));
       filtered.sort((a, b) => { if (sort === 'name') return a.name.localeCompare(b.name); const x = sort === 'wins' ? a.wins : points(a.id), y = sort === 'wins' ? b.wins : points(b.id); return x === null ? y === null ? 0 : 1 : y === null ? -1 : y - x; });
