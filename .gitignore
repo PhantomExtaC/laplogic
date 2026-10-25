@@ -48,3 +48,5 @@ build/
 # =========================
 .DS_Store
 Thumbs.db
+# Isolated updater candidates and run reports
+.updater/
