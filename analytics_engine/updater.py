@@ -79,15 +79,21 @@ def main():
     parser.add_argument("--season", type=int, required=True)
     parser.add_argument("--input-dir", type=Path, default=ROOT / "web_app/public/data")
     parser.add_argument("--work-dir", type=Path, default=ROOT / ".updater")
-    parser.add_argument("--live", action="store_true", help="Collect a complete live season source snapshot before staging cached core outputs")
+    parser.add_argument("--source-snapshot", type=Path, help="Replay a saved live source without network access")
+    parser.add_argument("--source-observed-at", help="Required original fetch timestamp when replaying")
+    parser.add_argument("--live", action="store_true", help="Stage live calendar and standings alongside cached directories")
     parser.add_argument("--dry-run", action="store_true", help="Validate without updating the candidate pointer")
     args = parser.parse_args()
+    if args.live and args.source_snapshot: parser.error("Choose live or saved snapshot")
+    if args.source_snapshot and not args.source_observed_at: parser.error("Replay requires original --source-observed-at")
+    if args.source_observed_at and not args.source_snapshot: parser.error("--source-observed-at is only valid for replay")
     from src.export.core_exports import build
     folder = args.work_dir.resolve()
     try:
         with lock(folder):
             report = {"startedAt": datetime.now(timezone.utc).isoformat(), "season": args.season, "sourceMode": "live-source-request" if args.live else "cached-export-bundle", "dryRun": args.dry_run}
             try:
+                source = None
                 if args.live:
                     from src.ingestion.jolpica import collect
                     source = collect(args.season)
@@ -95,8 +101,15 @@ def main():
                     source_folder = folder / "sources"
                     source_folder.mkdir(exist_ok=True)
                     atomic_json(source_folder / (source_id + ".json"), source)
-                    report.update(liveSourceId=source_id, throughRound=source["throughRound"], sourceMode="live-ingestion-with-cached-core-candidate")
+                    report.update(liveSourceId=source_id, throughRound=source["throughRound"], sourceMode="live-core-with-cached-directories")
                 payloads = build(args.input_dir.resolve(), ROOT / "web_app/public", args.season)
+                if args.source_snapshot:
+                    source = json.loads(args.source_snapshot.read_text(encoding="utf-8"))
+                    report["sourceMode"] = "replayed-live-core-with-cached-directories"
+                if source is not None:
+                    if source["season"] != args.season: raise ValueError("Requested season differs from snapshot")
+                    from src.export.live_core import convert
+                    payloads = convert(payloads, source, args.source_observed_at or report["startedAt"])
                 identifier, created = stage(payloads, folder, validate_frontend)
                 report.update(status="validated", releaseId=identifier, changed=created, files=sorted(payloads))
                 if not args.dry_run:
