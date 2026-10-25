@@ -4,7 +4,7 @@ export interface DriverStanding {
   points: number;
   wins: number;
   driverName: string;
-  driverNumber: string;
+  driverNumber: number;
   nationality: string;
   currentTeamId: string | null;
   imagePath: string;

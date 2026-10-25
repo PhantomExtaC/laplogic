@@ -1,6 +1,3 @@
-import type { RaceEvent } from "../types/calendar";
-import { fetchJson } from "./fetchJson";
-
-export function getCalendar(): Promise<RaceEvent[]> {
-  return fetchJson<RaceEvent[]>("/data/calendar.json");
-}
+import {fetchJson} from '../data/client/fetchJson';
+import {calendarSchema} from '../data/schemas';
+export async function getCalendar(){const data=await fetchJson('data/calendar.json',calendarSchema);return data;}

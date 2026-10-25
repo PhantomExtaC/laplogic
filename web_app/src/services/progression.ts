@@ -1,6 +1,3 @@
-import type { PointsProgression } from "../types/progression";
-import { fetchJson } from "./fetchJson"; // Assumes you have this utility already
-
-export function getPointsProgression(): Promise<PointsProgression[]> {
-  return fetchJson<PointsProgression[]>("/data/pointsProgression.json");
-}
+import {fetchJson} from '../data/client/fetchJson';
+import {progressionSchema} from '../data/schemas';
+export async function getPointsProgression(signal?:AbortSignal){const data=await fetchJson('data/pointsProgression.json',progressionSchema,signal);return data;}

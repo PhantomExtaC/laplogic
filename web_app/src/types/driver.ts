@@ -7,15 +7,15 @@ export interface Driver {
   number: number;
 
   nationality: string;
-  dateOfBirth: string;
-  age: number;
+  dateOfBirth: string | null;
+  age: number | null;
 
   currentTeamId: string;
 
   active: boolean;
 
   raceStarts: number;
-  raceFinishes: number;
+  raceFinishes: number | null;
   dnfs: number;
 
   wins: number;

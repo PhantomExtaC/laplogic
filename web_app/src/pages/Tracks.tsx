@@ -15,7 +15,7 @@ export default function Tracks() {
   }, []);
 
   const sortedTracks = useMemo(() => {
-    let updatedTracks = [...tracks];
+    const updatedTracks = [...tracks];
 
     return updatedTracks.sort((a, b) => {
       if (sortBy === "alphabetical") {

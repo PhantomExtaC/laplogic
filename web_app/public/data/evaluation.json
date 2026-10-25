@@ -1,0 +1,20 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "snapshotId": null,
+    "season": null,
+    "raceId": null,
+    "generatedAt": null,
+    "dataThrough": null,
+    "placeholder": true,
+    "source": "analytics_engine/src/export/placeholders/export_evaluation.py"
+  },
+  "data": {
+    "evaluationId": null,
+    "championId": null,
+    "sampleCount": null,
+    "models": [],
+    "conflict": true
+  },
+  "_note": "Sample data. Replace by running analytics_engine/src/export/placeholders/export_evaluation.py"
+}

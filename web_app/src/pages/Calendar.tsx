@@ -1,26 +1,18 @@
-import { useEffect, useState } from "react";
+import {useResource} from "../data/hooks/useResource";
+import {ResourceBoundary} from "../ui/ResourceBoundary";
+import {getCalendarResource} from "../data/services";
 
-import { getCalendar } from "../services/calendar";
 
-import type { Race } from "../types/race";
+
+
 
 export default function Calendar() {
-  const [calendar, setCalendar] = useState<Race[]>([]);
-
-  useEffect(() => {
-    getCalendar().then((data) => {
-      // Map over the data to add the missing required properties
-      const formattedCalendar = data.map((event: any) => ({
-        ...event,
-        trackId: event.trackId || "unknown-track",
-        country: event.country || "TBD",
-      }));
-      setCalendar(formattedCalendar);
-    });
-  }, []);
+  const state=useResource(getCalendarResource);
+  if(state.status!=='ready')return <div className="p-6"><ResourceBoundary state={state}>{()=>null}</ResourceBoundary></div>;
+  const calendar=state.data;
   return (
 <div className="mx-auto max-w-7xl p-8">
-  <div className="relative flex flex-col w-full overflow-hidden rounded-xl bg-gray-500 shadow-md">
+  <div className="relative flex flex-col w-full overflow-hidden rounded-xl bg-neutral-900 shadow-md">
 
     {/* Header */}
     <div className="flex flex-col justify-between gap-4 border-b p-6 md:flex-row md:items-center">
@@ -39,21 +31,21 @@ export default function Calendar() {
     {/* Table */}
     <div className="overflow-x-auto">
       <table className="w-full text-left">
-        <thead className="bg-gray-50">
+        <thead className="bg-neutral-800">
           <tr>
-            <th className="px-6 py-4 text-sm font-semibold text-gray-600">
+            <th className="px-6 py-4 text-sm font-semibold text-neutral-300">
               Round
             </th>
-            <th className="px-6 py-4 text-sm font-semibold text-gray-600">
+            <th className="px-6 py-4 text-sm font-semibold text-neutral-300">
               Grand Prix
             </th>
-            <th className="px-6 py-4 text-sm font-semibold text-gray-600">
+            <th className="px-6 py-4 text-sm font-semibold text-neutral-300">
               Date
             </th>
-            <th className="px-6 py-4 text-sm font-semibold text-gray-600">
+            <th className="px-6 py-4 text-sm font-semibold text-neutral-300">
               Sprint
             </th>
-            <th className="px-6 py-4 text-sm font-semibold text-gray-600">
+            <th className="px-6 py-4 text-sm font-semibold text-neutral-300">
               Status
             </th>
           </tr>
@@ -63,7 +55,7 @@ export default function Calendar() {
           {calendar.map((race) => (
             <tr
               key={race.round}
-              className="border-b last:border-none hover:bg-gray-50 transition-colors"
+              className="border-b last:border-none hover:bg-neutral-800 transition-colors"
             >
               <td className="px-6 py-4 font-medium">
                 {race.round}

@@ -1,0 +1,86 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "snapshotId": null,
+    "season": null,
+    "raceId": null,
+    "generatedAt": null,
+    "dataThrough": null,
+    "placeholder": true,
+    "source": "analytics_engine/src/export/placeholders/export_manifest.py"
+  },
+  "data": {
+    "snapshotId": null,
+    "season": null,
+    "nextRaceId": null,
+    "championModelId": null,
+    "evaluationId": null,
+    "resources": {
+      "arena_metrics": {
+        "filename": "arena_metrics.json",
+        "schemaVersion": "legacy"
+      },
+      "calendar": {
+        "filename": "calendar.json",
+        "schemaVersion": "legacy"
+      },
+      "constructor_standings": {
+        "filename": "constructor_standings.json",
+        "schemaVersion": "legacy"
+      },
+      "drivers": {
+        "filename": "drivers.json",
+        "schemaVersion": "legacy"
+      },
+      "driverTrends": {
+        "filename": "driverTrends.json",
+        "schemaVersion": "legacy"
+      },
+      "driver_standings": {
+        "filename": "driver_standings.json",
+        "schemaVersion": "legacy"
+      },
+      "evaluation_metrics": {
+        "filename": "evaluation_metrics.json",
+        "schemaVersion": "legacy"
+      },
+      "insights": {
+        "filename": "insights.json",
+        "schemaVersion": "legacy"
+      },
+      "next_race": {
+        "filename": "next_race.json",
+        "schemaVersion": "legacy"
+      },
+      "pointsProgression": {
+        "filename": "pointsProgression.json",
+        "schemaVersion": "legacy"
+      },
+      "predictions": {
+        "filename": "predictions.json",
+        "schemaVersion": "legacy"
+      },
+      "stats": {
+        "filename": "stats.json",
+        "schemaVersion": "legacy"
+      },
+      "teams": {
+        "filename": "teams.json",
+        "schemaVersion": "legacy"
+      },
+      "tracks": {
+        "filename": "tracks.json",
+        "schemaVersion": "legacy"
+      },
+      "tracksDeg": {
+        "filename": "tracksDeg.json",
+        "schemaVersion": "legacy"
+      },
+      "weekend_state": {
+        "filename": "weekend_state.json",
+        "schemaVersion": "legacy"
+      }
+    }
+  },
+  "_note": "Sample data. Replace by running analytics_engine/src/export/placeholders/export_manifest.py"
+}

@@ -20,7 +20,7 @@ export default function Teams() {
   }, []);
 
   const sortedTeams = useMemo(() => {
-    // ✅ Create a shallow copy to prevent direct state mutation
+    // âœ… Create a shallow copy to prevent direct state mutation
     let filteredTeams = [...teams];
 
     // Filter
@@ -45,7 +45,7 @@ export default function Teams() {
     <div className="mx-auto max-w-7xl p-8 text-white">
       <h1 className="mb-8 text-4xl font-bold">Teams</h1>
 
-      {/* ✅ Filtering and Sorting UI Layer */}
+      {/* âœ… Filtering and Sorting UI Layer */}
       <div className="mb-6 flex flex-wrap gap-4 items-center">
         <label className="flex items-center gap-2 cursor-pointer select-none">
           <input

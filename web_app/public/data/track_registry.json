@@ -1,0 +1,554 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "snapshotId": null,
+    "season": null,
+    "raceId": null,
+    "generatedAt": null,
+    "dataThrough": null,
+    "placeholder": true,
+    "source": "analytics_engine/src/export/placeholders/export_registries.py"
+  },
+  "data": [
+    {
+      "canonicalId": "brands_hatch",
+      "aliases": [
+        "brands_hatch"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "avus",
+      "aliases": [
+        "avus"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "autodromo_internazionale_enzo_e_dino_ferrari",
+      "aliases": [
+        "autodromo_internazionale_enzo_e_dino_ferrari"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "aut_dromo_juan_y_oscar_g_lvez",
+      "aliases": [
+        "aut_dromo_juan_y_oscar_g_lvez"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "autodromo_internazionale_del_mugello",
+      "aliases": [
+        "autodromo_internazionale_del_mugello"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "anderstorp_raceway",
+      "aliases": [
+        "anderstorp_raceway"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "baku_city_circuit",
+      "aliases": [
+        "baku_city_circuit"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "bahrain_international_circuit",
+      "aliases": [
+        "bahrain_international_circuit"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "caesars_palace",
+      "aliases": [
+        "caesars_palace"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "aut_dromo_internacional_nelson_piquet",
+      "aliases": [
+        "aut_dromo_internacional_nelson_piquet"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "aintree_motor_racing_circuit",
+      "aliases": [
+        "aintree_motor_racing_circuit"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "aut_dromo_jos_carlos_pace",
+      "aliases": [
+        "aut_dromo_jos_carlos_pace"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "autodromo_nazionale_monza",
+      "aliases": [
+        "autodromo_nazionale_monza"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "adelaide_street_circuit",
+      "aliases": [
+        "adelaide_street_circuit"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "bugatti_circuit",
+      "aliases": [
+        "bugatti_circuit"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "ain_diab_circuit",
+      "aliases": [
+        "ain_diab_circuit"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "aut_dromo_do_estoril",
+      "aliases": [
+        "aut_dromo_do_estoril"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "aut_dromo_hermanos_rodr_guez",
+      "aliases": [
+        "aut_dromo_hermanos_rodr_guez"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "algarve_international_circuit",
+      "aliases": [
+        "algarve_international_circuit"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "buddh_international_circuit",
+      "aliases": [
+        "buddh_international_circuit"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "charade_circuit",
+      "aliases": [
+        "charade_circuit"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "canadian_tire_motorsport_park",
+      "aliases": [
+        "canadian_tire_motorsport_park"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "circuit_bremgarten",
+      "aliases": [
+        "circuit_bremgarten"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "circuit_de_barcelona_catalunya",
+      "aliases": [
+        "circuit_de_barcelona_catalunya"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "circuit_de_nevers_magny_cours",
+      "aliases": [
+        "circuit_de_nevers_magny_cours"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "circuit_de_monaco",
+      "aliases": [
+        "circuit_de_monaco"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "circuit_gilles_villeneuve",
+      "aliases": [
+        "circuit_gilles_villeneuve"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "circuit_de_spa_francorchamps",
+      "aliases": [
+        "circuit_de_spa_francorchamps"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "circuito_da_boavista",
+      "aliases": [
+        "circuito_da_boavista"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "circuit_mont_tremblant",
+      "aliases": [
+        "circuit_mont_tremblant"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "circuito_de_jerez",
+      "aliases": [
+        "circuito_de_jerez"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "circuito_de_monsanto",
+      "aliases": [
+        "circuito_de_monsanto"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "circuito_del_jarama",
+      "aliases": [
+        "circuito_del_jarama"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "circuito_de_montju_c",
+      "aliases": [
+        "circuito_de_montju_c"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "circuit_of_the_americas",
+      "aliases": [
+        "circuit_of_the_americas"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "circuit_park_zandvoort",
+      "aliases": [
+        "circuit_park_zandvoort"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "circuit_zolder",
+      "aliases": [
+        "circuit_zolder"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "circuit_paul_ricard",
+      "aliases": [
+        "circuit_paul_ricard"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "dijon_prenois",
+      "aliases": [
+        "dijon_prenois"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "detroit_street_circuit",
+      "aliases": [
+        "detroit_street_circuit"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "fair_park",
+      "aliases": [
+        "fair_park"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "donington_park",
+      "aliases": [
+        "donington_park"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "fuji_speedway",
+      "aliases": [
+        "fuji_speedway"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "hockenheimring",
+      "aliases": [
+        "hockenheimring"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "indianapolis_motor_speedway",
+      "aliases": [
+        "indianapolis_motor_speedway"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "hungaroring",
+      "aliases": [
+        "hungaroring"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "jeddah_corniche_circuit",
+      "aliases": [
+        "jeddah_corniche_circuit"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "istanbul_park",
+      "aliases": [
+        "istanbul_park"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "korea_international_circuit",
+      "aliases": [
+        "korea_international_circuit"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "kyalami_racing_circuit",
+      "aliases": [
+        "kyalami_racing_circuit"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "las_vegas_street_circuit",
+      "aliases": [
+        "las_vegas_street_circuit"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "lusail_international_circuit",
+      "aliases": [
+        "lusail_international_circuit"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "long_beach",
+      "aliases": [
+        "long_beach"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "marina_bay_street_circuit",
+      "aliases": [
+        "marina_bay_street_circuit"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "melbourne_grand_prix_circuit",
+      "aliases": [
+        "melbourne_grand_prix_circuit"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "miami_international_autodrome",
+      "aliases": [
+        "miami_international_autodrome"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "nivelles_baulers",
+      "aliases": [
+        "nivelles_baulers"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "okayama_international_circuit",
+      "aliases": [
+        "okayama_international_circuit"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "pedralbes_circuit",
+      "aliases": [
+        "pedralbes_circuit"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "n_rburgring",
+      "aliases": [
+        "n_rburgring"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "prince_george_circuit",
+      "aliases": [
+        "prince_george_circuit"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "pescara_circuit",
+      "aliases": [
+        "pescara_circuit"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "phoenix_street_circuit",
+      "aliases": [
+        "phoenix_street_circuit"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "riverside_international_raceway",
+      "aliases": [
+        "riverside_international_raceway"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "reims_gueux",
+      "aliases": [
+        "reims_gueux"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "rouen_les_essarts",
+      "aliases": [
+        "rouen_les_essarts"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "sebring_international_raceway",
+      "aliases": [
+        "sebring_international_raceway"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "red_bull_ring",
+      "aliases": [
+        "red_bull_ring"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "shanghai_international_circuit",
+      "aliases": [
+        "shanghai_international_circuit"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "sepang_international_circuit",
+      "aliases": [
+        "sepang_international_circuit"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "sochi_autodrom",
+      "aliases": [
+        "sochi_autodrom"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "suzuka_circuit",
+      "aliases": [
+        "suzuka_circuit"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "watkins_glen_international",
+      "aliases": [
+        "watkins_glen_international"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "silverstone_circuit",
+      "aliases": [
+        "silverstone_circuit"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "zeltweg",
+      "aliases": [
+        "zeltweg"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "yas_marina_circuit",
+      "aliases": [
+        "yas_marina_circuit"
+      ],
+      "engineCircuitId": null
+    },
+    {
+      "canonicalId": "valencia_street_circuit",
+      "aliases": [
+        "valencia_street_circuit"
+      ],
+      "engineCircuitId": null
+    }
+  ],
+  "_note": "Sample data. Replace by running analytics_engine/src/export/placeholders/export_registries.py"
+}

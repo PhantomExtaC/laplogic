@@ -1,0 +1,27 @@
+import { z } from 'zod';
+const n=z.number().finite();
+export const metaSchema=z.object({schemaVersion:z.string(),snapshotId:z.string().nullable(),season:n.nullable(),raceId:z.string().nullable(),generatedAt:z.string().nullable(),dataThrough:z.string().nullable(),placeholder:z.boolean(),source:z.string()});
+export const envelope=<T extends z.ZodType>(data:T)=>z.object({meta:metaSchema,data});
+export const registrySchema=envelope(z.array(z.object({canonicalId:z.string(),aliases:z.array(z.string()),abbreviation:z.string(),number:n})));
+export const trackRegistrySchema=envelope(z.array(z.object({canonicalId:z.string(),aliases:z.array(z.string()),engineCircuitId:z.string().nullable()})));
+export const assetSchema=envelope(z.array(z.string()));
+export const evaluationSchema=envelope(z.object({evaluationId:z.string().nullable(),championId:z.string().nullable(),sampleCount:n.nullable(),models:z.array(z.object({id:z.string(),accuracy:n.nullable()})),conflict:z.boolean()}));
+export const manifestSchema=envelope(z.object({snapshotId:z.string().nullable(),season:n.nullable(),nextRaceId:z.string().nullable(),championModelId:z.string().nullable(),evaluationId:z.string().nullable(),resources:z.record(z.string(),z.object({filename:z.string(),schemaVersion:z.string()}))}));
+export const legacyEvaluationSchema=z.object({totalRaces:n,baselineAccuracy:n,champion:z.string(),models:z.record(z.string(),z.object({winAccuracy:n,podiumCoverage:n}))});
+export const arenaSchema=z.object({champion:z.string(),models:z.record(z.string(),z.object({winAccuracy:n}))});
+export const predictionsSchema=z.array(z.object({driverId:z.string(),driverName:z.string(),winProbability:n.min(0).max(1),predictedPosition:n.int().positive(),insights:z.object({trackMastery:n.nullable(),driverMomentum:n.nullable(),teamMomentum:n.nullable()}).optional()}));
+export const calendarSchema=z.array(z.object({round:n.int().positive(),grandPrix:z.string(),date:z.string().regex(/^\d{4}-\d{2}-\d{2}$/),sprintWeekend:z.boolean(),status:z.enum(['upcoming','in_progress','completed','cancelled','postponed']),trackId:z.string().nullable().default(null),country:z.string().nullable().default(null)}));
+export const driversSchema=z.array(z.object({id:z.string(),fullName:z.string(),abbreviation:z.string(),number:n,nationality:z.string(),dateOfBirth:z.string().nullable().default(null),age:n.nullable().default(null),currentTeamId:z.string(),active:z.boolean(),raceStarts:n,raceFinishes:n.nullable().default(null),dnfs:n,wins:n,podiums:n,polePositions:n,fastestLaps:n,championships:n,currentPoints:n,image:z.string()}));
+export const teamsSchema=z.array(z.object({id:z.string(),name:z.string(),principal:z.string(),base:z.string(),engine:z.string(),driverIds:z.array(z.string()),wins:n,podiums:n,championships:n,points:n,active:z.boolean(),logo:z.string()}));
+export const tracksSchema=z.array(z.object({id:z.string(),name:z.string(),country:z.string(),city:z.string(),lengthKm:n.nullable(),turns:n.nullable(),firstGrandPrix:z.string().nullable(),lastGrandPrix:z.string().nullable(),lapRecord:z.object({time:z.string(),driver:z.string(),year:z.union([n,z.string()]),milliseconds:n}).nullable(),active:z.boolean(),layoutImage:z.string().nullable()}));
+const standing=z.object({id:z.string(),position:n,points:n,wins:n,nationality:z.string(),imagePath:z.string()});
+export const driverStandingsSchema=z.array(standing.extend({driverName:z.string(),driverNumber:n,currentTeamId:z.string().nullable()}));
+export const constructorStandingsSchema=z.array(standing.extend({teamName:z.string()}));
+export const progressionSchema=z.array(z.object({round:n}).catchall(n));
+export const weekendSchema=z.object({track:z.object({circuitName:z.string(),layoutType:z.string(),pitStopDelta:n,drsZones:n}),weather:z.object({airTemp:n,trackTemp:n,rainProbability:n,condition:z.string()}),telemetry:z.object({fastestSectors:z.object({sector1:z.string(),sector2:z.string(),sector3:z.string()}),longRunPace:z.array(z.object({driverId:z.string(),driverName:z.string(),avgLapTime:z.string(),tireCompound:z.string()}))})});
+
+export const trendsSchema=z.record(z.string(),z.object({momentumHistory:z.array(n),racecraftHistory:z.array(n)}));
+export const insightsSchema=z.array(z.object({driverId:z.string(),powerRating:z.object({momentumIndex:n,racecraftIndex:n}),mastery:z.object({overallAverage:n,streetAverage:n,highDegAverage:n}),profile:z.object({strength:z.string(),weakness:z.string()})}));
+export const degradationSchema=z.array(z.object({circuitId:z.string(),tireDegradationIndex:n.min(1).max(5),isStreetCircuit:z.boolean(),averagePitStops:n}));
+export const statsSchema=z.object({season:n,drivers:n,teams:n,tracks:n,completedRaces:n,remainingRaces:n});
+export const nextRaceSchema=z.object({round:n,grandPrix:z.string(),trackId:z.string(),country:z.string(),date:z.string(),weather:z.object({condition:z.string(),airTemperature:n,trackTemperature:n,rainProbability:n})});

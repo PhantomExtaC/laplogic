@@ -1,0 +1,10 @@
+import {z} from 'zod';
+import {fetchJson} from '../client/fetchJson';
+import * as s from '../schemas';
+import {legacy,resolveDriver} from '../adapters';
+export const getManifest=(signal?:AbortSignal)=>fetchJson('data/manifest.json',s.manifestSchema,signal);
+export const getRegistry=(signal?:AbortSignal)=>fetchJson('data/driver_registry.json',s.registrySchema,signal);
+export const getCalendarResource=async(signal?:AbortSignal)=>{const raw=await fetchJson('data/calendar.json',z.union([s.envelope(s.calendarSchema),s.calendarSchema]),signal);return Array.isArray(raw)?legacy(raw):raw;};
+export const getWeekendResource=async(signal?:AbortSignal)=>{const raw=await fetchJson('data/weekend_state.json',z.union([s.envelope(s.weekendSchema),s.weekendSchema]),signal);return 'meta' in raw?raw:legacy(raw);};
+export const getPredictionsResource=async(signal?:AbortSignal)=>{const [rows,registry]=await Promise.all([fetchJson('data/predictions.json',z.union([s.envelope(s.predictionsSchema),s.predictionsSchema]),signal),getRegistry(signal)]);const resource=Array.isArray(rows)?legacy(rows):rows;return {...resource,data:resource.data.map(row=>({...row,driverId:resolveDriver(row.driverId,registry.data)}))};};
+export const getEvaluation=async(signal?:AbortSignal)=>{const [canonical,evaluation,arena]=await Promise.all([fetchJson('data/evaluation.json',s.evaluationSchema,signal),fetchJson('data/evaluation_metrics.json',s.legacyEvaluationSchema,signal),fetchJson('data/arena_metrics.json',s.arenaSchema,signal)]);const normalize=(id:string)=>id.toLowerCase().replace(/[^a-z]/g,'');const conflict=normalize(evaluation.champion)!==normalize(arena.champion)||Object.entries(evaluation.models).some(([id,row])=>arena.models[id]?.winAccuracy!==row.winAccuracy);return {...canonical,data:{...canonical.data,conflict}};};

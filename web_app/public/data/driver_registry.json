@@ -1,0 +1,235 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "snapshotId": null,
+    "season": null,
+    "raceId": null,
+    "generatedAt": null,
+    "dataThrough": null,
+    "placeholder": true,
+    "source": "analytics_engine/src/export/placeholders/export_registries.py"
+  },
+  "data": [
+    {
+      "canonicalId": "antonelli",
+      "aliases": [
+        "antonelli",
+        "ANT",
+        "ant"
+      ],
+      "abbreviation": "ANT",
+      "number": 12
+    },
+    {
+      "canonicalId": "hamilton",
+      "aliases": [
+        "ham",
+        "hamilton",
+        "HAM"
+      ],
+      "abbreviation": "HAM",
+      "number": 44
+    },
+    {
+      "canonicalId": "russell",
+      "aliases": [
+        "RUS",
+        "russell",
+        "rus"
+      ],
+      "abbreviation": "RUS",
+      "number": 63
+    },
+    {
+      "canonicalId": "leclerc",
+      "aliases": [
+        "LEC",
+        "lec",
+        "leclerc"
+      ],
+      "abbreviation": "LEC",
+      "number": 16
+    },
+    {
+      "canonicalId": "norris",
+      "aliases": [
+        "norris",
+        "NOR",
+        "nor"
+      ],
+      "abbreviation": "NOR",
+      "number": 1
+    },
+    {
+      "canonicalId": "piastri",
+      "aliases": [
+        "piastri",
+        "pia",
+        "PIA"
+      ],
+      "abbreviation": "PIA",
+      "number": 81
+    },
+    {
+      "canonicalId": "max_verstappen",
+      "aliases": [
+        "VER",
+        "ver",
+        "max_verstappen"
+      ],
+      "abbreviation": "VER",
+      "number": 3
+    },
+    {
+      "canonicalId": "gasly",
+      "aliases": [
+        "GAS",
+        "gasly",
+        "gas"
+      ],
+      "abbreviation": "GAS",
+      "number": 10
+    },
+    {
+      "canonicalId": "hadjar",
+      "aliases": [
+        "HAD",
+        "hadjar",
+        "had"
+      ],
+      "abbreviation": "HAD",
+      "number": 6
+    },
+    {
+      "canonicalId": "lawson",
+      "aliases": [
+        "lawson",
+        "law",
+        "LAW"
+      ],
+      "abbreviation": "LAW",
+      "number": 30
+    },
+    {
+      "canonicalId": "bearman",
+      "aliases": [
+        "bearman",
+        "BEA",
+        "bea"
+      ],
+      "abbreviation": "BEA",
+      "number": 87
+    },
+    {
+      "canonicalId": "colapinto",
+      "aliases": [
+        "COL",
+        "col",
+        "colapinto"
+      ],
+      "abbreviation": "COL",
+      "number": 43
+    },
+    {
+      "canonicalId": "arvid_lindblad",
+      "aliases": [
+        "arvid_lindblad",
+        "lin",
+        "LIN"
+      ],
+      "abbreviation": "LIN",
+      "number": 41
+    },
+    {
+      "canonicalId": "sainz",
+      "aliases": [
+        "sai",
+        "sainz",
+        "SAI"
+      ],
+      "abbreviation": "SAI",
+      "number": 55
+    },
+    {
+      "canonicalId": "albon",
+      "aliases": [
+        "alb",
+        "albon",
+        "ALB"
+      ],
+      "abbreviation": "ALB",
+      "number": 23
+    },
+    {
+      "canonicalId": "ocon",
+      "aliases": [
+        "OCO",
+        "ocon",
+        "oco"
+      ],
+      "abbreviation": "OCO",
+      "number": 31
+    },
+    {
+      "canonicalId": "bortoleto",
+      "aliases": [
+        "bortoleto",
+        "BOR",
+        "bor"
+      ],
+      "abbreviation": "BOR",
+      "number": 5
+    },
+    {
+      "canonicalId": "alonso",
+      "aliases": [
+        "ALO",
+        "alo",
+        "alonso"
+      ],
+      "abbreviation": "ALO",
+      "number": 14
+    },
+    {
+      "canonicalId": "hulkenberg",
+      "aliases": [
+        "HUL",
+        "hulkenberg",
+        "hul"
+      ],
+      "abbreviation": "HUL",
+      "number": 27
+    },
+    {
+      "canonicalId": "bottas",
+      "aliases": [
+        "bottas",
+        "bot",
+        "BOT"
+      ],
+      "abbreviation": "BOT",
+      "number": 77
+    },
+    {
+      "canonicalId": "perez",
+      "aliases": [
+        "perez",
+        "per",
+        "PER"
+      ],
+      "abbreviation": "PER",
+      "number": 11
+    },
+    {
+      "canonicalId": "stroll",
+      "aliases": [
+        "str",
+        "stroll",
+        "STR"
+      ],
+      "abbreviation": "STR",
+      "number": 18
+    }
+  ],
+  "_note": "Sample data. Replace by running analytics_engine/src/export/placeholders/export_registries.py"
+}

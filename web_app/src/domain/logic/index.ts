@@ -1,0 +1,11 @@
+export function nextEvent<T extends {status:string;date:string;round:number}>(rows:T[],now:Date){const sorted=rows.filter(r=>!['completed','cancelled','postponed'].includes(r.status)).sort((a,b)=>a.date.localeCompare(b.date)||a.round-b.round);return sorted.find(r=>r.status==='in_progress')??sorted.find(r=>r.date>=now.toISOString().slice(0,10))??null;}
+export function probabilityCoverage(rows:{winProbability:number}[]){const mass=rows.reduce((sum,r)=>sum+r.winProbability,0);return {count:rows.length,mass,massMissing:1-mass};}
+export const pairwiseMatchups=(n:number)=>n*(n-1)/2;
+export const formatLapTime=(seconds:number|null)=>seconds===null?'—':`${Math.floor(seconds/60)}:${(seconds%60).toFixed(3).padStart(6,'0')}`;
+export const formatPpDelta=(before:number,after:number)=>`${after>=before?'+':''}${((after-before)*100).toFixed(1)} pp`;
+
+export interface ComparisonMetric {raw:number|null;normalized:number|null;sampleCount:number;higherIsBetter:boolean|null}
+export function headToHead(a:{id:string;metrics:Record<string,ComparisonMetric>},b:{id:string;metrics:Record<string,ComparisonMetric>}){
+ if(a.id===b.id)throw new Error('Select two different drivers');
+ return Object.keys(a.metrics).map(key=>{const left=a.metrics[key],right=b.metrics[key];const eligible=left.sampleCount>0&&right?.sampleCount>0&&left.normalized!==null&&right.normalized!==null&&left.higherIsBetter!==null&&left.higherIsBetter===right.higherIsBetter;return {key,a:eligible?left:null,b:eligible?right:null};});
+}

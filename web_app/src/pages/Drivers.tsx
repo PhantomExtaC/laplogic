@@ -92,7 +92,6 @@ export default function Drivers() {
           );
 
           // Temporary debug log
-  console.log({ driverId: driver.id, currentTeamId: driver.currentTeamId, teamsState: teams, foundTeam: team });
 
           return (
             <DriverCard

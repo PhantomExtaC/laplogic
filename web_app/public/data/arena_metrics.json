@@ -1,0 +1,11 @@
+{
+  "champion": "randomForest",
+  "models": {
+    "randomForest": {
+      "winAccuracy": 62.5
+    },
+    "xgBoost": {
+      "winAccuracy": 45.8
+    }
+  }
+}

@@ -1,0 +1,3 @@
+import type {ReactNode} from 'react';
+import type {ResourceState} from '../data/hooks/useResource';
+export function ResourceBoundary<T>({state,children}:{state:ResourceState<T>;children:(data:T)=>ReactNode}){if(state.status==='loading')return <p role="status">Loading data…</p>;if(state.status==='error')return <div role="alert"><p>{state.error.message}</p><button className="min-h-11 underline" onClick={state.retry}>Retry</button></div>;return <>{state.isPlaceholder&&<p className="mb-3 text-xs text-amber-400">SAMPLE DATA</p>}{state.isStale&&<p role="status" className="mb-3 text-sm text-amber-400">STALE / UNVERIFIED — snapshot or freshness unavailable</p>}{children(state.data)}</>;}

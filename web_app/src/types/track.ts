@@ -2,7 +2,7 @@ export interface LapRecord {
   time: string;
   driver: string;
   year: string | number;
-  milliseconds: number;
+  seconds: number;
 }
 
 export interface Track {
@@ -10,14 +10,14 @@ export interface Track {
   name: string;
   country: string;
   city: string;
-  lengthKm: number;
-  corners: number;
-  firstGrandPrix: string;
-  lastGrandPrix: string;
-  laps: number;
-  drsZones: number;
-  // ✅ Changed from string to our new object type (and allow null just in case)
+  lengthKm: number | null;
+  corners: number | null;
+  firstGrandPrix: string | null;
+  lastGrandPrix: string | null;
+  laps: number | null;
+  drsZones: number | null;
+  // âœ… Changed from string to our new object type (and allow null just in case)
   lapRecord: LapRecord | null; 
   active: boolean;
-  layout: string;
+  layout: string | null;
 }

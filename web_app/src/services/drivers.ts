@@ -1,6 +1,3 @@
-import type { Driver } from "../types/driver";
-import { fetchJson } from "./fetchJson";
-
-export function getDrivers(): Promise<Driver[]> {
-  return fetchJson<Driver[]>("/data/drivers.json");
-}
+import {fetchJson} from '../data/client/fetchJson';
+import {driversSchema} from '../data/schemas';
+export async function getDrivers(){const data=await fetchJson('data/drivers.json',driversSchema);return data.map(row=>({...row,poles:row.polePositions}));}
