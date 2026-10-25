@@ -1,5 +1,10 @@
 # U2/U3 implementation progress
 
+Current continuation: --publish now writes validated core exports into the website
+checkout and the weekly workflow calls it before build/commit. See
+pipeline_ui_connection.md for publication, recovery and remaining analytics gates.
+The staging-only descriptions below record the earlier checkpoints.
+
 The candidate runner now converts a Jolpica season snapshot into frontend calendar,
 driver standings and constructor standings resources. Directory career statistics
 remain cached with unknown freshness. This is staging; website publication and

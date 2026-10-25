@@ -1,101 +1,114 @@
-[
-  {
-    "id": "mercedes",
-    "position": 1,
-    "points": 425.0,
-    "wins": 8,
-    "teamName": "Mercedes",
-    "nationality": "German",
-    "imagePath": "/images/teams/mercedes.png"
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "snapshotId": "jolpica-af71b6d4fc7690801e5002eb",
+    "season": 2026,
+    "raceId": null,
+    "round": 17,
+    "generatedAt": "2026-10-25T14:40:27.628719+00:00",
+    "dataThrough": "2026-10-11",
+    "placeholder": false,
+    "source": "Jolpica constructor standings; schedule observed at generatedAt; results through dataThrough"
   },
-  {
-    "id": "ferrari",
-    "position": 2,
-    "points": 338.0,
-    "wins": 2,
-    "teamName": "Ferrari",
-    "nationality": "Italian",
-    "imagePath": "/images/teams/ferrari.png"
-  },
-  {
-    "id": "mclaren",
-    "position": 3,
-    "points": 263.0,
-    "wins": 2,
-    "teamName": "McLaren",
-    "nationality": "British",
-    "imagePath": "/images/teams/mclaren.png"
-  },
-  {
-    "id": "red_bull",
-    "position": 4,
-    "points": 186.0,
-    "wins": 0,
-    "teamName": "Red Bull",
-    "nationality": "Austrian",
-    "imagePath": "/images/teams/red_bull.png"
-  },
-  {
-    "id": "rb",
-    "position": 5,
-    "points": 66.0,
-    "wins": 0,
-    "teamName": "RB F1 Team",
-    "nationality": "Italian",
-    "imagePath": "/images/teams/rb.png"
-  },
-  {
-    "id": "alpine",
-    "position": 6,
-    "points": 63.0,
-    "wins": 0,
-    "teamName": "Alpine F1 Team",
-    "nationality": "French",
-    "imagePath": "/images/teams/alpine.png"
-  },
-  {
-    "id": "haas",
-    "position": 7,
-    "points": 21.0,
-    "wins": 0,
-    "teamName": "Haas F1 Team",
-    "nationality": "American",
-    "imagePath": "/images/teams/haas.png"
-  },
-  {
-    "id": "audi",
-    "position": 8,
-    "points": 16.0,
-    "wins": 0,
-    "teamName": "Audi",
-    "nationality": "German",
-    "imagePath": "/images/teams/audi.png"
-  },
-  {
-    "id": "williams",
-    "position": 9,
-    "points": 11.0,
-    "wins": 0,
-    "teamName": "Williams",
-    "nationality": "British",
-    "imagePath": "/images/teams/williams.png"
-  },
-  {
-    "id": "aston_martin",
-    "position": 10,
-    "points": 3.0,
-    "wins": 0,
-    "teamName": "Aston Martin",
-    "nationality": "British",
-    "imagePath": "/images/teams/aston_martin.png"
-  },
-  {
-    "id": "cadillac",
-    "position": 11,
-    "points": 0.0,
-    "wins": 0,
-    "teamName": "Cadillac F1 Team",
-    "nationality": "American",
-    "imagePath": "/images/teams/cadillac.png"
-  }
-]
+  "data": [
+    {
+      "id": "mercedes",
+      "position": 1,
+      "points": 578.0,
+      "wins": 11,
+      "nationality": "German",
+      "imagePath": "",
+      "teamName": "Mercedes"
+    },
+    {
+      "id": "ferrari",
+      "position": 2,
+      "points": 444.0,
+      "wins": 2,
+      "nationality": "Italian",
+      "imagePath": "",
+      "teamName": "Ferrari"
+    },
+    {
+      "id": "mclaren",
+      "position": 3,
+      "points": 339.0,
+      "wins": 2,
+      "nationality": "British",
+      "imagePath": "",
+      "teamName": "McLaren"
+    },
+    {
+      "id": "red_bull",
+      "position": 4,
+      "points": 332.0,
+      "wins": 2,
+      "nationality": "Austrian",
+      "imagePath": "",
+      "teamName": "Red Bull"
+    },
+    {
+      "id": "rb",
+      "position": 5,
+      "points": 100.0,
+      "wins": 0,
+      "nationality": "Italian",
+      "imagePath": "",
+      "teamName": "RB F1 Team"
+    },
+    {
+      "id": "alpine",
+      "position": 6,
+      "points": 68.0,
+      "wins": 0,
+      "nationality": "French",
+      "imagePath": "",
+      "teamName": "Alpine F1 Team"
+    },
+    {
+      "id": "haas",
+      "position": 7,
+      "points": 30.0,
+      "wins": 0,
+      "nationality": "American",
+      "imagePath": "",
+      "teamName": "Haas F1 Team"
+    },
+    {
+      "id": "audi",
+      "position": 8,
+      "points": 23.0,
+      "wins": 0,
+      "nationality": "German",
+      "imagePath": "",
+      "teamName": "Audi"
+    },
+    {
+      "id": "williams",
+      "position": 9,
+      "points": 12.0,
+      "wins": 0,
+      "nationality": "British",
+      "imagePath": "",
+      "teamName": "Williams"
+    },
+    {
+      "id": "aston_martin",
+      "position": 10,
+      "points": 7.0,
+      "wins": 0,
+      "nationality": "British",
+      "imagePath": "",
+      "teamName": "Aston Martin"
+    },
+    {
+      "id": "cadillac",
+      "position": 11,
+      "points": 0.0,
+      "wins": 0,
+      "nationality": "American",
+      "imagePath": "",
+      "teamName": "Cadillac F1 Team"
+    }
+  ]
+}

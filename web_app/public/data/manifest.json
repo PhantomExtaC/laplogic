@@ -1,95 +1,44 @@
 {
   "meta": {
     "schemaVersion": "1.0.0",
-    "snapshotId": null,
-    "season": null,
+    "snapshotId": "jolpica-af71b6d4fc7690801e5002eb",
+    "season": 2026,
     "raceId": null,
-    "generatedAt": null,
-    "dataThrough": null,
-    "placeholder": true,
-    "source": "analytics_engine/src/export/placeholders/export_manifest.py"
+    "round": 17,
+    "generatedAt": "2026-10-25T14:40:27.628719+00:00",
+    "dataThrough": "2026-10-11",
+    "placeholder": false,
+    "source": "Jolpica driver standings; schedule observed at generatedAt; results through dataThrough"
   },
   "data": {
-    "snapshotId": null,
-    "season": null,
-    "nextRaceId": null,
+    "snapshotId": "jolpica-af71b6d4fc7690801e5002eb",
+    "season": 2026,
+    "nextRaceId": "2026-r18",
     "championModelId": null,
     "evaluationId": null,
     "resources": {
-      "arena_metrics": {
-        "filename": "arena_metrics.json",
-        "schemaVersion": "legacy"
-      },
       "calendar": {
         "filename": "calendar.json",
-        "schemaVersion": "legacy"
-      },
-      "constructor_standings": {
-        "filename": "constructor_standings.json",
-        "schemaVersion": "legacy"
+        "schemaVersion": "1.0.0"
       },
       "drivers": {
         "filename": "drivers.json",
-        "schemaVersion": "legacy"
-      },
-      "driverTrends": {
-        "filename": "driverTrends.json",
-        "schemaVersion": "legacy"
-      },
-      "driver_standings": {
-        "filename": "driver_standings.json",
-        "schemaVersion": "legacy"
-      },
-      "evaluation_metrics": {
-        "filename": "evaluation_metrics.json",
-        "schemaVersion": "legacy"
-      },
-      "insights": {
-        "filename": "insights.json",
-        "schemaVersion": "legacy"
-      },
-      "next_race": {
-        "filename": "next_race.json",
-        "schemaVersion": "legacy"
-      },
-      "pointsProgression": {
-        "filename": "pointsProgression.json",
-        "schemaVersion": "legacy"
-      },
-      "predictions": {
-        "filename": "predictions.json",
-        "schemaVersion": "legacy"
-      },
-      "stats": {
-        "filename": "stats.json",
-        "schemaVersion": "legacy"
+        "schemaVersion": "1.0.0"
       },
       "teams": {
         "filename": "teams.json",
-        "schemaVersion": "legacy"
+        "schemaVersion": "1.0.0"
       },
       "tracks": {
         "filename": "tracks.json",
-        "schemaVersion": "legacy"
-      },
-      "tracksDeg": {
-        "filename": "tracksDeg.json",
-        "schemaVersion": "legacy"
-      },
-      "weekend_state": {
-        "filename": "weekend_state.json",
-        "schemaVersion": "legacy"
-      },
-      "momentum": {
-        "filename": "momentum.json",
         "schemaVersion": "1.0.0"
       },
-      "prediction_stages": {
-        "filename": "prediction_stages.json",
+      "driver_standings": {
+        "filename": "driver_standings.json",
         "schemaVersion": "1.0.0"
       },
-      "season_stats": {
-        "filename": "season_stats.json",
+      "constructor_standings": {
+        "filename": "constructor_standings.json",
         "schemaVersion": "1.0.0"
       },
       "driver_registry": {
@@ -100,31 +49,18 @@
         "filename": "track_registry.json",
         "schemaVersion": "1.0.0"
       },
-      "evaluation": {
-        "filename": "evaluation.json",
-        "schemaVersion": "1.0.0"
-      },
       "asset_manifest": {
         "filename": "asset_manifest.json",
         "schemaVersion": "1.0.0"
       },
-      "arena_history": {
-        "filename": "arena_history.json",
+      "season_stats": {
+        "filename": "season_stats.json",
         "schemaVersion": "1.0.0"
       },
-      "head_to_head": {
-        "filename": "head_to_head.json",
-        "schemaVersion": "1.0.0"
-      },
-      "simulator_scenarios": {
-        "filename": "simulator_scenarios.json",
-        "schemaVersion": "1.0.0"
-      },
-      "stories": {
-        "filename": "stories/index.json",
+      "momentum": {
+        "filename": "momentum.json",
         "schemaVersion": "1.0.0"
       }
     }
-  },
-  "_note": "Sample data. Replace by running analytics_engine/src/export/placeholders/export_manifest.py"
+  }
 }

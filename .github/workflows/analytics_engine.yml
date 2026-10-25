@@ -1,47 +1,60 @@
 name: LapLogic Weekly Data Engine
-
 on:
   schedule:
-    - cron: '0 8 * * 1' # Every Monday at 08:00 UTC
-  workflow_dispatch: # Allows manual trigger button on GitHub
-
+    - cron: '0 8 * * 1'
+  workflow_dispatch:
+concurrency:
+  group: weekly-json-publication
+  cancel-in-progress: false
 jobs:
   run-pipeline:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     permissions:
-      contents: write # Required for pushing changes back to the repository
-      
+      contents: write
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-
-      - name: Setup Python
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-          
-          
-      - name: Install Dependencies
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: web_app/package-lock.json
+      - name: Install locked frontend dependencies
+        working-directory: web_app
+        run: npm ci
+      - name: Check updater and publication recovery
+        run: python -m unittest discover -s analytics_engine/tests
+      - name: Fetch, validate and publish computed JSON into checkout
+        run: python analytics_engine/updater.py --season "$(date -u +%Y)" --live --publish
+      - name: Validate final website
+        working-directory: web_app
         run: |
-          cd analytics_engine
-          python -m pip install --upgrade pip
-          pip install pandas fastf1 scikit-learn xgboost matplotlib seaborn  
-          
-      - name: Execute LapLogic Pipeline
+          npm run lint
+          npm test
+          npm run build
+      - name: Save candidate and recovery evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: weekly-updater-evidence
+          path: .updater/
+          include-hidden-files: true
+          retention-days: 14
+      - name: Commit only validated published resources
+        shell: python
         run: |
-          cd analytics_engine
-          python main.py
-          
-      - name: Commit and Push Updated JSONs to React UI
-        run: |
-          git config --global user.name "LapLogic Data Bot"
-          git config --global user.email "bot@laplogic.local"
-          
-          # Stage the updated database and the newly generated React JSON files
-          git add analytics_engine/data/
-          
-          git add web_app/public/data/
-          
-          
-          # Commit only if changes exist
-          git diff --staged --quiet || (git commit -m "Automated Data Engine Update [Weekly]" && git push)
+          import json, subprocess
+          from pathlib import Path
+          report = json.loads(Path('.updater/last-run.json').read_text())
+          assert report['status'] == 'validated' and report['published']
+          paths = ['web_app/public/data/' + name for name in report['files']]
+          assert all(Path(name).name == name and name.endswith('.json') for name in report['files'])
+          subprocess.run(['git', 'config', 'user.name', 'LapLogic Data Bot'], check=True)
+          subprocess.run(['git', 'config', 'user.email', 'bot@laplogic.local'], check=True)
+          subprocess.run(['git', 'add', '--', *paths], check=True)
+          if subprocess.run(['git', 'diff', '--cached', '--quiet']).returncode:
+              subprocess.run(['git', 'commit', '-m', 'Refresh validated season JSON'], check=True)
+              subprocess.run(['git', 'push'], check=True)

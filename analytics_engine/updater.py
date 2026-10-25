@@ -1,8 +1,8 @@
-"""Stage and validate core exports. Publishing the website is deferred to U7.
+"""Stage and validate core exports; optionally publish into a build checkout.
 
 Examples: python updater.py --season 2026 --dry-run
           python updater.py --season 2026 --input-dir /verified/export/bundle
-Input files are cached source exports; this runner never claims they are live.
+Live runs fetch source snapshots; cached directory coverage remains unknown.
 """
 import argparse
 import hashlib
@@ -83,7 +83,10 @@ def main():
     parser.add_argument("--source-observed-at", help="Required original fetch timestamp when replaying")
     parser.add_argument("--live", action="store_true", help="Stage live calendar and standings alongside cached directories")
     parser.add_argument("--dry-run", action="store_true", help="Validate without updating the candidate pointer")
+    parser.add_argument("--publish", action="store_true", help="Write validated JSON into the website checkout before build/deploy")
     args = parser.parse_args()
+    if args.publish and args.dry_run: parser.error("Choose publish or dry-run")
+    if args.publish and not (args.live or args.source_snapshot): parser.error("Publishing requires a live or replayed source")
     if args.live and args.source_snapshot: parser.error("Choose live or saved snapshot")
     if args.source_snapshot and not args.source_observed_at: parser.error("Replay requires original --source-observed-at")
     if args.source_observed_at and not args.source_snapshot: parser.error("--source-observed-at is only valid for replay")
@@ -110,13 +113,27 @@ def main():
                     if source["season"] != args.season: raise ValueError("Requested season differs from snapshot")
                     from src.export.live_core import convert
                     payloads = convert(payloads, source, args.source_observed_at or report["startedAt"])
+                    published_standings = ROOT / "web_app/public/data/driver_standings.json"
+                    if args.live and published_standings.exists():
+                        previous = json.loads(published_standings.read_text(encoding="utf-8"))
+                        old_meta = previous.get("meta", {}) if isinstance(previous, dict) else {}
+                        if old_meta.get("snapshotId") == payloads["driver_standings.json"]["meta"]["snapshotId"] and old_meta.get("generatedAt"):
+                            for name in ("calendar.json", "driver_standings.json", "constructor_standings.json"):
+                                payloads[name]["meta"]["generatedAt"] = old_meta["generatedAt"]
                     from src.export.momentum import build as build_momentum
                     payloads["momentum.json"] = build_momentum(source, payloads["driver_standings.json"]["meta"])
+                    meta = payloads["driver_standings.json"]["meta"]
+                    upcoming = next((r for r in payloads["calendar.json"]["data"] if r["status"] == "upcoming"), None)
+                    payloads["manifest.json"] = {"meta": meta, "data": {"snapshotId": meta["snapshotId"], "season": args.season, "nextRaceId": upcoming["raceId"] if upcoming else None, "championModelId": None, "evaluationId": None, "resources": {name.removesuffix(".json"): {"filename": name, "schemaVersion": "1.0.0"} for name in payloads}}}
                 identifier, created = stage(payloads, folder, validate_frontend)
                 from src.export.freshness import describe
                 report["resources"] = describe(payloads)
                 report.update(status="validated", releaseId=identifier, changed=created, files=sorted(payloads))
                 if not args.dry_run:
+                    if args.publish:
+                        from src.export.publish import publish
+                        publish(folder / "releases" / identifier, ROOT / "web_app/public/data", folder / "backups" / identifier, atomic_json)
+                        report["published"] = True
                     atomic_json(folder / "candidate.json", {"releaseId": identifier})
             except Exception as error:
                 report.update(status="failed", error=str(error))

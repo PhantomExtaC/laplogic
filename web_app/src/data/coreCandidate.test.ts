@@ -8,7 +8,8 @@ it.skipIf(!candidate)('validates every core candidate with the production contra
  const schemas = { calendar: s.calendarResourceSchema, drivers: s.driversSchema, teams: s.teamsSchema, tracks: s.tracksSchema, driver_standings: s.driverStandingsResourceSchema, constructor_standings: s.constructorStandingsResourceSchema, driver_registry: s.registrySchema, track_registry: s.trackRegistrySchema, asset_manifest: s.assetSchema, season_stats: seasonStatsSchema };
  const folder = candidate ?? '';
  const files = readdirSync(folder);
- expect(files.sort()).toEqual([...Object.keys(schemas).map(name => `${name}.json`), ...(files.includes('momentum.json') ? ['momentum.json'] : [])].sort());
+ expect(files.sort()).toEqual([...Object.keys(schemas).map(name => `${name}.json`), ...['momentum.json', 'manifest.json'].filter(name => files.includes(name))].sort());
+ if (files.includes('manifest.json')) s.manifestSchema.parse(JSON.parse(readFileSync(resolve(folder, 'manifest.json'), 'utf8')));
  if (files.includes('momentum.json')) momentumSchema.parse(JSON.parse(readFileSync(resolve(folder, 'momentum.json'), 'utf8')));
  for (const [name, schema] of Object.entries(schemas)) {
   const raw: unknown = JSON.parse(readFileSync(resolve(folder, `${name}.json`), 'utf8'));

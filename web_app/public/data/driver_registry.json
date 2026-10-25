@@ -2,43 +2,53 @@
   "meta": {
     "schemaVersion": "1.0.0",
     "snapshotId": null,
-    "season": null,
+    "season": 2026,
     "raceId": null,
     "generatedAt": null,
     "dataThrough": null,
-    "placeholder": true,
-    "source": "analytics_engine/src/export/placeholders/export_registries.py"
+    "placeholder": false,
+    "source": "Cached directory IDs plus Jolpica standings identities; mixed source dates"
   },
   "data": [
     {
       "canonicalId": "antonelli",
       "aliases": [
-        "antonelli",
         "ANT",
-        "ant"
+        "ant",
+        "antonelli"
       ],
       "abbreviation": "ANT",
       "number": 12
     },
     {
+      "canonicalId": "russell",
+      "aliases": [
+        "RUS",
+        "rus",
+        "russell"
+      ],
+      "abbreviation": "RUS",
+      "number": 63
+    },
+    {
       "canonicalId": "hamilton",
       "aliases": [
+        "HAM",
         "ham",
-        "hamilton",
-        "HAM"
+        "hamilton"
       ],
       "abbreviation": "HAM",
       "number": 44
     },
     {
-      "canonicalId": "russell",
+      "canonicalId": "norris",
       "aliases": [
-        "RUS",
-        "russell",
-        "rus"
+        "NOR",
+        "nor",
+        "norris"
       ],
-      "abbreviation": "RUS",
-      "number": 63
+      "abbreviation": "NOR",
+      "number": 1
     },
     {
       "canonicalId": "leclerc",
@@ -51,51 +61,31 @@
       "number": 16
     },
     {
-      "canonicalId": "norris",
-      "aliases": [
-        "norris",
-        "NOR",
-        "nor"
-      ],
-      "abbreviation": "NOR",
-      "number": 1
-    },
-    {
-      "canonicalId": "piastri",
-      "aliases": [
-        "piastri",
-        "pia",
-        "PIA"
-      ],
-      "abbreviation": "PIA",
-      "number": 81
-    },
-    {
       "canonicalId": "max_verstappen",
       "aliases": [
         "VER",
-        "ver",
-        "max_verstappen"
+        "max_verstappen",
+        "ver"
       ],
       "abbreviation": "VER",
       "number": 3
     },
     {
-      "canonicalId": "gasly",
+      "canonicalId": "piastri",
       "aliases": [
-        "GAS",
-        "gasly",
-        "gas"
+        "PIA",
+        "pia",
+        "piastri"
       ],
-      "abbreviation": "GAS",
-      "number": 10
+      "abbreviation": "PIA",
+      "number": 81
     },
     {
       "canonicalId": "hadjar",
       "aliases": [
         "HAD",
-        "hadjar",
-        "had"
+        "had",
+        "hadjar"
       ],
       "abbreviation": "HAD",
       "number": 6
@@ -103,22 +93,32 @@
     {
       "canonicalId": "lawson",
       "aliases": [
-        "lawson",
+        "LAW",
         "law",
-        "LAW"
+        "lawson"
       ],
       "abbreviation": "LAW",
       "number": 30
     },
     {
-      "canonicalId": "bearman",
+      "canonicalId": "gasly",
       "aliases": [
-        "bearman",
-        "BEA",
-        "bea"
+        "GAS",
+        "gas",
+        "gasly"
       ],
-      "abbreviation": "BEA",
-      "number": 87
+      "abbreviation": "GAS",
+      "number": 10
+    },
+    {
+      "canonicalId": "arvid_lindblad",
+      "aliases": [
+        "LIN",
+        "arvid_lindblad",
+        "lin"
+      ],
+      "abbreviation": "LIN",
+      "number": 41
     },
     {
       "canonicalId": "colapinto",
@@ -131,21 +131,41 @@
       "number": 43
     },
     {
-      "canonicalId": "arvid_lindblad",
+      "canonicalId": "bearman",
       "aliases": [
-        "arvid_lindblad",
-        "lin",
-        "LIN"
+        "BEA",
+        "bea",
+        "bearman"
       ],
-      "abbreviation": "LIN",
-      "number": 41
+      "abbreviation": "BEA",
+      "number": 87
+    },
+    {
+      "canonicalId": "bortoleto",
+      "aliases": [
+        "BOR",
+        "bor",
+        "bortoleto"
+      ],
+      "abbreviation": "BOR",
+      "number": 5
+    },
+    {
+      "canonicalId": "hulkenberg",
+      "aliases": [
+        "HUL",
+        "hul",
+        "hulkenberg"
+      ],
+      "abbreviation": "HUL",
+      "number": 27
     },
     {
       "canonicalId": "sainz",
       "aliases": [
+        "SAI",
         "sai",
-        "sainz",
-        "SAI"
+        "sainz"
       ],
       "abbreviation": "SAI",
       "number": 55
@@ -153,9 +173,9 @@
     {
       "canonicalId": "albon",
       "aliases": [
+        "ALB",
         "alb",
-        "albon",
-        "ALB"
+        "albon"
       ],
       "abbreviation": "ALB",
       "number": 23
@@ -164,21 +184,11 @@
       "canonicalId": "ocon",
       "aliases": [
         "OCO",
-        "ocon",
-        "oco"
+        "oco",
+        "ocon"
       ],
       "abbreviation": "OCO",
       "number": 31
-    },
-    {
-      "canonicalId": "bortoleto",
-      "aliases": [
-        "bortoleto",
-        "BOR",
-        "bor"
-      ],
-      "abbreviation": "BOR",
-      "number": 5
     },
     {
       "canonicalId": "alonso",
@@ -191,21 +201,31 @@
       "number": 14
     },
     {
-      "canonicalId": "hulkenberg",
+      "canonicalId": "tsunoda",
       "aliases": [
-        "HUL",
-        "hulkenberg",
-        "hul"
+        "TSU",
+        "tsu",
+        "tsunoda"
       ],
-      "abbreviation": "HUL",
-      "number": 27
+      "abbreviation": "TSU",
+      "number": 22
+    },
+    {
+      "canonicalId": "stroll",
+      "aliases": [
+        "STR",
+        "str",
+        "stroll"
+      ],
+      "abbreviation": "STR",
+      "number": 18
     },
     {
       "canonicalId": "bottas",
       "aliases": [
-        "bottas",
+        "BOT",
         "bot",
-        "BOT"
+        "bottas"
       ],
       "abbreviation": "BOT",
       "number": 77
@@ -213,31 +233,12 @@
     {
       "canonicalId": "perez",
       "aliases": [
-        "perez",
+        "PER",
         "per",
-        "PER"
+        "perez"
       ],
       "abbreviation": "PER",
       "number": 11
-    },
-    {
-      "canonicalId": "stroll",
-      "aliases": [
-        "str",
-        "stroll",
-        "STR"
-      ],
-      "abbreviation": "STR",
-      "number": 18
-    },
-    {
-      "canonicalId": "tsunoda",
-      "aliases": [
-        "tsunoda"
-      ],
-      "abbreviation": null,
-      "number": 22
     }
-  ],
-  "_note": "Sample data. Replace by running analytics_engine/src/export/placeholders/export_registries.py"
+  ]
 }

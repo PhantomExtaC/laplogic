@@ -2,29 +2,27 @@
   "meta": {
     "schemaVersion": "1.0.0",
     "snapshotId": null,
-    "season": null,
+    "season": 2026,
     "raceId": null,
     "generatedAt": null,
     "dataThrough": null,
-    "placeholder": true,
-    "source": "analytics_engine/src/export/placeholders/export_registries.py"
+    "placeholder": false,
+    "source": "Reviewed Jolpica circuit-reference joins to cached directory; directory freshness unknown"
   },
   "data": [
     {
       "canonicalId": "brands_hatch",
       "aliases": [
-        "brands_hatch",
-        "38"
+        "brands_hatch"
       ],
-      "engineCircuitId": "38"
+      "engineCircuitId": null
     },
     {
       "canonicalId": "avus",
       "aliases": [
-        "avus",
-        "61"
+        "avus"
       ],
-      "engineCircuitId": "61"
+      "engineCircuitId": null
     },
     {
       "canonicalId": "autodromo_internazionale_enzo_e_dino_ferrari",
@@ -57,9 +55,10 @@
     {
       "canonicalId": "baku_city_circuit",
       "aliases": [
+        "baku",
         "baku_city_circuit"
       ],
-      "engineCircuitId": null
+      "engineCircuitId": "baku"
     },
     {
       "canonicalId": "bahrain_international_circuit",
@@ -92,16 +91,18 @@
     {
       "canonicalId": "aut_dromo_jos_carlos_pace",
       "aliases": [
-        "aut_dromo_jos_carlos_pace"
+        "aut_dromo_jos_carlos_pace",
+        "interlagos"
       ],
-      "engineCircuitId": null
+      "engineCircuitId": "interlagos"
     },
     {
       "canonicalId": "autodromo_nazionale_monza",
       "aliases": [
-        "autodromo_nazionale_monza"
+        "autodromo_nazionale_monza",
+        "monza"
       ],
-      "engineCircuitId": null
+      "engineCircuitId": "monza"
     },
     {
       "canonicalId": "adelaide_street_circuit",
@@ -134,9 +135,10 @@
     {
       "canonicalId": "aut_dromo_hermanos_rodr_guez",
       "aliases": [
-        "aut_dromo_hermanos_rodr_guez"
+        "aut_dromo_hermanos_rodr_guez",
+        "rodriguez"
       ],
-      "engineCircuitId": null
+      "engineCircuitId": "rodriguez"
     },
     {
       "canonicalId": "algarve_international_circuit",
@@ -176,9 +178,10 @@
     {
       "canonicalId": "circuit_de_barcelona_catalunya",
       "aliases": [
+        "catalunya",
         "circuit_de_barcelona_catalunya"
       ],
-      "engineCircuitId": null
+      "engineCircuitId": "catalunya"
     },
     {
       "canonicalId": "circuit_de_nevers_magny_cours",
@@ -190,23 +193,26 @@
     {
       "canonicalId": "circuit_de_monaco",
       "aliases": [
-        "circuit_de_monaco"
+        "circuit_de_monaco",
+        "monaco"
       ],
-      "engineCircuitId": null
+      "engineCircuitId": "monaco"
     },
     {
       "canonicalId": "circuit_gilles_villeneuve",
       "aliases": [
-        "circuit_gilles_villeneuve"
+        "circuit_gilles_villeneuve",
+        "villeneuve"
       ],
-      "engineCircuitId": null
+      "engineCircuitId": "villeneuve"
     },
     {
       "canonicalId": "circuit_de_spa_francorchamps",
       "aliases": [
-        "circuit_de_spa_francorchamps"
+        "circuit_de_spa_francorchamps",
+        "spa"
       ],
-      "engineCircuitId": null
+      "engineCircuitId": "spa"
     },
     {
       "canonicalId": "circuito_da_boavista",
@@ -253,16 +259,18 @@
     {
       "canonicalId": "circuit_of_the_americas",
       "aliases": [
+        "americas",
         "circuit_of_the_americas"
       ],
-      "engineCircuitId": null
+      "engineCircuitId": "americas"
     },
     {
       "canonicalId": "circuit_park_zandvoort",
       "aliases": [
-        "circuit_park_zandvoort"
+        "circuit_park_zandvoort",
+        "zandvoort"
       ],
-      "engineCircuitId": null
+      "engineCircuitId": "zandvoort"
     },
     {
       "canonicalId": "circuit_zolder",
@@ -316,10 +324,9 @@
     {
       "canonicalId": "hockenheimring",
       "aliases": [
-        "hockenheimring",
-        "10"
+        "hockenheimring"
       ],
-      "engineCircuitId": "10"
+      "engineCircuitId": null
     },
     {
       "canonicalId": "indianapolis_motor_speedway",
@@ -331,10 +338,9 @@
     {
       "canonicalId": "hungaroring",
       "aliases": [
-        "hungaroring",
-        "11"
+        "hungaroring"
       ],
-      "engineCircuitId": "11"
+      "engineCircuitId": "hungaroring"
     },
     {
       "canonicalId": "jeddah_corniche_circuit",
@@ -367,45 +373,49 @@
     {
       "canonicalId": "las_vegas_street_circuit",
       "aliases": [
-        "las_vegas_street_circuit"
+        "las_vegas_street_circuit",
+        "vegas"
       ],
-      "engineCircuitId": null
+      "engineCircuitId": "vegas"
     },
     {
       "canonicalId": "lusail_international_circuit",
       "aliases": [
+        "losail",
         "lusail_international_circuit"
       ],
-      "engineCircuitId": null
+      "engineCircuitId": "losail"
     },
     {
       "canonicalId": "long_beach",
       "aliases": [
-        "long_beach",
-        "43"
+        "long_beach"
       ],
-      "engineCircuitId": "43"
+      "engineCircuitId": null
     },
     {
       "canonicalId": "marina_bay_street_circuit",
       "aliases": [
+        "marina_bay",
         "marina_bay_street_circuit"
       ],
-      "engineCircuitId": null
+      "engineCircuitId": "marina_bay"
     },
     {
       "canonicalId": "melbourne_grand_prix_circuit",
       "aliases": [
+        "albert_park",
         "melbourne_grand_prix_circuit"
       ],
-      "engineCircuitId": null
+      "engineCircuitId": "albert_park"
     },
     {
       "canonicalId": "miami_international_autodrome",
       "aliases": [
+        "miami",
         "miami_international_autodrome"
       ],
-      "engineCircuitId": null
+      "engineCircuitId": "miami"
     },
     {
       "canonicalId": "nivelles_baulers",
@@ -487,24 +497,25 @@
     {
       "canonicalId": "red_bull_ring",
       "aliases": [
-        "red_bull_ring",
-        "70"
+        "red_bull_ring"
       ],
-      "engineCircuitId": "70"
+      "engineCircuitId": "red_bull_ring"
     },
     {
       "canonicalId": "shanghai_international_circuit",
       "aliases": [
+        "shanghai",
         "shanghai_international_circuit"
       ],
-      "engineCircuitId": null
+      "engineCircuitId": "shanghai"
     },
     {
       "canonicalId": "sepang_international_circuit",
       "aliases": [
+        "sepang",
         "sepang_international_circuit"
       ],
-      "engineCircuitId": null
+      "engineCircuitId": "sepang"
     },
     {
       "canonicalId": "sochi_autodrom",
@@ -516,9 +527,10 @@
     {
       "canonicalId": "suzuka_circuit",
       "aliases": [
+        "suzuka",
         "suzuka_circuit"
       ],
-      "engineCircuitId": null
+      "engineCircuitId": "suzuka"
     },
     {
       "canonicalId": "watkins_glen_international",
@@ -530,24 +542,25 @@
     {
       "canonicalId": "silverstone_circuit",
       "aliases": [
+        "silverstone",
         "silverstone_circuit"
       ],
-      "engineCircuitId": null
+      "engineCircuitId": "silverstone"
     },
     {
       "canonicalId": "zeltweg",
       "aliases": [
-        "zeltweg",
-        "57"
+        "zeltweg"
       ],
-      "engineCircuitId": "57"
+      "engineCircuitId": null
     },
     {
       "canonicalId": "yas_marina_circuit",
       "aliases": [
+        "yas_marina",
         "yas_marina_circuit"
       ],
-      "engineCircuitId": null
+      "engineCircuitId": "yas_marina"
     },
     {
       "canonicalId": "valencia_street_circuit",
@@ -556,6 +569,5 @@
       ],
       "engineCircuitId": null
     }
-  ],
-  "_note": "Sample data. Replace by running analytics_engine/src/export/placeholders/export_registries.py"
+  ]
 }

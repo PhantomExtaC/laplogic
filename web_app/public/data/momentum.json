@@ -1,556 +1,149 @@
 {
   "meta": {
     "schemaVersion": "1.0.0",
-    "snapshotId": null,
+    "snapshotId": "jolpica-af71b6d4fc7690801e5002eb",
     "season": 2026,
     "raceId": null,
-    "generatedAt": "2026-10-25T11:53:16.670059+00:00",
-    "dataThrough": null,
-    "placeholder": true,
-    "source": "analytics_engine/src/export/placeholders/export_momentum.py",
-    "round": null,
-    "stage": null,
-    "modelId": null
+    "round": 17,
+    "generatedAt": "2026-10-25T14:40:27.628719+00:00",
+    "dataThrough": "2026-10-11",
+    "placeholder": false,
+    "source": "Jolpica recorded classifications; season finishing form v1"
   },
   "data": {
-    "definition": "Synthetic fixture index, 0\u2013100. Higher means stronger sample momentum; delta is index points, not percentage points.",
+    "definition": "Recorded race finishing form, 0\u2013100; higher is better. Each result scores 100 \u00d7 (field size \u2212 classified position) / (field size \u2212 1). Adjusted exponential mean, span 10, within this season, after each race; minimum three consecutive recorded starts. Gaps or absence reset the sample. Last five scheduled rounds through the result cutoff; missing values are unavailable. All classified entrants, including retirements, count. Racecraft unavailable. Delta is index points from the previous round, not percentage points. Excludes sprints; descriptive, not a forecast or the legacy engine power rating.",
     "drivers": [
+      {
+        "driverId": "albon",
+        "points": [
+          {
+            "raceId": "2026-r13",
+            "round": 13,
+            "momentum": 24.796002890786816,
+            "racecraft": null,
+            "delta": -0.24089598497466014,
+            "direction": "down"
+          },
+          {
+            "raceId": "2026-r14",
+            "round": 14,
+            "momentum": 26.447748847353534,
+            "racecraft": null,
+            "delta": 1.6517459565667174,
+            "direction": "up"
+          },
+          {
+            "raceId": "2026-r15",
+            "round": 15,
+            "momentum": 23.211140765384584,
+            "racecraft": null,
+            "delta": -3.2366080819689493,
+            "direction": "down"
+          },
+          {
+            "raceId": "2026-r16",
+            "round": 16,
+            "momentum": 19.715776240859334,
+            "racecraft": null,
+            "delta": -3.4953645245252503,
+            "direction": "down"
+          },
+          {
+            "raceId": "2026-r17",
+            "round": 17,
+            "momentum": 19.590148022437834,
+            "racecraft": null,
+            "delta": -0.1256282184215003,
+            "direction": "down"
+          }
+        ]
+      },
+      {
+        "driverId": "alonso",
+        "points": [
+          {
+            "raceId": "2026-r13",
+            "round": 13,
+            "momentum": 26.859540385173016,
+            "racecraft": null,
+            "delta": -5.3961931886715355,
+            "direction": "down"
+          },
+          {
+            "raceId": "2026-r14",
+            "round": 14,
+            "momentum": 26.269443447940333,
+            "racecraft": null,
+            "delta": -0.5900969372326834,
+            "direction": "down"
+          },
+          {
+            "raceId": "2026-r15",
+            "round": 15,
+            "momentum": 22.15624780219364,
+            "racecraft": null,
+            "delta": -4.113195645746693,
+            "direction": "down"
+          },
+          {
+            "raceId": "2026-r16",
+            "round": 16,
+            "momentum": 30.589124862321956,
+            "racecraft": null,
+            "delta": 8.432877060128316,
+            "direction": "up"
+          },
+          {
+            "raceId": "2026-r17",
+            "round": 17,
+            "momentum": 30.209753671073777,
+            "racecraft": null,
+            "delta": -0.379371191248179,
+            "direction": "down"
+          }
+        ]
+      },
       {
         "driverId": "antonelli",
         "points": [
           {
-            "raceId": "2026-r8",
-            "round": 8,
-            "momentum": 35,
-            "racecraft": 3.5,
-            "delta": null,
-            "direction": "unknown"
-          },
-          {
-            "raceId": "2026-r9",
-            "round": 9,
-            "momentum": 38,
-            "racecraft": 3.8,
-            "delta": 3,
+            "raceId": "2026-r13",
+            "round": 13,
+            "momentum": 87.14545582675079,
+            "racecraft": null,
+            "delta": 3.1390509325859455,
             "direction": "up"
           },
           {
-            "raceId": "2026-r10",
-            "round": 10,
-            "momentum": 41,
-            "racecraft": 4.1,
-            "delta": 3,
+            "raceId": "2026-r14",
+            "round": 14,
+            "momentum": 89.63246760456121,
+            "racecraft": null,
+            "delta": 2.487011777810423,
             "direction": "up"
           },
           {
-            "raceId": "2026-r11",
-            "round": 11,
-            "momentum": 44,
-            "racecraft": 4.4,
-            "delta": 3,
-            "direction": "up"
-          },
-          {
-            "raceId": "2026-r12",
-            "round": 12,
-            "momentum": 47,
-            "racecraft": 4.7,
-            "delta": 3,
-            "direction": "up"
-          }
-        ]
-      },
-      {
-        "driverId": "hamilton",
-        "points": [
-          {
-            "raceId": "2026-r8",
-            "round": 8,
-            "momentum": 42,
-            "racecraft": 4.2,
-            "delta": null,
-            "direction": "unknown"
-          },
-          {
-            "raceId": "2026-r9",
-            "round": 9,
-            "momentum": 45,
-            "racecraft": 4.5,
-            "delta": 3,
-            "direction": "up"
-          },
-          {
-            "raceId": "2026-r10",
-            "round": 10,
-            "momentum": 48,
-            "racecraft": 4.8,
-            "delta": 3,
-            "direction": "up"
-          },
-          {
-            "raceId": "2026-r11",
-            "round": 11,
-            "momentum": 51,
-            "racecraft": 5.1,
-            "delta": 3,
-            "direction": "up"
-          },
-          {
-            "raceId": "2026-r12",
-            "round": 12,
-            "momentum": 54,
-            "racecraft": 5.4,
-            "delta": 3,
-            "direction": "up"
-          }
-        ]
-      },
-      {
-        "driverId": "russell",
-        "points": [
-          {
-            "raceId": "2026-r8",
-            "round": 8,
-            "momentum": 49,
-            "racecraft": 4.9,
-            "delta": null,
-            "direction": "unknown"
-          },
-          {
-            "raceId": "2026-r9",
-            "round": 9,
-            "momentum": 52,
-            "racecraft": 5.2,
-            "delta": 3,
-            "direction": "up"
-          },
-          {
-            "raceId": "2026-r10",
-            "round": 10,
-            "momentum": 55,
-            "racecraft": 5.5,
-            "delta": 3,
-            "direction": "up"
-          },
-          {
-            "raceId": "2026-r11",
-            "round": 11,
-            "momentum": 58,
-            "racecraft": 5.8,
-            "delta": 3,
-            "direction": "up"
-          },
-          {
-            "raceId": "2026-r12",
-            "round": 12,
-            "momentum": 61,
-            "racecraft": 6.1,
-            "delta": 3,
-            "direction": "up"
-          }
-        ]
-      },
-      {
-        "driverId": "leclerc",
-        "points": [
-          {
-            "raceId": "2026-r8",
-            "round": 8,
-            "momentum": 56,
-            "racecraft": 5.6,
-            "delta": null,
-            "direction": "unknown"
-          },
-          {
-            "raceId": "2026-r9",
-            "round": 9,
-            "momentum": 59,
-            "racecraft": 5.9,
-            "delta": 3,
-            "direction": "up"
-          },
-          {
-            "raceId": "2026-r10",
-            "round": 10,
-            "momentum": 62,
-            "racecraft": 6.2,
-            "delta": 3,
-            "direction": "up"
-          },
-          {
-            "raceId": "2026-r11",
-            "round": 11,
-            "momentum": 65,
-            "racecraft": 6.5,
-            "delta": 3,
-            "direction": "up"
-          },
-          {
-            "raceId": "2026-r12",
-            "round": 12,
-            "momentum": 68,
-            "racecraft": 6.8,
-            "delta": 3,
-            "direction": "up"
-          }
-        ]
-      },
-      {
-        "driverId": "norris",
-        "points": [
-          {
-            "raceId": "2026-r8",
-            "round": 8,
-            "momentum": 63,
-            "racecraft": 6.3,
-            "delta": null,
-            "direction": "unknown"
-          },
-          {
-            "raceId": "2026-r9",
-            "round": 9,
-            "momentum": 66,
-            "racecraft": 6.6,
-            "delta": 3,
-            "direction": "up"
-          },
-          {
-            "raceId": "2026-r10",
-            "round": 10,
-            "momentum": 69,
-            "racecraft": 6.9,
-            "delta": 3,
-            "direction": "up"
-          },
-          {
-            "raceId": "2026-r11",
-            "round": 11,
-            "momentum": 72,
-            "racecraft": 7.2,
-            "delta": 3,
-            "direction": "up"
-          },
-          {
-            "raceId": "2026-r12",
-            "round": 12,
-            "momentum": 75,
-            "racecraft": 7.5,
-            "delta": 3,
-            "direction": "up"
-          }
-        ]
-      },
-      {
-        "driverId": "piastri",
-        "points": [
-          {
-            "raceId": "2026-r8",
-            "round": 8,
-            "momentum": 70,
-            "racecraft": 7.0,
-            "delta": null,
-            "direction": "unknown"
-          },
-          {
-            "raceId": "2026-r9",
-            "round": 9,
-            "momentum": 73,
-            "racecraft": 7.3,
-            "delta": 3,
-            "direction": "up"
-          },
-          {
-            "raceId": "2026-r10",
-            "round": 10,
-            "momentum": 76,
-            "racecraft": 7.6,
-            "delta": 3,
-            "direction": "up"
-          },
-          {
-            "raceId": "2026-r11",
-            "round": 11,
-            "momentum": 79,
-            "racecraft": 7.9,
-            "delta": 3,
-            "direction": "up"
-          },
-          {
-            "raceId": "2026-r12",
-            "round": 12,
-            "momentum": 37,
-            "racecraft": 3.7,
-            "delta": -42,
-            "direction": "down"
-          }
-        ]
-      },
-      {
-        "driverId": "max_verstappen",
-        "points": [
-          {
-            "raceId": "2026-r8",
-            "round": 8,
-            "momentum": 77,
-            "racecraft": 7.7,
-            "delta": null,
-            "direction": "unknown"
-          },
-          {
-            "raceId": "2026-r9",
-            "round": 9,
-            "momentum": 35,
-            "racecraft": 3.5,
-            "delta": -42,
+            "raceId": "2026-r15",
+            "round": 15,
+            "momentum": 87.97244991757069,
+            "racecraft": null,
+            "delta": -1.6600176869905283,
             "direction": "down"
           },
           {
-            "raceId": "2026-r10",
-            "round": 10,
-            "momentum": 38,
-            "racecraft": 3.8,
-            "delta": 3,
+            "raceId": "2026-r16",
+            "round": 16,
+            "momentum": 89.34898815993229,
+            "racecraft": null,
+            "delta": 1.3765382423616046,
             "direction": "up"
           },
           {
-            "raceId": "2026-r11",
-            "round": 11,
-            "momentum": 41,
-            "racecraft": 4.1,
-            "delta": 3,
-            "direction": "up"
-          },
-          {
-            "raceId": "2026-r12",
-            "round": 12,
-            "momentum": 44,
-            "racecraft": 4.4,
-            "delta": 3,
-            "direction": "up"
-          }
-        ]
-      },
-      {
-        "driverId": "gasly",
-        "points": [
-          {
-            "raceId": "2026-r8",
-            "round": 8,
-            "momentum": 39,
-            "racecraft": 3.9,
-            "delta": null,
-            "direction": "unknown"
-          },
-          {
-            "raceId": "2026-r9",
-            "round": 9,
-            "momentum": 42,
-            "racecraft": 4.2,
-            "delta": 3,
-            "direction": "up"
-          },
-          {
-            "raceId": "2026-r10",
-            "round": 10,
-            "momentum": 45,
-            "racecraft": 4.5,
-            "delta": 3,
-            "direction": "up"
-          },
-          {
-            "raceId": "2026-r11",
-            "round": 11,
-            "momentum": 48,
-            "racecraft": 4.8,
-            "delta": 3,
-            "direction": "up"
-          },
-          {
-            "raceId": "2026-r12",
-            "round": 12,
-            "momentum": 51,
-            "racecraft": 5.1,
-            "delta": 3,
-            "direction": "up"
-          }
-        ]
-      },
-      {
-        "driverId": "hadjar",
-        "points": [
-          {
-            "raceId": "2026-r8",
-            "round": 8,
-            "momentum": 46,
-            "racecraft": 4.6,
-            "delta": null,
-            "direction": "unknown"
-          },
-          {
-            "raceId": "2026-r9",
-            "round": 9,
-            "momentum": 49,
-            "racecraft": 4.9,
-            "delta": 3,
-            "direction": "up"
-          },
-          {
-            "raceId": "2026-r10",
-            "round": 10,
-            "momentum": 52,
-            "racecraft": 5.2,
-            "delta": 3,
-            "direction": "up"
-          },
-          {
-            "raceId": "2026-r11",
-            "round": 11,
-            "momentum": 55,
-            "racecraft": 5.5,
-            "delta": 3,
-            "direction": "up"
-          },
-          {
-            "raceId": "2026-r12",
-            "round": 12,
-            "momentum": 58,
-            "racecraft": 5.8,
-            "delta": 3,
-            "direction": "up"
-          }
-        ]
-      },
-      {
-        "driverId": "lawson",
-        "points": [
-          {
-            "raceId": "2026-r8",
-            "round": 8,
-            "momentum": 53,
-            "racecraft": 5.3,
-            "delta": null,
-            "direction": "unknown"
-          },
-          {
-            "raceId": "2026-r9",
-            "round": 9,
-            "momentum": 56,
-            "racecraft": 5.6,
-            "delta": 3,
-            "direction": "up"
-          },
-          {
-            "raceId": "2026-r10",
-            "round": 10,
-            "momentum": 59,
-            "racecraft": 5.9,
-            "delta": 3,
-            "direction": "up"
-          },
-          {
-            "raceId": "2026-r11",
-            "round": 11,
-            "momentum": 62,
-            "racecraft": 6.2,
-            "delta": 3,
-            "direction": "up"
-          },
-          {
-            "raceId": "2026-r12",
-            "round": 12,
-            "momentum": 65,
-            "racecraft": 6.5,
-            "delta": 3,
-            "direction": "up"
-          }
-        ]
-      },
-      {
-        "driverId": "bearman",
-        "points": [
-          {
-            "raceId": "2026-r8",
-            "round": 8,
-            "momentum": 60,
-            "racecraft": 6.0,
-            "delta": null,
-            "direction": "unknown"
-          },
-          {
-            "raceId": "2026-r9",
-            "round": 9,
-            "momentum": 63,
-            "racecraft": 6.3,
-            "delta": 3,
-            "direction": "up"
-          },
-          {
-            "raceId": "2026-r10",
-            "round": 10,
-            "momentum": 66,
-            "racecraft": 6.6,
-            "delta": 3,
-            "direction": "up"
-          },
-          {
-            "raceId": "2026-r11",
-            "round": 11,
-            "momentum": 69,
-            "racecraft": 6.9,
-            "delta": 3,
-            "direction": "up"
-          },
-          {
-            "raceId": "2026-r12",
-            "round": 12,
-            "momentum": 72,
-            "racecraft": 7.2,
-            "delta": 3,
-            "direction": "up"
-          }
-        ]
-      },
-      {
-        "driverId": "colapinto",
-        "points": [
-          {
-            "raceId": "2026-r8",
-            "round": 8,
-            "momentum": 67,
-            "racecraft": 6.7,
-            "delta": null,
-            "direction": "unknown"
-          },
-          {
-            "raceId": "2026-r9",
-            "round": 9,
-            "momentum": 70,
-            "racecraft": 7.0,
-            "delta": 3,
-            "direction": "up"
-          },
-          {
-            "raceId": "2026-r10",
-            "round": 10,
-            "momentum": 73,
-            "racecraft": 7.3,
-            "delta": 3,
-            "direction": "up"
-          },
-          {
-            "raceId": "2026-r11",
-            "round": 11,
-            "momentum": 76,
-            "racecraft": 7.6,
-            "delta": 3,
-            "direction": "up"
-          },
-          {
-            "raceId": "2026-r12",
-            "round": 12,
-            "momentum": 79,
-            "racecraft": 7.9,
-            "delta": 3,
+            "raceId": "2026-r17",
+            "round": 17,
+            "momentum": 89.56092693755042,
+            "racecraft": null,
+            "delta": 0.21193877761812985,
             "direction": "up"
           }
         ]
@@ -559,178 +152,88 @@
         "driverId": "arvid_lindblad",
         "points": [
           {
-            "raceId": "2026-r8",
-            "round": 8,
-            "momentum": 74,
-            "racecraft": 7.4,
-            "delta": null,
-            "direction": "unknown"
-          },
-          {
-            "raceId": "2026-r9",
-            "round": 9,
-            "momentum": 77,
-            "racecraft": 7.7,
-            "delta": 3,
+            "raceId": "2026-r13",
+            "round": 13,
+            "momentum": 57.04261417701525,
+            "racecraft": null,
+            "delta": 2.3501720897863763,
             "direction": "up"
           },
           {
-            "raceId": "2026-r10",
-            "round": 10,
-            "momentum": 35,
-            "racecraft": 3.5,
-            "delta": -42,
+            "raceId": "2026-r14",
+            "round": 14,
+            "momentum": 57.98331020648042,
+            "racecraft": null,
+            "delta": 0.9406960294651654,
+            "direction": "up"
+          },
+          {
+            "raceId": "2026-r15",
+            "round": 15,
+            "momentum": 60.55464069305715,
+            "racecraft": null,
+            "delta": 2.571330486576734,
+            "direction": "up"
+          },
+          {
+            "raceId": "2026-r16",
+            "round": 16,
+            "momentum": 59.908249309453055,
+            "racecraft": null,
+            "delta": -0.6463913836040973,
             "direction": "down"
           },
           {
-            "raceId": "2026-r11",
-            "round": 11,
-            "momentum": 38,
-            "racecraft": 3.8,
-            "delta": 3,
-            "direction": "up"
-          },
-          {
-            "raceId": "2026-r12",
-            "round": 12,
-            "momentum": 41,
-            "racecraft": 4.1,
-            "delta": 3,
-            "direction": "up"
+            "raceId": "2026-r17",
+            "round": 17,
+            "momentum": 54.911581784868915,
+            "racecraft": null,
+            "delta": -4.99666752458414,
+            "direction": "down"
           }
         ]
       },
       {
-        "driverId": "sainz",
+        "driverId": "bearman",
         "points": [
           {
-            "raceId": "2026-r8",
-            "round": 8,
-            "momentum": 36,
-            "racecraft": 3.6,
-            "delta": null,
-            "direction": "unknown"
-          },
-          {
-            "raceId": "2026-r9",
-            "round": 9,
-            "momentum": 39,
-            "racecraft": 3.9,
-            "delta": 3,
+            "raceId": "2026-r13",
+            "round": 13,
+            "momentum": 29.019962938827096,
+            "racecraft": null,
+            "delta": 1.0533154016958761,
             "direction": "up"
           },
           {
-            "raceId": "2026-r10",
-            "round": 10,
-            "momentum": 42,
-            "racecraft": 4.2,
-            "delta": 3,
+            "raceId": "2026-r14",
+            "round": 14,
+            "momentum": 28.93318349029602,
+            "racecraft": null,
+            "delta": -0.08677944853107533,
+            "direction": "down"
+          },
+          {
+            "raceId": "2026-r15",
+            "round": 15,
+            "momentum": 35.238812169965975,
+            "racecraft": null,
+            "delta": 6.3056286796699546,
             "direction": "up"
           },
           {
-            "raceId": "2026-r11",
-            "round": 11,
-            "momentum": 45,
-            "racecraft": 4.5,
-            "delta": 3,
+            "raceId": "2026-r16",
+            "round": 16,
+            "momentum": 35.779986332638465,
+            "racecraft": null,
+            "delta": 0.5411741626724904,
             "direction": "up"
           },
           {
-            "raceId": "2026-r12",
-            "round": 12,
-            "momentum": 48,
-            "racecraft": 4.8,
-            "delta": 3,
-            "direction": "up"
-          }
-        ]
-      },
-      {
-        "driverId": "albon",
-        "points": [
-          {
-            "raceId": "2026-r8",
-            "round": 8,
-            "momentum": 43,
-            "racecraft": 4.3,
-            "delta": null,
-            "direction": "unknown"
-          },
-          {
-            "raceId": "2026-r9",
-            "round": 9,
-            "momentum": 46,
-            "racecraft": 4.6,
-            "delta": 3,
-            "direction": "up"
-          },
-          {
-            "raceId": "2026-r10",
-            "round": 10,
-            "momentum": 49,
-            "racecraft": 4.9,
-            "delta": 3,
-            "direction": "up"
-          },
-          {
-            "raceId": "2026-r11",
-            "round": 11,
-            "momentum": 52,
-            "racecraft": 5.2,
-            "delta": 3,
-            "direction": "up"
-          },
-          {
-            "raceId": "2026-r12",
-            "round": 12,
-            "momentum": 55,
-            "racecraft": 5.5,
-            "delta": 3,
-            "direction": "up"
-          }
-        ]
-      },
-      {
-        "driverId": "ocon",
-        "points": [
-          {
-            "raceId": "2026-r8",
-            "round": 8,
-            "momentum": 50,
-            "racecraft": 5.0,
-            "delta": null,
-            "direction": "unknown"
-          },
-          {
-            "raceId": "2026-r9",
-            "round": 9,
-            "momentum": 53,
-            "racecraft": 5.3,
-            "delta": 3,
-            "direction": "up"
-          },
-          {
-            "raceId": "2026-r10",
-            "round": 10,
-            "momentum": 56,
-            "racecraft": 5.6,
-            "delta": 3,
-            "direction": "up"
-          },
-          {
-            "raceId": "2026-r11",
-            "round": 11,
-            "momentum": 59,
-            "racecraft": 5.9,
-            "delta": 3,
-            "direction": "up"
-          },
-          {
-            "raceId": "2026-r12",
-            "round": 12,
-            "momentum": 62,
-            "racecraft": 6.2,
-            "delta": 3,
+            "raceId": "2026-r17",
+            "round": 17,
+            "momentum": 38.00598972262169,
+            "racecraft": null,
+            "delta": 2.2260033899832266,
             "direction": "up"
           }
         ]
@@ -739,88 +242,268 @@
         "driverId": "bortoleto",
         "points": [
           {
-            "raceId": "2026-r8",
-            "round": 8,
-            "momentum": 57,
-            "racecraft": 5.7,
-            "delta": null,
-            "direction": "unknown"
-          },
-          {
-            "raceId": "2026-r9",
-            "round": 9,
-            "momentum": 60,
-            "racecraft": 6.0,
-            "delta": 3,
+            "raceId": "2026-r13",
+            "round": 13,
+            "momentum": 52.00377344083959,
+            "racecraft": null,
+            "delta": 0.092106253458347,
             "direction": "up"
           },
           {
-            "raceId": "2026-r10",
-            "round": 10,
-            "momentum": 63,
-            "racecraft": 6.3,
-            "delta": 3,
+            "raceId": "2026-r14",
+            "round": 14,
+            "momentum": 50.234144142254756,
+            "racecraft": null,
+            "delta": -1.7696292985848316,
+            "direction": "down"
+          },
+          {
+            "raceId": "2026-r15",
+            "round": 15,
+            "momentum": 47.00195925845027,
+            "racecraft": null,
+            "delta": -3.2321848838044858,
+            "direction": "down"
+          },
+          {
+            "raceId": "2026-r16",
+            "round": 16,
+            "momentum": 41.70577197671029,
+            "racecraft": null,
+            "delta": -5.296187281739982,
+            "direction": "down"
+          },
+          {
+            "raceId": "2026-r17",
+            "round": 17,
+            "momentum": 33.86417140077624,
+            "racecraft": null,
+            "delta": -7.841600575934045,
+            "direction": "down"
+          }
+        ]
+      },
+      {
+        "driverId": "bottas",
+        "points": [
+          {
+            "raceId": "2026-r13",
+            "round": 13,
+            "momentum": 14.227664733357868,
+            "racecraft": null,
+            "delta": 0.014175570833527829,
             "direction": "up"
           },
           {
-            "raceId": "2026-r11",
-            "round": 11,
-            "momentum": 66,
-            "racecraft": 6.6,
-            "delta": 3,
+            "raceId": "2026-r14",
+            "round": 14,
+            "momentum": 15.16019746159118,
+            "racecraft": null,
+            "delta": 0.932532728233312,
             "direction": "up"
           },
           {
-            "raceId": "2026-r12",
-            "round": 12,
-            "momentum": 69,
-            "racecraft": 6.9,
-            "delta": 3,
+            "raceId": "2026-r15",
+            "round": 15,
+            "momentum": 17.72501988085304,
+            "racecraft": null,
+            "delta": 2.5648224192618603,
+            "direction": "up"
+          },
+          {
+            "raceId": "2026-r16",
+            "round": 16,
+            "momentum": 14.366864254443756,
+            "racecraft": null,
+            "delta": -3.3581556264092836,
+            "direction": "down"
+          },
+          {
+            "raceId": "2026-r17",
+            "round": 17,
+            "momentum": 14.351606279075709,
+            "racecraft": null,
+            "delta": -0.015257975368047738,
+            "direction": "down"
+          }
+        ]
+      },
+      {
+        "driverId": "colapinto",
+        "points": [
+          {
+            "raceId": "2026-r13",
+            "round": 13,
+            "momentum": 49.799502498495976,
+            "racecraft": null,
+            "delta": 2.9560772685748944,
+            "direction": "up"
+          },
+          {
+            "raceId": "2026-r14",
+            "round": 14,
+            "momentum": 53.98415101245213,
+            "racecraft": null,
+            "delta": 4.184648513956155,
+            "direction": "up"
+          },
+          {
+            "raceId": "2026-r15",
+            "round": 15,
+            "momentum": 48.21342349988467,
+            "racecraft": null,
+            "delta": -5.770727512567461,
+            "direction": "down"
+          },
+          {
+            "raceId": "2026-r16",
+            "round": 16,
+            "momentum": 47.198630619653215,
+            "racecraft": null,
+            "delta": -1.0147928802314539,
+            "direction": "down"
+          },
+          {
+            "raceId": "2026-r17",
+            "round": 17,
+            "momentum": 39.219594669600426,
+            "racecraft": null,
+            "delta": -7.97903595005279,
+            "direction": "down"
+          }
+        ]
+      },
+      {
+        "driverId": "gasly",
+        "points": [
+          {
+            "raceId": "2026-r13",
+            "round": 13,
+            "momentum": 58.15908175547479,
+            "racecraft": null,
+            "delta": 3.240379695450912,
+            "direction": "up"
+          },
+          {
+            "raceId": "2026-r14",
+            "round": 14,
+            "momentum": 56.11986599779985,
+            "racecraft": null,
+            "delta": -2.0392157576749383,
+            "direction": "down"
+          },
+          {
+            "raceId": "2026-r15",
+            "round": 15,
+            "momentum": 49.03000755516292,
+            "racecraft": null,
+            "delta": -7.089858442636931,
+            "direction": "down"
+          },
+          {
+            "raceId": "2026-r16",
+            "round": 16,
+            "momentum": 45.153955929585855,
+            "racecraft": null,
+            "delta": -3.8760516255770625,
+            "direction": "down"
+          },
+          {
+            "raceId": "2026-r17",
+            "round": 17,
+            "momentum": 46.51278989546846,
+            "racecraft": null,
+            "delta": 1.358833965882603,
             "direction": "up"
           }
         ]
       },
       {
-        "driverId": "alonso",
+        "driverId": "hadjar",
         "points": [
           {
-            "raceId": "2026-r8",
-            "round": 8,
-            "momentum": 64,
-            "racecraft": 6.4,
+            "raceId": "2026-r13",
+            "round": 13,
+            "momentum": null,
+            "racecraft": null,
             "delta": null,
             "direction": "unknown"
           },
           {
-            "raceId": "2026-r9",
-            "round": 9,
-            "momentum": 67,
-            "racecraft": 6.7,
-            "delta": 3,
+            "raceId": "2026-r14",
+            "round": 14,
+            "momentum": null,
+            "racecraft": null,
+            "delta": null,
+            "direction": "unknown"
+          },
+          {
+            "raceId": "2026-r15",
+            "round": 15,
+            "momentum": null,
+            "racecraft": null,
+            "delta": null,
+            "direction": "unknown"
+          },
+          {
+            "raceId": "2026-r16",
+            "round": 16,
+            "momentum": null,
+            "racecraft": null,
+            "delta": null,
+            "direction": "unknown"
+          },
+          {
+            "raceId": "2026-r17",
+            "round": 17,
+            "momentum": 73.94399620313241,
+            "racecraft": null,
+            "delta": null,
+            "direction": "unknown"
+          }
+        ]
+      },
+      {
+        "driverId": "hamilton",
+        "points": [
+          {
+            "raceId": "2026-r13",
+            "round": 13,
+            "momentum": 84.51521604786755,
+            "racecraft": null,
+            "delta": -2.0328828514402772,
+            "direction": "down"
+          },
+          {
+            "raceId": "2026-r14",
+            "round": 14,
+            "momentum": 68.16377371880752,
+            "racecraft": null,
+            "delta": -16.351442329060035,
+            "direction": "down"
+          },
+          {
+            "raceId": "2026-r15",
+            "round": 15,
+            "momentum": 69.69883536105894,
+            "racecraft": null,
+            "delta": 1.5350616422514207,
             "direction": "up"
           },
           {
-            "raceId": "2026-r10",
-            "round": 10,
-            "momentum": 70,
-            "racecraft": 7.0,
-            "delta": 3,
+            "raceId": "2026-r16",
+            "round": 16,
+            "momentum": 73.63528183337877,
+            "racecraft": null,
+            "delta": 3.9364464723198296,
             "direction": "up"
           },
           {
-            "raceId": "2026-r11",
-            "round": 11,
-            "momentum": 73,
-            "racecraft": 7.3,
-            "delta": 3,
-            "direction": "up"
-          },
-          {
-            "raceId": "2026-r12",
-            "round": 12,
-            "momentum": 76,
-            "racecraft": 7.6,
-            "delta": 3,
+            "raceId": "2026-r17",
+            "round": 17,
+            "momentum": 74.1157144591896,
+            "racecraft": null,
+            "delta": 0.4804326258108347,
             "direction": "up"
           }
         ]
@@ -829,88 +512,268 @@
         "driverId": "hulkenberg",
         "points": [
           {
-            "raceId": "2026-r8",
-            "round": 8,
-            "momentum": 71,
-            "racecraft": 7.1,
-            "delta": null,
-            "direction": "unknown"
-          },
-          {
-            "raceId": "2026-r9",
-            "round": 9,
-            "momentum": 74,
-            "racecraft": 7.4,
-            "delta": 3,
+            "raceId": "2026-r13",
+            "round": 13,
+            "momentum": 43.6946872669336,
+            "racecraft": null,
+            "delta": 0.958320019526063,
             "direction": "up"
           },
           {
-            "raceId": "2026-r10",
-            "round": 10,
-            "momentum": 77,
-            "racecraft": 7.7,
-            "delta": 3,
+            "raceId": "2026-r14",
+            "round": 14,
+            "momentum": 46.29654980057513,
+            "racecraft": null,
+            "delta": 2.6018625336415298,
             "direction": "up"
           },
           {
-            "raceId": "2026-r11",
-            "round": 11,
-            "momentum": 35,
-            "racecraft": 3.5,
-            "delta": -42,
-            "direction": "down"
+            "raceId": "2026-r15",
+            "round": 15,
+            "momentum": 47.460157527424265,
+            "racecraft": null,
+            "delta": 1.1636077268491363,
+            "direction": "up"
           },
           {
-            "raceId": "2026-r12",
-            "round": 12,
-            "momentum": 38,
-            "racecraft": 3.8,
-            "delta": 3,
+            "raceId": "2026-r16",
+            "round": 16,
+            "momentum": 48.39244392455444,
+            "racecraft": null,
+            "delta": 0.9322863971301771,
+            "direction": "up"
+          },
+          {
+            "raceId": "2026-r17",
+            "round": 17,
+            "momentum": 51.828398920407686,
+            "racecraft": null,
+            "delta": 3.435954995853244,
             "direction": "up"
           }
         ]
       },
       {
-        "driverId": "bottas",
+        "driverId": "lawson",
         "points": [
           {
-            "raceId": "2026-r8",
-            "round": 8,
-            "momentum": 78,
-            "racecraft": 7.8,
-            "delta": null,
-            "direction": "unknown"
-          },
-          {
-            "raceId": "2026-r9",
-            "round": 9,
-            "momentum": 36,
-            "racecraft": 3.6,
-            "delta": -42,
+            "raceId": "2026-r13",
+            "round": 13,
+            "momentum": 58.86080232043991,
+            "racecraft": null,
+            "delta": -5.070904332994083,
             "direction": "down"
           },
           {
-            "raceId": "2026-r10",
-            "round": 10,
-            "momentum": 39,
-            "racecraft": 3.9,
-            "delta": 3,
+            "raceId": "2026-r14",
+            "round": 14,
+            "momentum": 62.213632451132874,
+            "racecraft": null,
+            "delta": 3.352830130692965,
             "direction": "up"
           },
           {
-            "raceId": "2026-r11",
-            "round": 11,
-            "momentum": 42,
-            "racecraft": 4.2,
-            "delta": 3,
+            "raceId": "2026-r15",
+            "round": 15,
+            "momentum": 59.42250029700171,
+            "racecraft": null,
+            "delta": -2.7911321541311622,
+            "direction": "down"
+          },
+          {
+            "raceId": "2026-r16",
+            "round": 16,
+            "momentum": 61.69715248879437,
+            "racecraft": null,
+            "delta": 2.2746521917926614,
             "direction": "up"
           },
           {
-            "raceId": "2026-r12",
-            "round": 12,
-            "momentum": 45,
-            "racecraft": 4.5,
-            "delta": 3,
+            "raceId": "2026-r17",
+            "round": 17,
+            "momentum": 63.52687285472897,
+            "racecraft": null,
+            "delta": 1.8297203659345982,
+            "direction": "up"
+          }
+        ]
+      },
+      {
+        "driverId": "leclerc",
+        "points": [
+          {
+            "raceId": "2026-r13",
+            "round": 13,
+            "momentum": 62.5654009677062,
+            "racecraft": null,
+            "delta": -15.278330962835632,
+            "direction": "down"
+          },
+          {
+            "raceId": "2026-r14",
+            "round": 14,
+            "momentum": 67.04409334543577,
+            "racecraft": null,
+            "delta": 4.4786923777295655,
+            "direction": "up"
+          },
+          {
+            "raceId": "2026-r15",
+            "round": 15,
+            "momentum": 70.61466248762534,
+            "racecraft": null,
+            "delta": 3.5705691421895693,
+            "direction": "up"
+          },
+          {
+            "raceId": "2026-r16",
+            "round": 16,
+            "momentum": 73.47541440983021,
+            "racecraft": null,
+            "delta": 2.8607519222048694,
+            "direction": "up"
+          },
+          {
+            "raceId": "2026-r17",
+            "round": 17,
+            "momentum": 77.56727609775412,
+            "racecraft": null,
+            "delta": 4.09186168792391,
+            "direction": "up"
+          }
+        ]
+      },
+      {
+        "driverId": "max_verstappen",
+        "points": [
+          {
+            "raceId": "2026-r13",
+            "round": 13,
+            "momentum": 62.63261156707103,
+            "racecraft": null,
+            "delta": 6.799339685890182,
+            "direction": "up"
+          },
+          {
+            "raceId": "2026-r14",
+            "round": 14,
+            "momentum": 68.94090385796335,
+            "racecraft": null,
+            "delta": 6.308292290892318,
+            "direction": "up"
+          },
+          {
+            "raceId": "2026-r15",
+            "round": 15,
+            "momentum": 73.97009360668879,
+            "racecraft": null,
+            "delta": 5.029189748725443,
+            "direction": "up"
+          },
+          {
+            "raceId": "2026-r16",
+            "round": 16,
+            "momentum": 78.9016805497325,
+            "racecraft": null,
+            "delta": 4.931586943043712,
+            "direction": "up"
+          },
+          {
+            "raceId": "2026-r17",
+            "round": 17,
+            "momentum": 82.86862771581893,
+            "racecraft": null,
+            "delta": 3.9669471660864275,
+            "direction": "up"
+          }
+        ]
+      },
+      {
+        "driverId": "norris",
+        "points": [
+          {
+            "raceId": "2026-r13",
+            "round": 13,
+            "momentum": 79.98606321969302,
+            "racecraft": null,
+            "delta": 1.398819119633231,
+            "direction": "up"
+          },
+          {
+            "raceId": "2026-r14",
+            "round": 14,
+            "momentum": 82.0156233259107,
+            "racecraft": null,
+            "delta": 2.029560106217673,
+            "direction": "up"
+          },
+          {
+            "raceId": "2026-r15",
+            "round": 15,
+            "momentum": 69.06265966894718,
+            "racecraft": null,
+            "delta": -12.952963656963519,
+            "direction": "down"
+          },
+          {
+            "raceId": "2026-r16",
+            "round": 16,
+            "momentum": 67.70653511666801,
+            "racecraft": null,
+            "delta": -1.3561245522791694,
+            "direction": "down"
+          },
+          {
+            "raceId": "2026-r17",
+            "round": 17,
+            "momentum": 71.09238750027599,
+            "racecraft": null,
+            "delta": 3.3858523836079826,
+            "direction": "up"
+          }
+        ]
+      },
+      {
+        "driverId": "ocon",
+        "points": [
+          {
+            "raceId": "2026-r13",
+            "round": 13,
+            "momentum": 31.68484612716175,
+            "racecraft": null,
+            "delta": -0.760289602659892,
+            "direction": "down"
+          },
+          {
+            "raceId": "2026-r14",
+            "round": 14,
+            "momentum": 35.688991222800944,
+            "racecraft": null,
+            "delta": 4.004145095639192,
+            "direction": "up"
+          },
+          {
+            "raceId": "2026-r15",
+            "round": 15,
+            "momentum": 41.61329718877336,
+            "racecraft": null,
+            "delta": 5.924305965972415,
+            "direction": "up"
+          },
+          {
+            "raceId": "2026-r16",
+            "round": 16,
+            "momentum": 40.04458768127952,
+            "racecraft": null,
+            "delta": -1.5687095074938355,
+            "direction": "down"
+          },
+          {
+            "raceId": "2026-r17",
+            "round": 17,
+            "momentum": 40.57340979010447,
+            "racecraft": null,
+            "delta": 0.5288221088249472,
             "direction": "up"
           }
         ]
@@ -919,43 +782,178 @@
         "driverId": "perez",
         "points": [
           {
-            "raceId": "2026-r8",
-            "round": 8,
-            "momentum": 40,
-            "racecraft": 4.0,
-            "delta": null,
-            "direction": "unknown"
+            "raceId": "2026-r13",
+            "round": 13,
+            "momentum": 21.483020714717245,
+            "racecraft": null,
+            "delta": -0.5947196393190843,
+            "direction": "down"
           },
           {
-            "raceId": "2026-r9",
-            "round": 9,
-            "momentum": 43,
-            "racecraft": 4.3,
-            "delta": 3,
+            "raceId": "2026-r14",
+            "round": 14,
+            "momentum": 19.169232012119345,
+            "racecraft": null,
+            "delta": -2.3137887025979005,
+            "direction": "down"
+          },
+          {
+            "raceId": "2026-r15",
+            "round": 15,
+            "momentum": 22.788724086449715,
+            "racecraft": null,
+            "delta": 3.6194920743303705,
             "direction": "up"
           },
           {
-            "raceId": "2026-r10",
-            "round": 10,
-            "momentum": 46,
-            "racecraft": 4.6,
-            "delta": 3,
+            "raceId": "2026-r16",
+            "round": 16,
+            "momentum": 21.177756629392128,
+            "racecraft": null,
+            "delta": -1.610967457057587,
+            "direction": "down"
+          },
+          {
+            "raceId": "2026-r17",
+            "round": 17,
+            "momentum": 21.67258662671167,
+            "racecraft": null,
+            "delta": 0.4948299973195418,
+            "direction": "up"
+          }
+        ]
+      },
+      {
+        "driverId": "piastri",
+        "points": [
+          {
+            "raceId": "2026-r13",
+            "round": 13,
+            "momentum": 65.63510273381647,
+            "racecraft": null,
+            "delta": 3.740445077525422,
             "direction": "up"
           },
           {
-            "raceId": "2026-r11",
-            "round": 11,
-            "momentum": 49,
-            "racecraft": 4.9,
-            "delta": 3,
+            "raceId": "2026-r14",
+            "round": 14,
+            "momentum": 65.8346828679687,
+            "racecraft": null,
+            "delta": 0.19958013415222808,
             "direction": "up"
           },
           {
-            "raceId": "2026-r12",
-            "round": 12,
-            "momentum": 52,
-            "racecraft": 5.2,
-            "delta": 3,
+            "raceId": "2026-r15",
+            "round": 15,
+            "momentum": 61.440357747732435,
+            "racecraft": null,
+            "delta": -4.39432512023626,
+            "direction": "down"
+          },
+          {
+            "raceId": "2026-r16",
+            "round": 16,
+            "momentum": 64.23489301887254,
+            "racecraft": null,
+            "delta": 2.7945352711401057,
+            "direction": "up"
+          },
+          {
+            "raceId": "2026-r17",
+            "round": 17,
+            "momentum": 67.37814770028152,
+            "racecraft": null,
+            "delta": 3.143254681408976,
+            "direction": "up"
+          }
+        ]
+      },
+      {
+        "driverId": "russell",
+        "points": [
+          {
+            "raceId": "2026-r13",
+            "round": 13,
+            "momentum": 75.49099397387589,
+            "racecraft": null,
+            "delta": 4.822197956137131,
+            "direction": "up"
+          },
+          {
+            "raceId": "2026-r14",
+            "round": 14,
+            "momentum": 76.5476268311489,
+            "racecraft": null,
+            "delta": 1.0566328572730157,
+            "direction": "up"
+          },
+          {
+            "raceId": "2026-r15",
+            "round": 15,
+            "momentum": 81.03276111865236,
+            "racecraft": null,
+            "delta": 4.485134287503456,
+            "direction": "up"
+          },
+          {
+            "raceId": "2026-r16",
+            "round": 16,
+            "momentum": 67.48478262547994,
+            "racecraft": null,
+            "delta": -13.547978493172423,
+            "direction": "down"
+          },
+          {
+            "raceId": "2026-r17",
+            "round": 17,
+            "momentum": 66.4356162481799,
+            "racecraft": null,
+            "delta": -1.0491663773000397,
+            "direction": "down"
+          }
+        ]
+      },
+      {
+        "driverId": "sainz",
+        "points": [
+          {
+            "raceId": "2026-r13",
+            "round": 13,
+            "momentum": 32.773985842418,
+            "racecraft": null,
+            "delta": 2.4622843878315557,
+            "direction": "up"
+          },
+          {
+            "raceId": "2026-r14",
+            "round": 14,
+            "momentum": 29.19699793112614,
+            "racecraft": null,
+            "delta": -3.576987911291859,
+            "direction": "down"
+          },
+          {
+            "raceId": "2026-r15",
+            "round": 15,
+            "momentum": 34.54148611753935,
+            "racecraft": null,
+            "delta": 5.3444881864132086,
+            "direction": "up"
+          },
+          {
+            "raceId": "2026-r16",
+            "round": 16,
+            "momentum": 32.508224668506756,
+            "racecraft": null,
+            "delta": -2.0332614490325938,
+            "direction": "down"
+          },
+          {
+            "raceId": "2026-r17",
+            "round": 17,
+            "momentum": 33.55870582802763,
+            "racecraft": null,
+            "delta": 1.0504811595208707,
             "direction": "up"
           }
         ]
@@ -964,48 +962,92 @@
         "driverId": "stroll",
         "points": [
           {
-            "raceId": "2026-r8",
-            "round": 8,
-            "momentum": 47,
-            "racecraft": 4.7,
+            "raceId": "2026-r13",
+            "round": 13,
+            "momentum": 16.29430432523592,
+            "racecraft": null,
+            "delta": -1.6533396854875662,
+            "direction": "down"
+          },
+          {
+            "raceId": "2026-r14",
+            "round": 14,
+            "momentum": 14.063092299833489,
+            "racecraft": null,
+            "delta": -2.2312120254024315,
+            "direction": "down"
+          },
+          {
+            "raceId": "2026-r15",
+            "round": 15,
+            "momentum": 11.37360509919132,
+            "racecraft": null,
+            "delta": -2.6894872006421693,
+            "direction": "down"
+          },
+          {
+            "raceId": "2026-r16",
+            "round": 16,
+            "momentum": 18.240612163100568,
+            "racecraft": null,
+            "delta": 6.867007063909249,
+            "direction": "up"
+          },
+          {
+            "raceId": "2026-r17",
+            "round": 17,
+            "momentum": 16.60166193254882,
+            "racecraft": null,
+            "delta": -1.6389502305517496,
+            "direction": "down"
+          }
+        ]
+      },
+      {
+        "driverId": "tsunoda",
+        "points": [
+          {
+            "raceId": "2026-r13",
+            "round": 13,
+            "momentum": null,
+            "racecraft": null,
             "delta": null,
             "direction": "unknown"
           },
           {
-            "raceId": "2026-r9",
-            "round": 9,
-            "momentum": 50,
-            "racecraft": 5.0,
-            "delta": 3,
-            "direction": "up"
+            "raceId": "2026-r14",
+            "round": 14,
+            "momentum": 48.20439803828508,
+            "racecraft": null,
+            "delta": null,
+            "direction": "unknown"
           },
           {
-            "raceId": "2026-r10",
-            "round": 10,
-            "momentum": 53,
-            "racecraft": 5.3,
-            "delta": 3,
-            "direction": "up"
+            "raceId": "2026-r15",
+            "round": 15,
+            "momentum": null,
+            "racecraft": null,
+            "delta": null,
+            "direction": "unknown"
           },
           {
-            "raceId": "2026-r11",
-            "round": 11,
-            "momentum": 56,
-            "racecraft": 5.6,
-            "delta": 3,
-            "direction": "up"
+            "raceId": "2026-r16",
+            "round": 16,
+            "momentum": null,
+            "racecraft": null,
+            "delta": null,
+            "direction": "unknown"
           },
           {
-            "raceId": "2026-r12",
-            "round": 12,
-            "momentum": 59,
-            "racecraft": 5.9,
-            "delta": 3,
-            "direction": "up"
+            "raceId": "2026-r17",
+            "round": 17,
+            "momentum": null,
+            "racecraft": null,
+            "delta": null,
+            "direction": "unknown"
           }
         ]
       }
     ]
-  },
-  "_note": "Sample data. Replace by running analytics_engine/src/export/placeholders/export_momentum.py"
+  }
 }
