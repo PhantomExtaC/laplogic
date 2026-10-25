@@ -79,14 +79,23 @@ def main():
     parser.add_argument("--season", type=int, required=True)
     parser.add_argument("--input-dir", type=Path, default=ROOT / "web_app/public/data")
     parser.add_argument("--work-dir", type=Path, default=ROOT / ".updater")
+    parser.add_argument("--live", action="store_true", help="Collect a complete live season source snapshot before staging cached core outputs")
     parser.add_argument("--dry-run", action="store_true", help="Validate without updating the candidate pointer")
     args = parser.parse_args()
     from src.export.core_exports import build
     folder = args.work_dir.resolve()
     try:
         with lock(folder):
-            report = {"startedAt": datetime.now(timezone.utc).isoformat(), "season": args.season, "sourceMode": "cached-export-bundle", "dryRun": args.dry_run}
+            report = {"startedAt": datetime.now(timezone.utc).isoformat(), "season": args.season, "sourceMode": "live-source-request" if args.live else "cached-export-bundle", "dryRun": args.dry_run}
             try:
+                if args.live:
+                    from src.ingestion.jolpica import collect
+                    source = collect(args.season)
+                    source_id = hashlib.sha256(canonical(source)).hexdigest()[:24]
+                    source_folder = folder / "sources"
+                    source_folder.mkdir(exist_ok=True)
+                    atomic_json(source_folder / (source_id + ".json"), source)
+                    report.update(liveSourceId=source_id, throughRound=source["throughRound"], sourceMode="live-ingestion-with-cached-core-candidate")
                 payloads = build(args.input_dir.resolve(), ROOT / "web_app/public", args.season)
                 identifier, created = stage(payloads, folder, validate_frontend)
                 report.update(status="validated", releaseId=identifier, changed=created, files=sorted(payloads))

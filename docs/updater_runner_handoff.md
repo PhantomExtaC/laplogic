@@ -34,3 +34,20 @@ network retries, official source adapters, correction-window handling, complete
 profile policy, verified calendar instants and roster/standings provenance, and
 real-source outage/recovery rehearsal. Keep production data unchanged until those
 gates pass. See weekly_updater_plan.md and updater_source_map.md.
+
+
+## Live ingestion continuation
+`--live` now collects schedule, complete paginated race results and standings at the
+same result cutoff through Jolpica. The source is saved separately under
+.updater/sources/<content-hash>.json; the ten core candidate files still come from
+the cached bundle until source-to-contract conversion is complete. The report
+explicitly distinguishes these two sources. No website files are published.
+
+The adapter uses a custom User-Agent, 20-second request timeout, three bounded
+attempts for transient failures, capped retry delay, pagination completeness checks
+and explicit season/round checks. Full-season rereads include earlier corrections
+and gaps; absent results remain absent. No pit-stop values are invented. The API
+contract was checked against https://github.com/jolpica/jolpica-f1/blob/main/docs/README.md.
+Twelve Python tests pass, including retries, permanent failures, split race pages,
+truncated pagination and noncontiguous rounds. Live source verification is recorded
+in .updater/last-run.json; a failed attempt preserves existing validated candidates.
