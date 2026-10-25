@@ -1,7 +1,7 @@
 import { getDrivers, getTeams, getTracks } from './directories';
 import { fetchJson } from '../client/fetchJson';
-import { momentumSchema, seasonStatsSchema, stagesSchema } from '../schemas/core';
-import { degradationSchema, insightsSchema, trackRegistrySchema } from '../schemas';
+import { momentumSchema, seasonStatsSchema, stagesSchema, trackProfilesSchema } from '../schemas/core';
+import { insightsSchema } from '../schemas';
 import { legacy, resolveDriver } from '../adapters';
 import { getRegistry } from './index';
 
@@ -24,14 +24,7 @@ export const getMomentum = async (signal?: AbortSignal) => {
     return { ...row, driverId: id, name: directory.find(driver => driver.id === id)?.fullName ?? id };
   }) } };
 };
-export const getTrackProfiles = async (signal?: AbortSignal) => {
-  const [rows, registry] = await Promise.all([
-    fetchJson('data/tracksDeg.json', degradationSchema, signal), fetchJson('data/track_registry.json', trackRegistrySchema, signal),
-  ]);
-  return legacy(rows.map(row => ({ ...row, trackId: registry.data.find(track => track.engineCircuitId === row.circuitId)?.canonicalId ?? null,
-    definition: 'Legacy 1–5 index. Direction, sample window and pit-stop denominator are unconfirmed.',
-  })));
-};
+export const getTrackProfiles = (signal?: AbortSignal) => fetchJson('data/track_profiles.json', trackProfilesSchema, signal);
 export const getInsights = async (signal?: AbortSignal) => legacy((await fetchJson('data/insights.json', insightsSchema, signal)).map(row => ({
   ...row, higherIsBetter: { momentumIndex: null, racecraftIndex: null, mastery: null },
 })));

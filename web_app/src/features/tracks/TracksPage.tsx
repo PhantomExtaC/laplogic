@@ -5,7 +5,6 @@ import { ResourceBoundary } from '../../ui/ResourceBoundary';
 import { SearchInput, Select, Tabs } from '../../ui/Controls';
 import { EmptyState } from '../../ui/States';
 import { Num } from '../../ui/Indicators';
-import { DegScale } from '../../charts/DegScale';
 import TrackCard from '../../ui/TrackCard';
 
 export default function TracksPage() {
@@ -23,9 +22,9 @@ export default function TracksPage() {
     filtered.sort((a, b) => { if (sort === 'name') return a.name.localeCompare(b.name); if (a.lengthKm === null) return b.lengthKm === null ? 0 : 1; if (b.lengthKm === null) return -1; return sort === 'lengthAsc' ? a.lengthKm - b.lengthKm : b.lengthKm - a.lengthKm; });
     return filtered.length ? <div className="grid items-start gap-6 md:grid-cols-2 xl:grid-cols-3">{filtered.map(track => {
       const event = calendar.status === 'ready' ? calendar.data.find(row => row.trackId === track.id) : null;
-      return <div key={track.id} className="space-y-3"><TrackCard track={track} /><Surface><p className="mb-3 text-xs text-text-muted">Pole-to-win conversion: <Num value={null} /> / Sample window unavailable</p>{event && <Link className="button text-xs" to={`/race-hub?race=${encodeURIComponent(event.raceId)}`}>Open race profile</Link>}<ResourceBoundary state={profiles}>{data => {
+      return <div key={track.id} className="space-y-3"><TrackCard track={track} /><Surface>{event && <Link className="button text-xs" to={`/race-hub?race=${encodeURIComponent(event.raceId)}`}>Open race profile</Link>}<ResourceBoundary state={profiles}>{data => {
         const profile = data.find(row => row.trackId === track.id);
-        return profile ? <DegScale value={profile.tireDegradationIndex} summary={profile.definition} /> : <p className="text-xs text-text-muted">Degradation profile unavailable.</p>;
+        return profile ? <div className="space-y-2 text-sm"><p>Pole-to-win: <Num value={profile.poleToWin === null ? null : profile.poleToWin * 100} digits={0} unit="%" /></p><p className="text-xs text-text-muted">{profile.poleWins} wins / {profile.poleStarts} identified pole starts · {profile.sampleCount} recorded races</p><p className="text-xs text-text-muted">{profile.fromDate && profile.toDate ? `${profile.fromDate} to ${profile.toDate}` : 'No recorded races in this season yet.'}</p><p className="text-xs text-text-muted">{profile.definition}</p></div> : <p className="text-xs text-text-muted">No circuit observations in this export.</p>;
       }}</ResourceBoundary></Surface></div>;
     })}</div> : <EmptyState title="No matching circuits" description="Adjust the country, type or search filter." />;
   }}</ResourceBoundary>;
