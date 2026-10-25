@@ -111,6 +111,8 @@ def main():
                     from src.export.live_core import convert
                     payloads = convert(payloads, source, args.source_observed_at or report["startedAt"])
                 identifier, created = stage(payloads, folder, validate_frontend)
+                from src.export.freshness import describe
+                report["resources"] = describe(payloads)
                 report.update(status="validated", releaseId=identifier, changed=created, files=sorted(payloads))
                 if not args.dry_run:
                     atomic_json(folder / "candidate.json", {"releaseId": identifier})
