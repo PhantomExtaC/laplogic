@@ -30,7 +30,9 @@ Raw snapshots are saved under .updater/sources/<content-hash>.json. Calendar and
 standings envelopes retain source snapshot identity, observation time and result
 cutoff. Sessions preserve supplied UTC instants; missing times stay null. Events
 are completed only when results exist; missing results do not imply cancellation.
-Track directory joins and local timezone names remain null pending verified mapping.
+Track directory joins use an explicit reviewed circuit-reference map with unique
+target and country checks. Unknown references remain null; local timezone names
+remain unavailable.
 Driver teams come from their latest recorded race result, avoiding transfer errors
 from the ordering of constructors in standings. Missing numbers stay null; zero
 points remain zero. Live identities extend the driver registry without name joins.
@@ -61,7 +63,17 @@ Python checks cover ingestion retries/pagination, isolation, immutable candidate
 provenance, transfer handling, missing values, timestamp validation and replay.
 Frontend checks cover envelope metadata retention and compatibility with legacy arrays.
 
-Remaining U2/U3 gates include verified circuit mapping, complete profile freshness
-policy, and real-source outage/recovery rehearsal. Later checkpoints populate
+The next candidate, 1cda871a24603326f0496ba6, resolves 22 of 23 scheduled track joins.
+Madring has no directory entry and remains null. Mapping evidence is the saved
+Jolpica schedule's circuit references/locations and the supplied track directory;
+no approximate name matching or new track statistics were introduced.
+
+A deterministic runner rehearsal injects a network outage after staging a valid
+candidate, verifies the pointer and release bytes are unchanged, checks failure
+reporting/lock cleanup, then verifies the next successful run reuses the candidate.
+This exercises the real runner boundary with an injected fetch failure; it does
+not claim an upstream service outage was observed. Retry tests exercise HTTP errors
+separately. Remaining U2/U3 gates include complete profile freshness policy and
+broader live-source recovery observation. Later checkpoints populate
 analytics, forecasts, Simulator and stories before coherent scheduled publication.
 See weekly_updater_plan.md and updater_source_map.md.
